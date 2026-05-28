@@ -498,7 +498,7 @@ for _, row in merged.iterrows():
         # Robust hub check
         is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
         # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
-        share_val = f"<b>{int(row[share_col_name])}%</b>|{int(row['Market_Size'])} MT" if pd.notna(row[share_col_name]) else f"0%|{int(row['Market_Size'])} MT"
+        share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b>|{int(row['Market_Size'])} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%|{int(row['Market_Size'])} MT</span>"
         # 1. District Name
         annotations.append(dict(
             x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
@@ -526,9 +526,9 @@ for _, row in merged.iterrows():
             y=centroid.y + current_offset, # Using the state-specific offset
             text=f"<b>{share_val}</b>",
             showarrow=False,
-            font=dict(size=13, color="white"),
+            font=dict(size=10, color="white"),
             bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-            bordercolor="black", borderwidth=1, borderpad=3,
+            bordercolor="black", borderwidth=1, borderpad=2,
             xref="x", yref="y"
         ))
 
