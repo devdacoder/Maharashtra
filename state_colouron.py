@@ -510,7 +510,7 @@ for _, row in merged.iterrows():
         ))
         state_y_offsets = {
             "Maharashtra": -0.15,
-            "Gujarat": -0.05,
+            "Gujarat": -0.75,
             "Punjab": 0,
             "Jammu and Kashmir": 0,
             "Uttar Pradesh": -0.05,
