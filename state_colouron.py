@@ -529,7 +529,7 @@ for _, row in merged.iterrows():
             showarrow=False,
             font=dict(size=10, color="white"),
             bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-            bordercolor="black", borderwidth=1, borderpad=2,
+            bordercolor="black", borderwidth=1, borderpad=1,
             xref="x", yref="y"
         ))
 
