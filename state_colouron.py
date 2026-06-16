@@ -227,10 +227,16 @@ state_distributor_configs = {
           'PUNE': 'Manmohan Ispat', 'AHMEDNAGAR': 'Jai Associates'
     },
     "Gujarat": {
-        'AHMEDABAD': 'Distributor A', 
-        'SURAT': ['Distributor B', 'Distributor C'],
-        'RAJKOT': 'Distributor D'
-        # Add your Gujarat distributor list here...
+        'AHMADABAD': 'Jayhind', 'ANAND': 'Jayhind', 'GANDHINAGAR': 'Jayhind', 'KHEDA': 'Jayhind',
+        'AMRELI': 'Jayhind', 'BHAVNAGAR': 'Jayhind', 'BOTAD': 'Jayhind', 'GIR SOMNATH': 'Jayhind',
+        'JUNAGADH': 'Jayhind', 'PORBANDAR': 'Jayhind','JAMNAGAR': 'Jayhind',
+        'KACHCHH': ['Jalaram','Lokhandwala'], 'MORBI': 'Jayhind', 'ARVALLI': ['Jalaram','Lokhandwala'],
+        'BANAS KANTHA': ['Jalaram','Lokhandwala'], 'MAHESANA': ['Jalaram','Lokhandwala'], 'PATAN': ['Jalaram','Lokhandwala'],
+        'SABAR KANTHA': ['Jalaram','Lokhandwala'], 'DEVBHUMI DWARKA': 'Jayhind', 'RAJKOT': 'Jayhind',
+        'SURENDRANAGAR': 'Jayhind','DANG': 'Vikas Industries', 'NAVSARI': 'Vikas Industries',
+        'SURAT': 'Vikas Industries', 'TAPI': 'Vikas Industries', 'VALSAD': 'Vikas Industries',
+        'BHARUCH': ['Jalaram','Hariom'], 'CHHOTAUDEPUR': ['Jalaram','Hariom'], 'DOHAD': ['Jalaram','Hariom'],
+        'MAHISAGAR': ['Jalaram','Hariom'], 'NARMADA': ['Jalaram','Hariom'], 'PANCH MAHALS': ['Jalaram','Hariom'], 'VADODARA': ['Jalaram','Hariom']
     },
     "Punjab": {
         'AMRITSAR': 'Distributor A'
