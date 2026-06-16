@@ -561,7 +561,7 @@ for _, row in merged.iterrows():
             y=centroid.y + current_offset, # Using the state-specific offset
             text=f"<b>{share_val}</b>",
             showarrow=False,
-            font=dict(size=13, color="white"),
+            font=dict(size=10, color="white"),
             bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
             bordercolor="black", borderwidth=0.5, borderpad=1,
             xref="x", yref="y"
