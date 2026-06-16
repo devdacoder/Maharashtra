@@ -806,7 +806,7 @@ def style_final_table(st_df):
 st.subheader("📍 Gujarat Distribution Network Detail")
 
 # 1. Prepare the Data
-dist_df = merged_dist[['cluster', 'District', 'Distributors_List']].copy()
+dist_df = merged[['cluster', 'District', 'Distributors_List']].copy()
 dist_df = dist_df.sort_values(by=['cluster', 'District'])
 
 # Format Distributor Names for the Table
