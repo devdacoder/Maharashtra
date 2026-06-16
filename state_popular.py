@@ -531,8 +531,9 @@ for _, row in merged.iterrows():
         centroid = row.geometry.centroid
         # Robust hub check
         is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
-        share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
-        
+        # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
+        mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
+        share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
         # 1. District Name
         annotations.append(dict(
             x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
@@ -541,16 +542,15 @@ for _, row in merged.iterrows():
             font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
             xref="x", yref="y"
         ))
-        
         state_y_offsets = {
-            "Maharashtra": -0.1,
-            "Gujarat": -0.05,
+            "Maharashtra": -0.15,
+            "Gujarat": -0.075,
             "Punjab": 0,
             "Jammu and Kashmir": 0,
             "Uttar Pradesh": -0.05,
             "Haryana":0,
             "Himachal Pradesh":0,
-            "Uttarakhand":0   
+            "Uttarakhand":0
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -563,7 +563,7 @@ for _, row in merged.iterrows():
             showarrow=False,
             font=dict(size=13, color="white"),
             bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-            bordercolor="black", borderwidth=1, borderpad=3,
+            bordercolor="black", borderwidth=0.5, borderpad=1,
             xref="x", yref="y"
         ))
 
