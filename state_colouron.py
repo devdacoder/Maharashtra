@@ -22,14 +22,16 @@ def get_state_data(state_name):
               'BHANDARA', 'CHANDRAPUR', 'AMRAVATI', 'GADCHIROLI', 'GONDIA', 'NAGPUR', 'WARDHA',
               'YAVATMAL', 'DHULE', 'JALGAON', 'NANDURBAR', 'NASHIK', 'PUNE', 'AHMEDNAGAR'
           ],
-          "Colouron+": [5, 0, 0, 25, 0, 0, 15, 0, 0, 0, 0, 150, 75, 100, 75, 75, 0, 150, 0, 325, 500, 450, 5, 5, 5, 0, 10, 163, 0, 0, 0, 20, 0, 75, 250, 50],
+          "Colouron+": [5, 0, 0, 25, 0, 0, 15, 0, 0, 0, 0, 150, 75, 100, 75, 75, 0, 75, 75, 325, 500, 450, 5, 5, 5, 0, 10, 163, 0, 0, 0, 20, 0, 75, 250, 50],
           "Everglow": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "JSW_Radiance": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0],
-          "TATA_Prisma": [5, 0, 0, 25, 15, 10, 15, 0, 10, 3, 0, 25, 10, 25, 10, 10, 5, 50, 15, 25, 15, 25, 2, 0, 5, 0, 5, 10, 0, 0, 0, 15, 0, 40, 125, 20],
+          "JSW_CC_Liner": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0],
+          "JSW_Radiance": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "TATA_Durashine": [5, 0, 0, 25, 15, 10, 15, 0, 10, 3, 0, 25, 10, 25, 10, 10, 5, 50, 15, 25, 15, 25, 2, 0, 5, 0, 5, 10, 0, 0, 0, 15, 0, 40, 125, 20],
           "Tata_Liner": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "TATA_Durashine": [15, 5, 5, 150, 35, 10, 50, 10, 50, 7, 10, 100, 25, 75, 25, 15, 25, 100, 35, 75, 75, 75, 0, 0, 10, 0, 0, 150, 0, 0, 25, 50, 15, 75, 150, 50],
-          "JSW_CC_Liner": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          "Others": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0, 25, 0, 25, 0, 25, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 0, 25, 100, 0]        
+          "TATA_Prisma": [15, 5, 5, 150, 35, 10, 50, 10, 50, 7, 10, 100, 25, 75, 25, 15, 25, 100, 35, 75, 75, 75, 0, 0, 10, 0, 0, 150, 0, 0, 25, 50, 15, 75, 150, 50],
+          "Jindal Neucolor+": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "APL Apollo Coral": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          "Others": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 0, 50, 0, 0, 0, 25, 0, 25, 0, 25, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 0, 25, 100, 0]
       }
     elif state_name == "Gujarat":
         data = {
@@ -38,14 +40,16 @@ def get_state_data(state_name):
                 'JAMNAGAR', 'KACHCHH', 'MORBI', 'ARVALLI', 'BANAS KANTHA', 'MAHESANA', 'PATAN', 'SABAR KANTHA', 'DEVBHUMI DWARKA', 'RAJKOT','SURENDRANAGAR',
                 'DANG', 'NAVSARI', 'SURAT', 'TAPI', 'VALSAD', 'BHARUCH', 'CHHOTAUDEPUR', 'DOHAD', 'MAHISAGAR', 'NARMADA', 'PANCH MAHALS', 'VADODARA'
             ],
-            "Colouron+": [80, 50, 80, 50, 25, 25, 0, 0, 40, 10, 40, 40, 40, 10, 70, 80, 25, 30, 0, 400, 40, 1, 40, 700, 10, 200, 20, 0, 0, 5, 0, 5, 80],
-            "Everglow": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            "JSW_CC_Liner": [0]*33,
-            "TATA_Durashine": [30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 5, 10, 5, 2, 0, 0, 0, 0, 8, 50, 1, 15, 10, 0, 0, 2, 0, 0, 15],
-            "Tata_Liner": [100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 10, 0, 0, 10, 10, 0, 0, 0, 100, 0, 0, 0, 120, 0, 0, 20, 0, 0, 0, 0, 0, 50],
-            "TATA_Prisma": [100, 20, 30, 10, 20, 25, 10, 0, 25, 10, 0, 20, 50, 0, 20, 50, 10, 20, 0, 200, 40, 0, 10, 300, 0, 180, 40, 0, 0, 0, 0, 5, 120],
+            "Colouron+": [100,63,100,63,31,31,0,0,50,13,50,50,50,13,88,100,31,38,0,500,50,1,50,875,13,250,25,0,0,6,0,6,100],
+            "Everglow": [0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            "JSW_CC_Liner": [70,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0],
+            "TATA_Durashine": [36,0,0,0,0,0,0,0,0,0,0,6,0,0,6,12,6,2,0,0,0,0,10,60,1,18,12,0,0,2,0,0,18],
+            "Tata_Liner": [120,0,0,0,0,0,0,0,0,0,96,12,0,0,12,12,0,0,0,120,0,0,0,144,0,0,24,0,0,0,0,0,60],
+            "TATA_Prisma": [36,24,12,12,24,30,12,0,30,12,0,24,24,0,12,36,12,24,0,120,48,0,12,96,0,36,48,0,0,0,0,6,36],
+            "Jindal Neucolour+": [0]*33,
+            "APL Apollo Coral": [0]*33,
             "JSW_Radiance": [0]*33,
-            "Others": [10, 5, 10, 5, 5, 10, 5, 2, 5, 10, 5, 0, 10, 0, 0, 0, 0, 0, 5, 10, 5, 0, 1, 10, 1, 0, 10, 0, 0, 0, 0, 0, 0]
+            "Others": [10,5,10,5,5,10,5,2,5,10,5,0,10,0,0,0,0,0,5,10,5,0,1,10,1,0,10,0,0,0,0,0,0]
         }
     elif state_name == "Punjab":
         data = {
@@ -62,6 +66,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [5,0,5,20,10,10,5,10,0,30,50,5,0,10,10,5,15,0,0,0,10,0,0],
             "Tata_Liner": [0]*23,
             "TATA_Prisma": [5,0,5,25,5,10,5,5,0,30,20,0,0,0,0,0,0,5,5,5,15,10,0],
+            "Jindal Neucolour+": [0]*23,
+            "APL Apollo Coral": [0]*23,
             "JSW_Radiance": [0]*23,
             "Others": [0,0,0,80,0,10,0,10,0,20,20,0,0,0,0,0,0,0,0,0,10,0,0]
         }
@@ -79,6 +85,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [20, 0, 0, 10, 0, 0, 10, 0, 0, 20, 0, 30, 0, 30, 0, 0, 0, 0, 0, 30],
             "Tata_Liner": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             "TATA_Prisma": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            "Jindal Neucolour+": [0]*20,
+            "APL Apollo Coral": [0]*20,
             "JSW_Radiance": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             "Others": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50]
         }
@@ -102,6 +110,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [25, 1, 2, 1, 2, 0, 0, 3, 0, 0,2, 0, 2, 1, 2, 0, 0, 0, 14, 100, 0, 8, 5, 0, 2, 0, 8, 0, 2, 3,0, 0, 0, 10, 0, 0, 0, 0, 0, 3, 0, 3, 0, 5, 0, 0, 15, 0, 3,30, 3, 0, 0, 3, 0, 9, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 10],
             "Tata_Liner": [0]*69,
             "TATA_Prisma": [0]*69,
+            "Jindal Neucolour+": [0]*69,
+            "APL Apollo Coral": [0]*69,
             "JSW_Radiance": [0]*69,
             "Others": [0]*69
         }
@@ -119,6 +129,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             "Tata_Liner": [0]*22,
             "TATA_Prisma": [0]*22,
+            "Jindal Neucolour+": [0]*22,
+            "APL Apollo Coral": [0]*22,
             "JSW_Radiance": [0]*22,
             "Others": [0]*22
         }
@@ -133,6 +145,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [40,25,60,200,30,10,100,30,10,100,30,60],
             "Tata_Liner": [0]*12,
             "TATA_Prisma": [0]*12,
+            "Jindal Neucolour+": [0]*12,
+            "APL Apollo Coral": [0]*12,
             "JSW_Radiance": [0]*12,
             "Others": [0]*12
         }
@@ -149,6 +163,8 @@ def get_state_data(state_name):
             "TATA_Durashine": [0,30,20,10,0,0,0,0,0,0,0,0,50],
             "Tata_Liner": [0]*13,
             "TATA_Prisma": [0]*13,
+            "Jindal Neucolour+": [0]*13,
+            "APL Apollo Coral": [0]*13,
             "JSW_Radiance": [0]*13,
             "Others": [0]*13
         }
@@ -190,14 +206,14 @@ def get_geojson(state_name):
 # ---------------------------------------------------------
 # Sidebar Selections
 target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra"])
-target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "JSW_Radiance", "TATA_Prisma", "Tata_Liner", "TATA_Durashine", "JSW_CC_Liner", "Everglow", "Others"])
+target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
 state_districts = get_geojson(target_state)
 
 st.title(f"📊 {target_state} District wise Market Mapping")
 
-brand_cols = ["Colouron+", "JSW_Radiance", "TATA_Prisma", "Tata_Liner", "TATA_Durashine", "JSW_CC_Liner", "Everglow", "Others"]
+brand_cols = ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"]
 df['Market_Size'] = df[brand_cols].sum(axis=1)
 share_col_name = f'{target_brand} % share'
 df[share_col_name] = np.where(df['Market_Size'] == 0, 0, (df[target_brand] / df['Market_Size']) * 100)
