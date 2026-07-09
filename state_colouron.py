@@ -40,7 +40,7 @@ def get_state_data(state_name):
                           10, 100, 25, 75, 25, 15, 25, 100, 35, 75,
                           75, 75, 0, 0, 10, 0, 0, 150, 0, 0,
                           25, 50, 15, 75, 150, 50],
-          "Jindal Neucolor+": [0]*36,
+          "Jindal Neucolour+": [0]*36,
           "APL Apollo Coral": [0]*36,
           "JSW_Radiance": [0]*36,
           "Others": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
