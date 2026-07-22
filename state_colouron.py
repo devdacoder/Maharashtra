@@ -183,6 +183,32 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*13,
             "Others": [0]*13
         }
+    elif state_name == "Madhya Pradesh":
+        data = {
+            "District": [
+                'ASHOKNAGAR','BETUL','BHIND','BHOPAL','DATIA','GUNA','GWALIOR','HARDA','HOSHANGABAD',
+                'MORENA','RAISEN','RAJGARH','SEHORE','SHEOPUR','SHIVPURI','VIDISHA','AGAR MALWA',
+                'ALIRAJPUR','BARWANI','BURHANPUR','DEWAS','DHAR','INDORE','JHABUA','KHARGONE','MANDSAUR',
+                'NEEMUCH','RATLAM','SHAJAPUR','UJJAIN','CHHATARPUR','CHHINDWARA','DAMOH','JABALPUR',
+                'KATNI','MANDLA','NARSINGHPUR','NIWARI','PANNA','SAGAR','SEONI','TIKAMGARH','ANUPPUR',
+                'BALAGHAT','DINDORI','EAST NIMAR','REWA','SATNA','SHAHDOL','SIDHI','SINGRAULI','UMARIA'
+
+            ],
+            "Colouron+": [0,0,0,10,0,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,5,10,25,0,0,0,0,0,0,0,0,0,0,25,
+                         0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0],
+            "Everglow": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "JSW_CC_Liner": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "TATA_Durashine": [0,0,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "Tata_Liner": [0]*52,
+            "TATA_Prisma": [0]*52,
+            "Jindal Neucolour+": [0]*52,
+            "APL Apollo Coral": [0]*52,
+            "JSW_Radiance": [0]*52,
+            "Others": [0]*52
+        }
            
     return pd.DataFrame(data)
 
@@ -211,7 +237,10 @@ def get_geojson(state_name):
         'B>GESHWAR':'BAGESHWAR',
         'CHAMP>WAT':'CHAMPAWAT', 
         'NAINIT>L':'NAINITAL',
-        'PITHOR>GARH':'PITHORAGARH'
+        'PITHOR>GARH':'PITHORAGARH',
+        'NARMADAPURAM':'HOSHANGABAD',
+        'KHANDWA':'EAST NIMAR'
+        
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
     return state_gdf
@@ -220,7 +249,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
