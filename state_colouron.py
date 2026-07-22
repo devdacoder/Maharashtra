@@ -319,7 +319,10 @@ state_distributor_configs = {
     },
     "Uttarakhand": {
         'BAGESHWAR': 'Distributor A'
-    }  
+    },
+    "Madhya Pradesh": {
+        'AGAR MALWA': 'Distributor A'
+    }
 }
 
 # 2. Get the specific lookup for the selected state
@@ -399,6 +402,12 @@ state_ranges = {
         (float('inf'), '200+ MT', '#1e40af')
     ],
     "Uttarakhand": [
+        (25, '0–25 MT', '#dbeafe'),
+        (50, '25–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "Madhya Pradesh": [
         (25, '0–25 MT', '#dbeafe'),
         (50, '25–50 MT', '#93c5fd'),
         (100, '50–100 MT', '#3b82f6'),
@@ -494,6 +503,19 @@ cluster_config = {
         'RUDRA PRAYAG':'Garhwal', 'TEHRI GARHWAL':'Garhwal', 'UTTAR KASHI':'Garhwal',
         'ALMORA':'Kumaon', 'BAGESHWAR':'Kumaon', 'CHAMPAWAT':'Kumaon', 
         'NAINITAL':'Kumaon', 'PITHORAGARH':'Kumaon', 'UDHAM SINGH NAGAR':'Kumaon'
+    },
+    "Madhya Pradesh": {
+        'ASHOKNAGAR':'Bhopal','BETUL':'Bhopal','BHIND':'Bhopal','BHOPAL':'Bhopal','DATIA':'Bhopal',
+        'GUNA':'Bhopal','GWALIOR':'Bhopal','HARDA':'Bhopal','HOSHANGABAD':'Bhopal','MORENA':'Bhopal',
+        'RAISEN':'Bhopal','RAJGARH':'Bhopal','SEHORE':'Bhopal','SHEOPUR':'Bhopal','SHIVPURI':'Bhopal',
+        'VIDISHA':'Bhopal','AGAR MALWA':'Indore','ALIRAJPUR':'Indore','BARWANI':'Indore','BURHANPUR':'Indore',
+        'DEWAS':'Indore','DHAR':'Indore','INDORE':'Indore','JHABUA':'Indore','KHARGONE':'Indore',
+        'MANDSAUR':'Indore','NEEMUCH':'Indore','RATLAM':'Indore','SHAJAPUR':'Indore','UJJAIN':'Indore',
+        'CHHATARPUR':'Jabalpur','CHHINDWARA':'Jabalpur','DAMOH':'Jabalpur','JABALPUR':'Jabalpur',
+        'KATNI':'Jabalpur','MANDLA':'Jabalpur','NARSINGHPUR':'Jabalpur','NIWARI':'Jabalpur','PANNA':'Jabalpur',
+        'SAGAR':'Jabalpur','SEONI':'Jabalpur','TIKAMGARH':'Jabalpur','ANUPPUR':'Satna','BALAGHAT':'Satna',
+        'DINDORI':'Satna','EAST NIMAR':'Satna','REWA':'Satna','SATNA':'Satna','SHAHDOL':'Satna',
+        'SIDHI':'Satna','SINGRAULI':'Satna','UMARIA':'Satna'
     }
 }
 
@@ -582,7 +604,8 @@ for _, row in merged.iterrows():
             "Uttar Pradesh": -0.05,
             "Haryana":0,
             "Himachal Pradesh":0,
-            "Uttarakhand":0
+            "Uttarakhand":0,
+            "Madhya Pradesh":0
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
