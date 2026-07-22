@@ -288,7 +288,8 @@ def get_geojson(state_name):
         'CHITTAURGARH':'CHITTORGARH',
         'DHAULPUR':'DHOLPUR',
         'JALOR':'JALORE',
-        'JHUNJHUNUN':'JHUNJHUNU'
+        'JHUNJHUNUN':'JHUNJHUNU',
+        'JODHPUR GRAMIN':'JODHPUR'
         
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
