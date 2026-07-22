@@ -209,6 +209,27 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*52,
             "Others": [0]*52
         }
+    elif state_name == "Chhattisgarh":
+        data = {
+            "District": [
+                'BIJAPUR','DANTEWADA','KANKER','KONDAGAON','NARAYANPUR','SUKMA','BASTAR','BILASPUR',
+                'SURGUJA','SAKTI','GAURELA-PENDRA-MARWAHI','JANJGIR - CHAMPA','JASHPUR','KORBA',
+                'KOREA','RAIGARH','SURAJPUR','BALRAMPUR','MOHLA-MANPUR','MANENDRAGARH','MUNGELI','BALOD','BALODA BAZAR',
+                'SARANGARH-BILAIGARH','GARIYABAND','DHAMTARI','DURG','KABIRDHAM','MAHASAMUND','RAIPUR','RAJNANDGAON',
+                'BEMETARA'
+            ],
+            "Colouron+": [0,0,0,0,0,0,5,10,0,0,0,10,0,0,0,80,0,0,0,0,0,10,0,0,0,0,50,10,0,150,0,0],
+            "Everglow": [0]*32,
+            "JSW_CC_Liner": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0],
+            "TATA_Durashine": [0,0,0,0,0,0,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,5,0,60,0,0],
+            "Tata_Liner": [0]*32,
+            "TATA_Prisma": [0,0,0,0,0,0,30,20,0,0,20,0,0,30,0,30,0,0,0,0,20,0,30,0,0,0,50,0,0,150,10,0],
+            "Jindal Neucolour+": [0]*32,
+            "APL Apollo Coral": [0]*32,
+            "JSW_Radiance": [0]*32,
+            "Others": [0]*32
+        }
+
            
     return pd.DataFrame(data)
 
@@ -239,7 +260,12 @@ def get_geojson(state_name):
         'NAINIT>L':'NAINITAL',
         'PITHOR>GARH':'PITHORAGARH',
         'NARMADAPURAM':'HOSHANGABAD',
-        'KHANDWA':'EAST NIMAR'
+        'KHANDWA':'EAST NIMAR',
+        'DAKSHIN BASTAR DANTEWARA':'DANTEWADA',
+        'KAWARDHA (KABIRDHAM)':'KABIRDHAM',
+        'UTTAR BASTAR KANKER':'KANKER',
+        'MANENDRAGARH-CHIRMIRI-BHARATPUR':'MANENDRAGARH',
+        'MOHLA-MANPUR-AMBAGARH CHOWKI':'MOHLA-MANPUR'
         
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
@@ -249,7 +275,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -322,6 +348,9 @@ state_distributor_configs = {
     },
     "Madhya Pradesh": {
         'AGAR MALWA': 'Distributor A'
+    },
+    "Chhattisgarh": {
+        'BIJAPUR': 'Distributor A'
     }
 }
 
@@ -408,6 +437,12 @@ state_ranges = {
         (float('inf'), '100+ MT', '#1e40af')
     ],
     "Madhya Pradesh": [
+        (25, '0–25 MT', '#dbeafe'),
+        (50, '25–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "Chhattisgarh": [
         (25, '0–25 MT', '#dbeafe'),
         (50, '25–50 MT', '#93c5fd'),
         (100, '50–100 MT', '#3b82f6'),
@@ -516,6 +551,16 @@ cluster_config = {
         'SAGAR':'Jabalpur','SEONI':'Jabalpur','TIKAMGARH':'Jabalpur','ANUPPUR':'Satna','BALAGHAT':'Satna',
         'DINDORI':'Satna','EAST NIMAR':'Satna','REWA':'Satna','SATNA':'Satna','SHAHDOL':'Satna',
         'SIDHI':'Satna','SINGRAULI':'Satna','UMARIA':'Satna'
+    },
+    "Chhattisgarh": {
+        'BIJAPUR':'Bastar','DANTEWADA':'Bastar','KANKER':'Bastar','KONDAGAON':'Bastar','NARAYANPUR':'Bastar',
+        'SUKMA':'Bastar','BASTAR':'Bastar','BILASPUR':'Bilaspur','SURGUJA':'Bilaspur','SAKTI':'Bilaspur',
+        'GAURELA-PENDRA-MARWAHI':'Bilaspur','JANJGIR - CHAMPA':'Bilaspur','JASHPUR':'Bilaspur','KORBA':'Bilaspur',
+        'KOREA':'Bilaspur','RAIGARH':'Bilaspur','SURAJPUR':'Bilaspur','BALRAMPUR':'Bilaspur',
+        'MOHLA-MANPUR':'Bilaspur','MANENDRAGARH':'Bilaspur','MUNGELI':'Bilaspur',
+        'BALOD':'Raipur','BALODA BAZAR':'Raipur','SARANGARH-BILAIGARH':'Raipur','GARIYABAND':'Raipur',
+        'DHAMTARI':'Raipur','DURG':'Raipur','KABIRDHAM':'Raipur','MAHASAMUND':'Raipur','RAIPUR':'Raipur',
+        'RAJNANDGAON':'Raipur','BEMETARA':'Raipur'
     }
 }
 
@@ -605,7 +650,8 @@ for _, row in merged.iterrows():
             "Haryana":0,
             "Himachal Pradesh":0,
             "Uttarakhand":0,
-            "Madhya Pradesh":-0.12
+            "Madhya Pradesh":-0.12,
+            "Chhattisgarh":-0.12
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
