@@ -831,6 +831,12 @@ if target_state == "Andhra Pradesh":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
+if target_state == "Telangana":
+    annotations.append(dict(
+        x=84, y=15, text="<b>WARANGAL</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
 
 # --- TOTAL MARKET BOX (Merged into annotations to prevent error) ---
 total_mkt_size = df['Market_Size'].sum()
