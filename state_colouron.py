@@ -248,6 +248,23 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*33,
             "Others": [0]*33
         }
+    elif state_name == "Andhra Pradesh":
+        data = {
+            "District": [
+                'ANANTAPUR','KURNOOL','Y.S.R.','CHITTOOR','SPSR NELLORE','EAST GODAVARI','WEST GODAVARI',
+                'GUNTUR','KRISHNA','PRAKASAM','SRIKAKULAM','VISAKHAPATNAM','VIZIANAGARAM'
+            ],
+            "Colouron+": [10,30,30,100,300,200,200,350,400,60,10,250,60],
+            "Everglow": [0]*13,
+            "JSW_CC_Liner": [0,0,0,0,0,0,0,20,20,0,0,10,0],
+            "TATA_Durashine": [5,5,20,10,10,0,0,0,20,0,10,20,0],
+            "Tata_Liner": [0]*13,
+            "TATA_Prisma": [10,15,25,30,20,120,150,30,100,30,20,100,20],
+            "Jindal Neucolour+": [0]*13,
+            "APL Apollo Coral": [0]*13,
+            "JSW_Radiance": [0]*13,
+            "Others": [0]*13
+        }
 
            
     return pd.DataFrame(data)
@@ -289,7 +306,10 @@ def get_geojson(state_name):
         'DHAULPUR':'DHOLPUR',
         'JALOR':'JALORE',
         'JHUNJHUNUN':'JHUNJHUNU',
-        'JODHPUR GRAMIN':'JODHPUR'
+        'JODHPUR GRAMIN':'JODHPUR',
+        'ANANTHAPURAMU':'ANANTAPUR',
+        'SRI POTTI SRIRAMULU NELLORE':'SPSR NELLORE',
+        'YSR KADAPA':'Y.S.R.'
         
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
@@ -299,7 +319,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -378,6 +398,9 @@ state_distributor_configs = {
     },
     "Rajasthan": {
         'AJMER': 'Distributor A'
+    },
+    "Andhra Pradesh": {
+        'ANANTAPUR': 'Distributor A'
     }
 }
 
@@ -480,6 +503,12 @@ state_ranges = {
         (100, '25–100 MT', '#93c5fd'),
         (200, '100–200 MT', '#3b82f6'),
         (float('inf'), '200+ MT', '#1e40af')
+    ],
+    "Andhra Pradesh": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
     ]
 }
 
@@ -603,6 +632,12 @@ cluster_config = {
         'PALI':'Jodhpur','SIROHI':'Jodhpur','BARAN':'Kota','BUNDI':'Kota','DHOLPUR':'Kota','DUNGARPUR':'Kota',
         'JHALAWAR':'Kota','KARAULI':'Kota','KOTA':'Kota','SAWAI MADHOPUR':'Kota',
         'BANSWARA':'Udaipur','CHITTORGARH':'Udaipur','PRATAPGARH':'Udaipur','RAJSAMAND':'Udaipur','UDAIPUR':'Udaipur'
+    },
+    "Andhra Pradesh": {
+        'ANANTAPUR':'Anantapur','KURNOOL':'Anantapur','Y.S.R.':'Anantapur','CHITTOOR':'Chittoor',
+        'SPSR NELLORE':'Chittoor','EAST GODAVARI':'Godavari','WEST GODAVARI':'Godavari',
+        'GUNTUR':'Krishna','KRISHNA':'Krishna','PRAKASAM':'Krishna',
+        'SRIKAKULAM':'Vizag','VISAKHAPATNAM':'Vizag','VIZIANAGARAM':'Vizag'
     }
 }
 
@@ -694,7 +729,8 @@ for _, row in merged.iterrows():
             "Uttarakhand":0,
             "Madhya Pradesh":-0.12,
             "Chhattisgarh":-0.14,
-            "Rajasthan":-0.12
+            "Rajasthan":-0.12,
+            "Andhra Pradesh":-0.12
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -735,6 +771,18 @@ if target_state == "Uttarakhand":
 if target_state == "Uttarakhand":
     annotations.append(dict(
         x=79.75, y=29.55, text="<b>KUMAON</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Andhra Pradesh":
+    annotations.append(dict(
+        x=79.75, y=29.55, text="<b>GODAVARI</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Andhra Pradesh":
+    annotations.append(dict(
+        x=78.78, y=30.15, text="<b>VIZAG</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
