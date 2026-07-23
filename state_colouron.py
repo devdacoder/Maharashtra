@@ -833,7 +833,7 @@ if target_state == "Andhra Pradesh":
     ))
 if target_state == "Telangana":
     annotations.append(dict(
-        x=84, y=15, text="<b>WARANGAL</b>",
+        x=82, y=17, text="<b>WARANGAL</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
