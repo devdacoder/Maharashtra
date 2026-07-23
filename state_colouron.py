@@ -730,7 +730,7 @@ for _, row in merged.iterrows():
             "Madhya Pradesh":-0.12,
             "Chhattisgarh":-0.14,
             "Rajasthan":-0.12,
-            "Andhra Pradesh":-0.12
+            "Andhra Pradesh":-0.13
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -782,7 +782,7 @@ if target_state == "Andhra Pradesh":
     ))
 if target_state == "Andhra Pradesh":
     annotations.append(dict(
-        x=83.75, y=18, text="<b>VIZAG</b>",
+        x=84, y=18, text="<b>VIZAG</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
