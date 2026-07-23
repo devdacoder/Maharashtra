@@ -270,7 +270,7 @@ def get_state_data(state_name):
             "District": [
                 'HYDERABAD','JOGULAMBA GADWAL','MAHABUBNAGAR','MEDAK','MEDCHAL MALKAJIGRI','NAGARKURNOOL',
                 'NARAYANPET','NIRMAL','RANGA REDDY','SANGAREDDY','VIKARABAD','WANPARTI','MULUGU',
-                'BHADRADRI KOTHAGUDEM','NALGONDA','KHAMMAM','MAHABUBABAD','SURIYAPET','YADADRI BHUVANAGIRI',
+                'BHADRADRI KOTHAGUDEM','NALGONDA','KHAMMAN','MAHABUBABAD','SURIYAPET','YADADRI BHUVANAGIRI',
                 'JAGTIAL','JANGOAN','JAYASHANKAR BHUPALPALLI','KARIMNAGAR','MANCHERIAL','PEDDAPALLI',
                 'RAJANNA SIRCILLA','SIDDIPET','WARANGAL RURAL','WARANGAL URBAN','ADILABAD','KAMAREDDY',
                 'KUMURAM BHEEM ASIFABAD','NIZAMABAD'
@@ -676,7 +676,7 @@ cluster_config = {
         'MEDAK':'Hyderabad','MEDCHAL MALKAJIGRI':'Hyderabad','NAGARKURNOOL':'Hyderabad',
         'NARAYANPET':'Hyderabad','NIRMAL':'Hyderabad','RANGA REDDY':'Hyderabad',
         'SANGAREDDY':'Hyderabad','VIKARABAD':'Hyderabad','WANPARTI':'Hyderabad','MULUGU':'Hyderabad',
-        'BHADRADRI KOTHAGUDEM':'Khamman','NALGONDA':'Khamman','KHAMMAM':'Khamman','MAHABUBABAD':'Khamman',
+        'BHADRADRI KOTHAGUDEM':'Khamman','NALGONDA':'Khamman','KHAMMAN':'Khamman','MAHABUBABAD':'Khamman',
         'SURIYAPET':'Khamman','YADADRI BHUVANAGIRI':'Khamman','JAGTIAL':'Warangal','JANGOAN':'Warangal',
         'JAYASHANKAR BHUPALPALLI':'Warangal','KARIMNAGAR':'Warangal','MANCHERIAL':'Warangal',
         'PEDDAPALLI':'Warangal','RAJANNA SIRCILLA':'Warangal','SIDDIPET':'Warangal',
