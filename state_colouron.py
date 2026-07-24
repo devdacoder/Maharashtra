@@ -355,23 +355,23 @@ def get_geojson(state_name):
         'WARANGAL':'WARANGAL RURAL',
         'HANUMAKONDA':'WARANGAL URBAN',
         'B': 'BAGALKOTE',
-        'Ball': 'BALLARI',
-        'Belag': 'BELAGAVI',
-        'Bengal#ru (Rural)': 'BENGALURU RURAL',
-        'Bengal#ru (Urban)': 'BENGALURU URBAN',
-        'B\dar': 'BIDAR',
-        'Ch': 'CHAMARAJANAGARA',
-        'Chikkaball': 'CHIKKABALLAPURA',
-        'Chikkamagal#ru': 'CHIKKAMAGALURU',
+        'BALL': 'BALLARI',
+        'BELAG': 'BELAGAVI',
+        'BENGAL#RU (RURAL)': 'BENGALURU RURAL',
+        'BENGAL#RU (URBAN)': 'BENGALURU URBAN',
+        'B\DAR': 'BIDAR',
+        'CH': 'CHAMARAJANAGARA',
+        'CHIKKABALL': 'CHIKKABALLAPURA',
+        'CHIKKAMAGAL#RU': 'CHIKKAMAGALURU',
         'D': 'DAVANGERE',
         'Dh': 'DHARWAD',
         'H': 'HASSAN',
         'H': 'HAVERI',
-        'Kol': 'KOLAR',
-        'Mys#ru': 'MYSURU',
-        'Raich#r': 'RAICHUR',
+        'KOL': 'KOLAR',
+        'MYS#RU': 'MYSURU',
+        'RAICH#R': 'RAICHUR',
         'R': 'RAMANAGARA',
-        'Tumak#ru': 'TUMAKURU',
+        'TUMAK#RU': 'TUMAKURU',
         'Y': 'YADGIR'
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
@@ -834,7 +834,7 @@ for _, row in merged.iterrows():
             "Rajasthan":-0.12,
             "Andhra Pradesh":-0.14,
             "Telangana":-0.05,
-            "Karnataka":-0.12
+            "Karnataka":-0.14
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
