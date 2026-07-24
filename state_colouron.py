@@ -286,6 +286,27 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*33,
             "Others": [0]*33
         }
+    elif state_name == "Karnataka":
+        data = {
+            "District": [
+                'BAGALKOTE','BALLARI','BIDAR','KALABURAGI','KOPPAL','RAICHUR','VIJAYAPURA','YADGIR',
+                'DHARWAD','GADAG','HAVERI','BELAGAVI','UTTARA KANNADA','CHIKKAMAGALURU','CHITRADURGA',
+                'DAVANGERE','SHIVAMOGGA','BENGALURU URBAN','BENGALURU RURAL','CHIKKABALLAPURA','KOLAR',
+                'RAMANAGARA','TUMAKURU','HASSAN','KODAGU','DAKSHINA KANNADA','UDUPI','CHAMARAJANAGARA',
+                'MANDYA','MYSURU'
+            ],
+            "Colouron+": [40,70,20,20,20,15,100,5,120,38,77,320,245,222,110,50,380,80,60,20,15,25,210,350,50,800,400,25,110,220],
+            "Everglow": [0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,0,0,10,0,10,0,40,10,0,0,0],
+            "JSW_CC_Liner": [0,120,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,60,0,0,0,0,0,0,0,0,0,0,30],
+            "TATA_Durashine": [20,40,15,30,20,10,50,10,77,17,20,80,170,30,30,110,30,0,0,0,0,3,35,0,5,250,40,0,0,30],
+            "Tata_Liner": [0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,20,0,0,0,30,0,0,0,0,0,0,0],
+            "TATA_Prisma": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0,0,0,0,0,0,0,30,0,0,0,0,0,0],
+            "Jindal Neucolour+": [0]*30,
+            "APL Apollo Coral": [0]*30,
+            "JSW_Radiance": [0]*30,
+            "Others": [0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0]
+        }
+
     return pd.DataFrame(data)
 
 @st.cache_data
@@ -332,8 +353,26 @@ def get_geojson(state_name):
         'KOMARRAM BHEEM':'KUMURAM BHEEM ASIFABAD',
         'MEDCHAL_MALKAJGIRI':'MEDCHAL MALKAJIGRI',
         'WARANGAL':'WARANGAL RURAL',
-        'HANUMAKONDA':'WARANGAL URBAN'
-        
+        'HANUMAKONDA':'WARANGAL URBAN',
+        'B': 'BAGALKOTE',
+        'Ball': 'BALLARI',
+        'Belag': 'BELAGAVI',
+        'Bengal#ru (Rural)': 'BENGALURU RURAL',
+        'Bengal#ru (Urban)': 'BENGALURU URBAN',
+        'B\dar': 'BIDAR',
+        'Ch': 'CHAMARAJANAGARA',
+        'Chikkaball': 'CHIKKABALLAPURA',
+        'Chikkamagal#ru': 'CHIKKAMAGALURU',
+        'D': 'DAVANGERE',
+        'Dh': 'DHARWAD',
+        'H': 'HASSAN',
+        'H': 'HAVERI',
+        'Kol': 'KOLAR',
+        'Mys#ru': 'MYSURU',
+        'Raich#r': 'RAICHUR',
+        'R': 'RAMANAGARA',
+        'Tumak#ru': 'TUMAKURU',
+        'Y': 'YADGIR'
     })
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
     return state_gdf
@@ -342,7 +381,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -427,6 +466,9 @@ state_distributor_configs = {
     },
     "Telangana": {
         'HYDERABAD': 'Distributor A'
+    },
+    "Karnataka": {
+        'BAGALKOTE': 'Distributor A'
     }
 }
 
@@ -540,6 +582,12 @@ state_ranges = {
         (50, '0–50 MT', '#dbeafe'),
         (150, '50–150 MT', '#93c5fd'),
         (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
+    ],
+    "Telangana": [
+        (100, '0–50 MT', '#dbeafe'),
+        (300, '50–150 MT', '#93c5fd'),
+        (500, '150–300 MT', '#3b82f6'),
         (float('inf'), '300+ MT', '#1e40af')
     ]
 }
@@ -682,6 +730,16 @@ cluster_config = {
         'PEDDAPALLI':'Warangal','RAJANNA SIRCILLA':'Warangal','SIDDIPET':'Warangal',
         'WARANGAL RURAL':'Warangal','WARANGAL URBAN':'Warangal','ADILABAD':'Adilabad',
         'KAMAREDDY':'Adilabad','KUMURAM BHEEM ASIFABAD':'Adilabad','NIZAMABAD':'Adilabad'
+    },
+    "Karnataka": {
+        'BAGALKOTE':'Ballari','BALLARI':'Ballari','BIDAR':'Ballari','KALABURAGI':'Ballari','KOPPAL':'Ballari',
+        'RAICHUR':'Ballari','VIJAYAPURA':'Ballari','YADGIR':'Ballari','DHARWAD':'Hubli','GADAG':'Hubli',
+        'HAVERI':'Hubli','BELAGAVI':'Hubli-IHB','UTTARA KANNADA':'Hubli-IHB','CHIKKAMAGALURU':'Shivamogga',
+        'CHITRADURGA':'Shivamogga','DAVANGERE':'Shivamogga','SHIVAMOGGA':'Shivamogga',
+        'BENGALURU URBAN':'Bangalore','BENGALURU RURAL':'Bangalore','CHIKKABALLAPURA':'Bangalore',
+        'KOLAR':'Bangalore','RAMANAGARA':'Bangalore','TUMAKURU':'Bangalore','HASSAN':'Hassan',
+        'KODAGU':'Hassan','DAKSHINA KANNADA':'Mangalore','UDUPI':'Mangalore','CHAMARAJANAGARA':'Mysuru',
+        'MANDYA':'Mysuru','MYSURU':'Mysuru'
     }
 }
 
@@ -775,7 +833,8 @@ for _, row in merged.iterrows():
             "Chhattisgarh":-0.14,
             "Rajasthan":-0.12,
             "Andhra Pradesh":-0.14,
-            "Telangana":-0.05
+            "Telangana":-0.05,
+            "Karnataka":-0.05
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
