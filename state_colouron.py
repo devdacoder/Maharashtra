@@ -365,8 +365,6 @@ def get_geojson(state_name):
         'CHIKKAMAGAL#RU': 'CHIKKAMAGALURU',
         'D': 'DAVANGERE',
         'DH': 'DHARWAD',
-        'H': 'HASSAN',
-        'H': 'HAVERI',
         'KOL': 'KOLAR',
         'MYS#RU': 'MYSURU',
         'RAICH#R': 'RAICHUR',
@@ -374,6 +372,11 @@ def get_geojson(state_name):
         'TUMAK#RU': 'TUMAKURU',
         'Y': 'YADGIR'
     })
+    h_idx = state_gdf[state_gdf['district'] == 'H'].index
+
+    state_gdf.loc[h_idx[0], 'district'] = 'HASSAN'
+    state_gdf.loc[h_idx[1], 'district'] = 'HAVERI'
+    
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
     return state_gdf
 
