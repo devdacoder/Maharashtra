@@ -306,6 +306,22 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*30,
             "Others": [0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0]
         }
+    elif state_name == "Goa":
+        data = {
+            "District": [
+                'NORTH GOA','SOUTH GOA'
+            ],
+            "Colouron+": [250,200],
+            "Everglow": [0,5],
+            "JSW_CC_Liner": [10,0],
+            "TATA_Durashine": [150,120],
+            "Tata_Liner": [0,30],
+            "TATA_Prisma": [0,0],
+            "Jindal Neucolour+": [0,0],
+            "APL Apollo Coral": [0,0],
+            "JSW_Radiance": [0,0],
+            "Others": [0,0]
+        }
 
     return pd.DataFrame(data)
 
@@ -384,7 +400,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -472,7 +488,10 @@ state_distributor_configs = {
     },
     "Karnataka": {
         'BAGALKOTE': 'Distributor A'
-    }
+    },
+    "Goa": {
+        'NORTH GOA': 'Distributor A'
+    }    
 }
 
 # 2. Get the specific lookup for the selected state
@@ -587,11 +606,18 @@ state_ranges = {
         (300, '150–300 MT', '#3b82f6'),
         (float('inf'), '300+ MT', '#1e40af')
     ],
-    "Telangana": [
-        (100, '0–50 MT', '#dbeafe'),
-        (300, '50–150 MT', '#93c5fd'),
-        (500, '150–300 MT', '#3b82f6'),
-        (float('inf'), '300+ MT', '#1e40af')
+    "Karnataka": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
+    ]
+    ,
+    "Goa": [
+        (50, '0–50 MT', '#dbeafe'),
+        (355, '355 MT', '#93c5fd'),
+        (510, '510 MT', '#3b82f6'),
+        (float('inf'), '510+ MT', '#1e40af')
     ]
 }
 
@@ -743,6 +769,9 @@ cluster_config = {
         'KOLAR':'Bangalore','RAMANAGARA':'Bangalore','TUMAKURU':'Bangalore','HASSAN':'Hassan',
         'KODAGU':'Hassan','DAKSHINA KANNADA':'Mangalore','UDUPI':'Mangalore','CHAMARAJANAGARA':'Mysuru',
         'MANDYA':'Mysuru','MYSURU':'Mysuru'
+    },
+    "Goa": {
+        'NORTH GOA':'Goa','SOUTH GOA':'Goa'
     }
 }
 
@@ -837,7 +866,8 @@ for _, row in merged.iterrows():
             "Rajasthan":-0.12,
             "Andhra Pradesh":-0.14,
             "Telangana":-0.05,
-            "Karnataka":-0.15
+            "Karnataka":-0.15,
+            "Goa":-0.12
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -896,6 +926,12 @@ if target_state == "Andhra Pradesh":
 if target_state == "Telangana":
     annotations.append(dict(
         x=80.3, y=19, text="<b>WARANGAL</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Goa":
+    annotations.append(dict(
+        x=74.05, y=15.4, text="<b>GOA</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
