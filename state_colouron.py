@@ -322,6 +322,28 @@ def get_state_data(state_name):
             "JSW_Radiance": [0,0],
             "Others": [0,0]
         }
+    elif state_name == "Tamil Nadu":
+        data = {
+            "District": [
+                'VIRUDHUNAGAR','KANNIYAKUMARI','TENKASI','TIRUNELVELI','TUTICORIN','DINDIGUL','MADURAI',
+                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','VILUPPURAM','CUDDALORE',
+                'TIRUVANAMALAI','KALLAKKURICHI','VELLORE','TIRUPATHUR','RANIPET','CHENGALPATTU','CHENNAI',
+                'KANCHIPURAM','THIRUVALLUR','COIMBATORE','ERODE','THE NILGIRIS','SALEM','NAMAKKAL',
+                'DHARMAPURI','KRISHNAGIRI','PUDUKKOTTAI','TRICHY','THANJAVUR','ARIYALUR','THIRUVARUR',
+                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI'
+            ],
+            "Colouron+": [60,180,60,130,100,80,50,20,40,30,190,60,50,25,50,40,50,20,20,100,200,100,
+                          150,150,50,20,120,30,50,50,15,60,25,20,15,20,10,10],
+            "Everglow": [0,0,0,0,0,2,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            "JSW_CC_Liner": [0,0,0,0,0,10,10,0,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,150,15,0,10,10,10,15,0,0,0,0,0,0,0,0],
+            "TATA_Durashine": [20,20,30,20,20,20,25,5,10,5,0,500,20,15,25,10,10,10,10,50,30,30,40,25,30,5,30,23,5,10,20,40,20,10,50,10,10,10],
+            "Tata_Liner": [0,0,0,15,0,10,30,0,0,0,100,30,0,0,0,0,0,0,0,80,100,150,80,10,15,0,10,8,12,0,0,0,0,0,0,0,0,0],
+            "TATA_Prisma": [0]*38,
+            "Jindal Neucolour+": [0]*38,
+            "APL Apollo Coral": [0]*38,
+            "JSW_Radiance": [20,0,0,0,0,20,20,0,0,10,700,0,0,0,0,0,0,0,30,150,100,100,200,25,10,0,25,15,4,40,0,300,100,0,0,0,0,0],
+            "Others": [0]*38
+        }
 
     return pd.DataFrame(data)
 
@@ -386,7 +408,12 @@ def get_geojson(state_name):
         'RAICH#R': 'RAICHUR',
         'R': 'RAMANAGARA',
         'TUMAK#RU': 'TUMAKURU',
-        'Y': 'YADGIR'
+        'Y': 'YADGIR',
+        'TIRUPPUR': 'TIRUPUR',
+        'TIRUVANNAMALAI': 'TIRUVANAMALAI',
+        'TIRUCHIRAPPALLI': 'TRICHY',
+        'THOOTHUKUDI': 'TUTICORIN'
+
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -401,7 +428,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -492,7 +519,11 @@ state_distributor_configs = {
     },
     "Goa": {
         'NORTH GOA': 'Distributor A'
+    },
+    "Tamil Nadu": {
+        'VIRUDHUNAGAR': 'Distributor A'
     }    
+    
 }
 
 # 2. Get the specific lookup for the selected state
@@ -619,6 +650,12 @@ state_ranges = {
         (355, '355 MT', '#93c5fd'),
         (510, '510 MT', '#3b82f6'),
         (float('inf'), '510+ MT', '#1e40af')
+    ],
+    "Tamil Nadu": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
     ]
 }
 
@@ -773,6 +810,18 @@ cluster_config = {
     },
     "Goa": {
         'NORTH GOA':'Goa','SOUTH GOA':'Goa'
+    },
+    "Tamil Nadu": {
+        'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
+        'TIRUNELVELI':'Tirunelveli','TUTICORIN':'Tirunelveli','DINDIGUL':'Madurai','MADURAI':'Madurai',
+        'THENI':'Madurai','RAMANATHAPURAM':'Madurai','SIVAGANGA':'Madurai','TIRUPUR':'Tirupur',
+        'KARUR':'Tirupur','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
+        'KALLAKKURICHI':'Pondy','VELLORE':'Vellore','TIRUPATHUR':'Vellore','RANIPET':'Vellore',
+        'CHENGALPATTU':'Chennai','CHENNAI':'Chennai','KANCHIPURAM':'Chennai','THIRUVALLUR':'Chennai',
+        'COIMBATORE':'Coimbatore','ERODE':'Coimbatore','THE NILGIRIS':'Coimbatore','SALEM':'Salem',
+        'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
+        'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
+        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
     }
 }
 
@@ -868,7 +917,8 @@ for _, row in merged.iterrows():
             "Andhra Pradesh":-0.14,
             "Telangana":-0.05,
             "Karnataka":-0.15,
-            "Goa":0
+            "Goa":0,
+            "Tamil Nadu":-0.12
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -933,6 +983,12 @@ if target_state == "Telangana":
 if target_state == "Goa":
     annotations.append(dict(
         x=74.05, y=15.4, text="<b>GOA</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Tamil Nadu":
+    annotations.append(dict(
+        x=79.83, y=11.93, text="<b>PONDY</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
