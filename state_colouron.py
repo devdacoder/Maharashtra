@@ -918,7 +918,7 @@ for _, row in merged.iterrows():
             "Telangana":-0.05,
             "Karnataka":-0.15,
             "Goa":0,
-            "Tamil Nadu":-0.09
+            "Tamil Nadu":-0.10
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
