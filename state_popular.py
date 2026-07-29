@@ -179,6 +179,31 @@ def get_state_data(state_name):
             "AM/NS Optigal 10 yW": [0]*13,
             "Others": [0]*13
         }
+    elif state_name == "Tamil Nadu":
+        data = {
+            "District": [
+                'VIRUDHUNAGAR','KANNIYAKUMARI','TENKASI','TIRUNELVELI','TUTICORIN','DINDIGUL','MADURAI',
+                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','VILUPPURAM','CUDDALORE',
+                'TIRUVANAMALAI','KALLAKKURICHI','VELLORE','TIRUPATHUR','RANIPET','CHENGALPATTU','CHENNAI',
+                'KANCHIPURAM','THIRUVALLUR','COIMBATORE','ERODE','THE NILGIRIS','SALEM','NAMAKKAL',
+                'DHARMAPURI','KRISHNAGIRI','PUDUKKOTTAI','TRICHY','THANJAVUR','ARIYALUR','THIRUVARUR',
+                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI'
+            ],
+            "Popular": [80,20,120,100,30,92,100,90,80,60,130,60,20,25,20,20,150,50,60,250,200,350,300,
+                        200,70,14,150,70,70,55,60,80,50,40,20,30,30,60],
+            "Alucolour": [0,0,0,0,0,5,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,0,25,10,0,0,0,0,0,0,0,0,0,0,0,0,5],
+            "Infinia": [0]*38, 
+            "APL Apollo Rooftuff": [20,0,0,10,0,10,50,10,0,10,20,30,0,0,25,10,0,0,15,150,100,100,100,
+                                    30,20,8,25,16,25,9,10,25,15,0,0,0,20,20],
+            "Jindal Sabrang": [10,0,20,60,15,0,0,0,0,0,0,0,0,0,0,0,15,10,0,100,80,100,80,0,0,0,0,0,0,0,
+                               10,0,20,0,0,20,20,20],
+            "APL Coral": [0]*38,
+            "APL Jumbo": [30,0,10,10,0,10,60,10,10,15,0,0,0,0,0,0,0,0,0,0,0,0,20,12,4,12,10,15,0,0,15,
+                          0,0,0,0,0,0],
+            "AM/NS Optigal 10 yW": [0,0,0,0,0,0,0,0,0,0,20,20,10,10,10,5,0,15,0,50,30,50,30,10,0,0,10,
+                                    0,12,15,10,20,10,0,0,0,10,10],
+            "Others": [0]*38
+        }
     
     return pd.DataFrame(data)
 
@@ -207,8 +232,54 @@ def get_geojson(state_name):
         'B>GESHWAR':'BAGESHWAR',
         'CHAMP>WAT':'CHAMPAWAT', 
         'NAINIT>L':'NAINITAL',
-        'PITHOR>GARH':'PITHORAGARH'
+        'PITHOR>GARH':'PITHORAGARH',
+        'NARMADAPURAM':'HOSHANGABAD',
+        'KHANDWA':'EAST NIMAR',
+        'DAKSHIN BASTAR DANTEWARA':'DANTEWADA',
+        'KAWARDHA (KABIRDHAM)':'KABIRDHAM',
+        'UTTAR BASTAR KANKER':'KANKER',
+        'MANENDRAGARH-CHIRMIRI-BHARATPUR':'MANENDRAGARH',
+        'MOHLA-MANPUR-AMBAGARH CHOWKI':'MOHLA-MANPUR',
+        'CHITTAURGARH':'CHITTORGARH',
+        'DHAULPUR':'DHOLPUR',
+        'JALOR':'JALORE',
+        'JHUNJHUNUN':'JHUNJHUNU',
+        'JODHPUR GRAMIN':'JODHPUR',
+        'ANANTHAPURAMU':'ANANTAPUR',
+        'SRI POTTI SRIRAMULU NELLORE':'SPSR NELLORE',
+        'YSR KADAPA':'Y.S.R.',
+        'KOMARRAM BHEEM':'KUMURAM BHEEM ASIFABAD',
+        'MEDCHAL_MALKAJGIRI':'MEDCHAL MALKAJIGRI',
+        'WARANGAL':'WARANGAL RURAL',
+        'HANUMAKONDA':'WARANGAL URBAN',
+        'B': 'BAGALKOTE',
+        'BALL': 'BALLARI',
+        'BELAG': 'BELAGAVI',
+        'BENGAL#RU (RURAL)': 'BENGALURU RURAL',
+        'BENGAL#RU (URBAN)': 'BENGALURU URBAN',
+        'B\DAR': 'BIDAR',
+        'CH': 'CHAMARAJANAGARA',
+        'CHIKKABALL': 'CHIKKABALLAPURA',
+        'CHIKKAMAGAL#RU': 'CHIKKAMAGALURU',
+        'D': 'DAVANGERE',
+        'DH': 'DHARWAD',
+        'KOL': 'KOLAR',
+        'MYS#RU': 'MYSURU',
+        'RAICH#R': 'RAICHUR',
+        'R': 'RAMANAGARA',
+        'TUMAK#RU': 'TUMAKURU',
+        'Y': 'YADGIR',
+        'TIRUPPUR': 'TIRUPUR',
+        'TIRUVANNAMALAI': 'TIRUVANAMALAI',
+        'TIRUCHIRAPPALLI': 'TRICHY',
+        'THOOTHUKUDI': 'TUTICORIN'
     })
+    if state_name == "Karnataka":
+        h_idx = state_gdf[state_gdf['district'] == 'H'].index
+    
+        state_gdf.loc[h_idx[0], 'district'] = 'HAVERI'
+        state_gdf.loc[h_idx[1], 'district'] = 'HASSAN'
+        
     state_gdf['district_upper'] = state_gdf['district'].str.upper()
     return state_gdf
 
@@ -216,7 +287,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Tamil Nadu"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Popular", "Alucolour", 
                                                             "Infinia", "APL Apollo Rooftuff", "Jindal Sabrang","APL Coral","APL Jumbo",
                                                             "AM/NS Optigal 10 yW", "Others"])
@@ -288,7 +359,10 @@ state_distributor_configs = {
     },
     "Uttarakhand": {
         'BAGESHWAR': 'Distributor A'
-    }  
+    },
+    "Tamil Nadu": {
+        'VIRUDHUNAGAR': 'Distributor A'
+    }      
 }
 
 # 2. Get the specific lookup for the selected state
@@ -372,6 +446,12 @@ state_ranges = {
         (50, '25–50 MT', '#93c5fd'),
         (100, '50–100 MT', '#3b82f6'),
         (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "Tamil Nadu": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
     ]
 }
 
@@ -463,6 +543,18 @@ cluster_config = {
         'RUDRA PRAYAG':'Garhwal', 'TEHRI GARHWAL':'Garhwal', 'UTTAR KASHI':'Garhwal',
         'ALMORA':'Kumaon', 'BAGESHWAR':'Kumaon', 'CHAMPAWAT':'Kumaon', 
         'NAINITAL':'Kumaon', 'PITHORAGARH':'Kumaon', 'UDHAM SINGH NAGAR':'Kumaon'
+    },
+    "Tamil Nadu": {
+        'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
+        'TIRUNELVELI':'Tirunelveli','TUTICORIN':'Tirunelveli','DINDIGUL':'Madurai','MADURAI':'Madurai',
+        'THENI':'Madurai','RAMANATHAPURAM':'Madurai','SIVAGANGA':'Madurai','TIRUPUR':'Tirupur',
+        'KARUR':'Tirupur','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
+        'KALLAKKURICHI':'Pondy','VELLORE':'Vellore','TIRUPATHUR':'Vellore','RANIPET':'Vellore',
+        'CHENGALPATTU':'Chennai','CHENNAI':'Chennai','KANCHIPURAM':'Chennai','THIRUVALLUR':'Chennai',
+        'COIMBATORE':'Coimbatore','ERODE':'Coimbatore','THE NILGIRIS':'Coimbatore','SALEM':'Salem',
+        'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
+        'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
+        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
     }
 }
 
@@ -553,7 +645,8 @@ for _, row in merged.iterrows():
             "Uttar Pradesh": -0.05,
             "Haryana":0,
             "Himachal Pradesh":0,
-            "Uttarakhand":0
+            "Uttarakhand":0,
+            "Tamil Nadu":-0.10
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
@@ -597,6 +690,13 @@ if target_state == "Uttarakhand":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
+if target_state == "Tamil Nadu":
+    annotations.append(dict(
+        x=79.83, y=11.93, text="<b>PONDY</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
 
 # --- TOTAL MARKET BOX (Merged into annotations to prevent error) ---
 total_mkt_size = df['Market_Size'].sum()
