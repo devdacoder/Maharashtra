@@ -376,7 +376,8 @@ state_distributor_configs = {
     },
     "Uttarakhand": {
         'BAGESHWAR': 'Distributor A'
-    }"Tamil Nadu": {
+    },
+    "Tamil Nadu": {
         'VIRUDHUNAGAR':'All Distributors','KANNIYAKUMARI':'All Distributors','TENKASI':'All Distributors',
         'TIRUNELVELI':'All Distributors','TUTICORIN':'All Distributors','DINDIGUL':'All Distributors',
         'MADURAI':'All Distributors','THENI':'All Distributors','RAMANATHAPURAM':'All Distributors',
