@@ -204,6 +204,23 @@ def get_state_data(state_name):
                                     0,12,15,10,20,10,0,0,0,10,10],
             "Others": [0]*38
         }
+    elif state_name == "Kerala":
+        data = {
+            "District": [
+                'ERNAKULAM','IDUKKI','KANNUR','KASARAGOD','ALAPPUZHA','KOTTAYAM','PATHANAMTHITTA',
+                'KOZHIKODE','MALAPPURAM','WAYANAD','KOLLAM','THIRUVANANTHAPURAM','PALAKKAD','THRISSUR'
+            ],
+            "Popular+": [240,15,170,100,25,25,20,130,40,50,35,40,150,200],
+            "Alucolour": [30,5,80,25,10,10,10,115,20,25,5,5,35,10],
+            "Infinia": [0]*14,
+            "APL Apollo Rooftuff": [20,5,10,10,10,10,10,20,10,10,15,15,20,15],
+            "Jindal Sabrang": [600,60,300,100,100,110,90,150,80,40,440,430,90,160],
+            "APL Coral": [0]*14,
+            "APL Jumbo": [0]*14,
+            "AM/NS Optigal 10 yW": [0]*14,
+            "Others": [40,5,10,0,10,10,10,0,20,0,40,40,15,15]
+        }
+    
     
     return pd.DataFrame(data)
 
@@ -287,7 +304,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Tamil Nadu"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Tamil Nadu","Kerala"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Popular", "Alucolour", 
                                                             "Infinia", "APL Apollo Rooftuff", "Jindal Sabrang","APL Coral","APL Jumbo",
                                                             "AM/NS Optigal 10 yW", "Others"])
@@ -359,10 +376,24 @@ state_distributor_configs = {
     },
     "Uttarakhand": {
         'BAGESHWAR': 'Distributor A'
+    }"Tamil Nadu": {
+        'VIRUDHUNAGAR':'All Distributors','KANNIYAKUMARI':'All Distributors','TENKASI':'All Distributors',
+        'TIRUNELVELI':'All Distributors','TUTICORIN':'All Distributors','DINDIGUL':'All Distributors',
+        'MADURAI':'All Distributors','THENI':'All Distributors','RAMANATHAPURAM':'All Distributors',
+        'SIVAGANGA':'All Distributors','TIRUPUR':'Mitsun Agencies','KARUR':'Mitsun Agencies',
+        'VILUPPURAM':'All Distributors','CUDDALORE':'All Distributors','TIRUVANAMALAI':'All Distributors',
+        'KALLAKKURICHI':'All Distributors','VELLORE':'All Distributors','TIRUPATHUR':'All Distributors',
+        'RANIPET':'All Distributors','CHENGALPATTU':'All Distributors','CHENNAI':'All Distributors',
+        'KANCHIPURAM':'All Distributors','THIRUVALLUR':'All Distributors','COIMBATORE':'Mitsun Agencies',
+        'ERODE':'Mitsun Agencies','THE NILGIRIS':'All Distributors','SALEM':'Mitsun Agencies',
+        'NAMAKKAL':'All Distributors','DHARMAPURI':'All Distributors','KRISHNAGIRI':'All Distributors',
+        'PUDUKKOTTAI':'All Distributors','TRICHY':'Mitsun Agencies','THANJAVUR':'All Distributors',
+        'ARIYALUR':'All Distributors','THIRUVARUR':'All Distributors','PERAMBALUR':'All Distributors',
+        'NAGAPATTINAM':'All Distributors','MAYILADUTHURAI':'All Distributors'
     },
-    "Tamil Nadu": {
-        'VIRUDHUNAGAR': 'Distributor A'
-    }      
+    "Kerala": {
+        'ERNAKULAM': 'Distributor A'
+    }          
 }
 
 # 2. Get the specific lookup for the selected state
@@ -448,6 +479,12 @@ state_ranges = {
         (float('inf'), '100+ MT', '#1e40af')
     ],
     "Tamil Nadu": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
+    ],
+    "Kerala": [
         (100, '0–100 MT', '#dbeafe'),
         (300, '100–300 MT', '#93c5fd'),
         (500, '300–500 MT', '#3b82f6'),
@@ -555,6 +592,12 @@ cluster_config = {
         'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
         'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
         'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
+    },
+    "Kerala": {
+        'ERNAKULAM':'Ernakulam','IDUKKI':'Ernakulam','KANNUR':'Kannur','KASARAGOD':'Kannur',
+        'ALAPPUZHA':'Kottayam','KOTTAYAM':'Kottayam','PATHANAMTHITTA':'Kottayam',
+        'KOZHIKODE':'Kozhikode','MALAPPURAM':'Kozhikode','WAYANAD':'Kozhikode','KOLLAM':'Thiruvananthapuram',
+        'THIRUVANANTHAPURAM':'Thiruvananthapuram','PALAKKAD':'Thrissur','THRISSUR':'Thrissur'
     }
 }
 
@@ -646,7 +689,8 @@ for _, row in merged.iterrows():
             "Haryana":0,
             "Himachal Pradesh":0,
             "Uttarakhand":0,
-            "Tamil Nadu":-0.10
+            "Tamil Nadu":-0.10,
+            "Kerala":-0.06
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
