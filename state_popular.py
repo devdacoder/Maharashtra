@@ -210,7 +210,7 @@ def get_state_data(state_name):
                 'ERNAKULAM','IDUKKI','KANNUR','KASARAGOD','ALAPPUZHA','KOTTAYAM','PATHANAMTHITTA',
                 'KOZHIKODE','MALAPPURAM','WAYANAD','KOLLAM','THIRUVANANTHAPURAM','PALAKKAD','THRISSUR'
             ],
-            "Popular+": [240,15,170,100,25,25,20,130,40,50,35,40,150,200],
+            "Popular": [240,15,170,100,25,25,20,130,40,50,35,40,150,200],
             "Alucolour": [30,5,80,25,10,10,10,115,20,25,5,5,35,10],
             "Infinia": [0]*14,
             "APL Apollo Rooftuff": [20,5,10,10,10,10,10,20,10,10,15,15,20,15],
