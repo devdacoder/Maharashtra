@@ -344,6 +344,24 @@ def get_state_data(state_name):
             "JSW_Radiance": [20,0,0,0,0,20,20,0,0,10,700,0,0,0,0,0,0,0,30,150,100,100,200,25,10,0,25,15,4,40,0,300,100,0,0,0,0,0],
             "Others": [0]*38
         }
+    elif state_name == "Kerala":
+        data = {
+            "District": [
+                'ERNAKULAM','IDUKKI','KANNUR','KASARAGOD','ALAPPUZHA','KOTTAYAM','PATHANAMTHITTA',
+                'KOZHIKODE','MALAPPURAM','WAYANAD','KOLLAM','THIRUVANANTHAPURAM','PALAKKAD','THRISSUR'
+            ],
+            "Colouron+": [310,70,110,80,65,65,60,160,145,60,235,440,150,145],
+            "Everglow": [2,0,0,0,1,0,0,5,1,1,2,1,0,2],
+            "JSW_CC_Liner": [240,5,15,10,40,120,10,50,5,5,30,30,10,270],
+            "TATA_Durashine": [50,5,75,50,5,5,5,15,10,5,15,15,5,5],
+            "Tata_Liner": [0]*14,
+            "TATA_Prisma": [0]*14,
+            "Jindal Neucolour+": [0]*14,
+            "APL Apollo Coral": [0]*14,
+            "JSW_Radiance": [0]*14,
+            "Others": [15,0,5,5,10,10,10,0,0,0,0,0,0,5]
+        }
+
 
     return pd.DataFrame(data)
 
@@ -428,7 +446,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -521,8 +539,24 @@ state_distributor_configs = {
         'NORTH GOA': 'Distributor A'
     },
     "Tamil Nadu": {
-        'VIRUDHUNAGAR': 'Distributor A'
-    }    
+        'VIRUDHUNAGAR':'Safi Steel Traders','KANNIYAKUMARI':'Safi Steel Traders','TENKASI':'Safi Steel Traders',
+        'TIRUNELVELI':'Safi Steel Traders','TUTICORIN':'Safi Steel Traders','DINDIGUL':'Shree Sivabalaji Steels',
+        'MADURAI':'Shree Sivabalaji Steels','THENI':'Shree Sivabalaji Steels','RAMANATHAPURAM':'Shree Sivabalaji Steels',
+        'SIVAGANGA':'Shree Sivabalaji Steels','TIRUPUR':'Balu Iron and Steel Corporation','KARUR':'Balu Iron and Steel Corporation',
+        'VILUPPURAM':'Balu Cement Corporation','CUDDALORE':'Balu Cement Corporation','TIRUVANAMALAI':'Balu Cement Corporation',
+        'KALLAKKURICHI':'Balu Cement Corporation','VELLORE':'Mercury Steel Agency','TIRUPATHUR':'Mercury Steel Agency',
+        'RANIPET':'Mercury Steel Agency','CHENGALPATTU':'Saro Steels and Crayon Roofing','CHENNAI':'Saro Steels and Crayon Roofing',
+        'KANCHIPURAM':'Saro Steels and Crayon Roofing','THIRUVALLUR':'Saro Steels and Crayon Roofing',
+        'COIMBATORE':'HH Iron and Steel Corporation','ERODE':'HH Iron and Steel Corporation',
+        'THE NILGIRIS':'HH Iron and Steel Corporation','SALEM':'Kay Vee Metal Roofing','NAMAKKAL':'Kay Vee Metal Roofing',
+        'DHARMAPURI':'Kay Vee Metal Roofing','KRISHNAGIRI':'Kay Vee Metal Roofing','PUDUKKOTTAI':'MKS Metal Roofing',
+        'TRICHY':'MKS Metal Roofing','THANJAVUR':'MKS Metal Roofing','ARIYALUR':'MKS Metal Roofing',
+        'THIRUVARUR':'MKS Metal Roofing','PERAMBALUR':'MKS Metal Roofing','NAGAPATTINAM':'MKS Metal Roofing',
+        'MAYILADUTHURAI':'MKS Metal Roofing'
+    },
+    "Kerala": {
+        'ERNAKULAM': 'Distributor A'
+    }      
     
 }
 
@@ -643,8 +677,7 @@ state_ranges = {
         (300, '100–300 MT', '#93c5fd'),
         (500, '300–500 MT', '#3b82f6'),
         (float('inf'), '500+ MT', '#1e40af')
-    ]
-    ,
+    ],
     "Goa": [
         (50, '0–50 MT', '#dbeafe'),
         (355, '355 MT', '#93c5fd'),
@@ -652,6 +685,12 @@ state_ranges = {
         (float('inf'), '510+ MT', '#1e40af')
     ],
     "Tamil Nadu": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
+    ],
+    "Kerala": [
         (100, '0–100 MT', '#dbeafe'),
         (300, '100–300 MT', '#93c5fd'),
         (500, '300–500 MT', '#3b82f6'),
@@ -822,6 +861,12 @@ cluster_config = {
         'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
         'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
         'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
+    },
+    "Kerala": {
+        'ERNAKULAM':'Ernakulam','IDUKKI':'Ernakulam','KANNUR':'Kannur','KASARAGOD':'Kannur',
+        'ALAPPUZHA':'Kottayam','KOTTAYAM':'Kottayam','PATHANAMTHITTA':'Kottayam',
+        'KOZHIKODE':'Kozhikode','MALAPPURAM':'Kozhikode','WAYANAD':'Kozhikode','KOLLAM':'Thiruvananthapuram',
+        'THIRUVANANTHAPURAM':'Thiruvananthapuram','PALAKKAD':'Thrissur','THRISSUR':'Thrissur'
     }
 }
 
@@ -918,7 +963,8 @@ for _, row in merged.iterrows():
             "Telangana":-0.05,
             "Karnataka":-0.15,
             "Goa":0,
-            "Tamil Nadu":-0.10
+            "Tamil Nadu":-0.10,
+            "Kerala":-0.10
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
