@@ -179,6 +179,141 @@ def get_state_data(state_name):
             "AM/NS Optigal 10 yW": [0]*13,
             "Others": [0]*13
         }
+    elif state_name == "Madhya Pradesh":
+        data = {
+            "District": [
+                'ASHOKNAGAR','BETUL','BHIND','BHOPAL','DATIA','GUNA','GWALIOR','HARDA','HOSHANGABAD',
+                'MORENA','RAISEN','RAJGARH','SEHORE','SHEOPUR','SHIVPURI','VIDISHA','AGAR MALWA',
+                'ALIRAJPUR','BARWANI','BURHANPUR','DEWAS','DHAR','INDORE','JHABUA','KHARGONE','MANDSAUR',
+                'NEEMUCH','RATLAM','SHAJAPUR','UJJAIN','CHHATARPUR','CHHINDWARA','DAMOH','JABALPUR',
+                'KATNI','MANDLA','NARSINGHPUR','NIWARI','PANNA','SAGAR','SEONI','TIKAMGARH','ANUPPUR',
+                'BALAGHAT','DINDORI','EAST NIMAR','REWA','SATNA','SHAHDOL','SIDHI','SINGRAULI','UMARIA'
+
+            ],
+            "Popular": [0,0,0,10,0,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,5,10,25,0,0,0,0,0,0,0,0,0,0,25,
+                         0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0],
+            "Alucolour": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "Infinia": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "APL Apollo Rooftuff": [0,0,0,40,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,
+                         0,0,0,0,0,0,0,0,0,0,0,0],
+            "Jindal Sabrang": [0]*52,
+            "APL Coral": [0]*52,
+            "APL Jumbo": [0]*52,
+            "AM/NS Optigal 10 yW": [0]*52,
+            "Others": [0]*52
+        }
+    elif state_name == "Chhattisgarh":
+        data = {
+            "District": [
+                'BIJAPUR','DANTEWADA','KANKER','KONDAGAON','NARAYANPUR','SUKMA','BASTAR','BILASPUR',
+                'SURGUJA','SAKTI','GAURELA-PENDRA-MARWAHI','JANJGIR - CHAMPA','JASHPUR','KORBA',
+                'KOREA','RAIGARH','SURAJPUR','BALRAMPUR','MOHLA-MANPUR','MANENDRAGARH','MUNGELI','BALOD','BALODA BAZAR',
+                'SARANGARH-BILAIGARH','GARIYABAND','DHAMTARI','DURG','KABIRDHAM','MAHASAMUND','RAIPUR','RAJNANDGAON',
+                'BEMETARA'
+            ],
+            "Popular": [0,0,0,0,0,0,5,10,0,0,0,10,0,0,0,80,0,0,0,0,0,10,0,0,0,0,50,10,0,150,0,0],
+            "Alucolour": [0]*32,
+            "Infinia": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0],
+            "APL Apollo Rooftuff": [0,0,0,0,0,0,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,5,0,60,0,0],
+            "Jindal Sabrang": [0]*32,
+            "APL Coral": [0,0,0,0,0,0,30,20,0,0,20,0,0,30,0,30,0,0,0,0,20,0,30,0,0,0,50,0,0,150,10,0],
+            "APL Jumbo": [0]*32,
+            "AM/NS Optigal 10 yW": [0]*32,
+            "Others": [0]*32
+        }
+    elif state_name == "Rajasthan":
+        data = {
+            "District": [
+                'AJMER','ALWAR','BHARATPUR','BHILWARA','DAUSA','JAIPUR','JHUNJHUNU','NAGAUR','SIKAR',
+                'TONK','BARMER','BIKANER','CHURU','GANGANAGAR','HANUMANGARH','JAISALMER','JALORE',
+                'JODHPUR','PALI','SIROHI','BARAN','BUNDI','DHOLPUR','DUNGARPUR','JHALAWAR','KARAULI',
+                'KOTA','SAWAI MADHOPUR','BANSWARA','CHITTORGARH','PRATAPGARH','RAJSAMAND','UDAIPUR'
+            ],
+            "Popular": [30,10,20,30,10,150,0,0,10,0,0,20,0,0,0,0,0,20,20,0,0,0,0,0,20,0,30,0,0,10,0,0,80],
+            "Alucolour": [0]*33,
+            "Infinia": [10,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,60],
+            "APL Apollo Rooftuff": [10,5,5,10,5,60,2,2,5,0,10,0,5,5,0,5,0,10,10,0,4,2,0,0,10,0,10,5,5,5,2,5,30],
+            "Jindal Sabrang": [40,20,0,10,0,100,0,0,0,0,0,20,0,20,20,0,0,20,0,0,0,10,0,0,20,0,10,0,0,10,0,10,50],
+            "APL Coral": [0]*33,
+            "APL Jumbo": [0]*33,
+            "AM/NS Optigal 10 yW": [0]*33,
+            "Others": [0]*33
+        }
+    elif state_name == "Andhra Pradesh":
+        data = {
+            "District": [
+                'ANANTAPUR','KURNOOL','Y.S.R.','CHITTOOR','SPSR NELLORE','EAST GODAVARI','WEST GODAVARI',
+                'GUNTUR','KRISHNA','PRAKASAM','SRIKAKULAM','VISAKHAPATNAM','VIZIANAGARAM'
+            ],
+            "Popular": [10,30,30,100,300,200,200,350,400,60,10,250,60],
+            "Alucolour": [0]*13,
+            "Infinia": [0,0,0,0,0,0,0,20,20,0,0,10,0],
+            "APL Apollo Rooftuff": [5,5,20,10,10,0,0,0,20,0,10,20,0],
+            "Jindal Sabrang": [0]*13,
+            "APL Coral": [10,15,25,30,20,120,150,30,100,30,20,100,20],
+            "APL Jumbo": [0]*13,
+            "AM/NS Optigal 10 yW": [0]*13,
+            "Others": [0]*13
+        }
+    elif state_name == "Telangana":
+        data = {
+            "District": [
+                'HYDERABAD','JOGULAMBA GADWAL','MAHABUBNAGAR','MEDAK','MEDCHAL MALKAJIGRI','NAGARKURNOOL',
+                'NARAYANPET','NIRMAL','RANGA REDDY','SANGAREDDY','VIKARABAD','WANPARTI','MULUGU',
+                'BHADRADRI KOTHAGUDEM','NALGONDA','KHAMMAM','MAHABUBABAD','SURIYAPET','YADADRI BHUVANAGIRI',
+                'JAGTIAL','JANGOAN','JAYASHANKAR BHUPALPALLI','KARIMNAGAR','MANCHERIAL','PEDDAPALLI',
+                'RAJANNA SIRCILLA','SIDDIPET','WARANGAL RURAL','WARANGAL URBAN','ADILABAD','KAMAREDDY',
+                'KUMURAM BHEEM ASIFABAD','NIZAMABAD'
+            ],
+            "Popular": [80,0,20,0,20,8,0,10,250,15,0,8,5,25,20,45,20,25,15,60,20,10,30,20,8,10,45,150,100,25,5,30,60],
+            "Alucolour": [0]*33,
+            "Infinia": [0]*33,
+            "APL Apollo Rooftuff": [20,0,10,0,0,0,0,0,25,0,0,0,0,0,0,0,0,0,0,15,0,5,5,10,4,0,5,0,0,0,2,10,5],
+            "Jindal Sabrang": [0]*33,
+            "APL Coral": [100,0,25,0,10,0,5,3,205,10,5,0,0,10,15,30,10,20,10,25,10,10,35,30,10,5,20,40,10,0,5,10,15],
+            "APL Jumbo": [0]*33,
+            "AM/NS Optigal 10 yW": [0]*33,
+            "Others": [0]*33
+        }
+    elif state_name == "Karnataka":
+        data = {
+            "District": [
+                'BAGALKOTE','BALLARI','BIDAR','KALABURAGI','KOPPAL','RAICHUR','VIJAYAPURA','YADGIR',
+                'DHARWAD','GADAG','HAVERI','BELAGAVI','UTTARA KANNADA','CHIKKAMAGALURU','CHITRADURGA',
+                'DAVANGERE','SHIVAMOGGA','BENGALURU URBAN','BENGALURU RURAL','CHIKKABALLAPURA','KOLAR',
+                'RAMANAGARA','TUMAKURU','HASSAN','KODAGU','DAKSHINA KANNADA','UDUPI','CHAMARAJANAGARA',
+                'MANDYA','MYSURU'
+            ],
+            "Popular": [70,70,100,50,80,50,200,25,70,105,50,108,45,70,80,100,240,80,130,30,40,30,70,
+                        25,5,50,25,20,90,120],
+            "Alucolour": [0]*30,
+            "Infinia": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,120,220,0,0,0,0,0,0,5,5,50,20,0,0,0],
+            "APL Apollo Rooftuff": [0,20,0,0,0,0,0,0,10,0,0,50,20,40,80,70,120,80,180,90,60,40,55,50,
+                                    5,150,40,15,60,45],
+            "Jindal Sabrang": [40,0,30,60,15,30,40,20,25,0,20,60,20,0,0,40,25,60,80,25,35,50,35,50,10,
+                              50,40,7,40,30],
+            "APL Coral": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,15,0,0,0,0,0,0,0,0,0,15,0],
+            "APL Jumbo": [0]*30,
+            "AM/NS Optigal 10 yW": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,25,50,15,10,5,20,0,0,0,0,15,0,20],
+            "Others": [0,0,0,15,30,0,20,0,20,15,20,37,10,0,0,0,0,0,0,0,0,0,5,130,25,300,125,5,0,0]
+        }
+    elif state_name == "Goa":
+        data = {
+            "District": [
+                'NORTH GOA','SOUTH GOA'
+            ],
+            "Popular": [250,200],
+            "Alucolour": [0,5],
+            "Infinia": [10,0],
+            "APL Apollo Rooftuff": [150,120],
+            "Jindal Sabrang": [0,30],
+            "APL Coral": [0,0],
+            "APL Jumbo": [0,0],
+            "AM/NS Optigal 10 yW": [0,0],
+            "Others": [0,0]
+        }
     elif state_name == "Tamil Nadu":
         data = {
             "District": [
@@ -304,7 +439,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Tamil Nadu","Kerala"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Popular", "Alucolour", 
                                                             "Infinia", "APL Apollo Rooftuff", "Jindal Sabrang","APL Coral","APL Jumbo",
                                                             "AM/NS Optigal 10 yW", "Others"])
@@ -376,6 +511,27 @@ state_distributor_configs = {
     },
     "Uttarakhand": {
         'BAGESHWAR': 'Distributor A'
+    },
+    "Madhya Pradesh": {
+        'AGAR MALWA': 'Distributor A'
+    },
+    "Chhattisgarh": {
+        'BIJAPUR': 'Distributor A'
+    },
+    "Rajasthan": {
+        'AJMER': 'Distributor A'
+    },
+    "Andhra Pradesh": {
+        'ANANTAPUR': 'Distributor A'
+    },
+    "Telangana": {
+        'HYDERABAD': 'Distributor A'
+    },
+    "Karnataka": {
+        'BAGALKOTE': 'Distributor A'
+    },
+    "Goa": {
+        'NORTH GOA': 'Distributor A'
     },
     "Tamil Nadu": {
         'VIRUDHUNAGAR':'All Distributors','KANNIYAKUMARI':'All Distributors','TENKASI':'All Distributors',
@@ -479,6 +635,48 @@ state_ranges = {
         (100, '50–100 MT', '#3b82f6'),
         (float('inf'), '100+ MT', '#1e40af')
     ],
+    "Madhya Pradesh": [
+        (25, '0–25 MT', '#dbeafe'),
+        (50, '25–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "Chhattisgarh": [
+        (25, '0–25 MT', '#dbeafe'),
+        (50, '25–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "Rajasthan": [
+        (25, '0–25 MT', '#dbeafe'),
+        (100, '25–100 MT', '#93c5fd'),
+        (200, '100–200 MT', '#3b82f6'),
+        (float('inf'), '200+ MT', '#1e40af')
+    ],
+    "Andhra Pradesh": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
+    ],
+    "Telangana": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
+    ],
+    "Karnataka": [
+        (100, '0–100 MT', '#dbeafe'),
+        (300, '100–300 MT', '#93c5fd'),
+        (500, '300–500 MT', '#3b82f6'),
+        (float('inf'), '500+ MT', '#1e40af')
+    ],
+    "Goa": [
+        (50, '0–50 MT', '#dbeafe'),
+        (355, '355 MT', '#93c5fd'),
+        (510, '510 MT', '#3b82f6'),
+        (float('inf'), '510+ MT', '#1e40af')
+    ],
     "Tamil Nadu": [
         (100, '0–100 MT', '#dbeafe'),
         (300, '100–300 MT', '#93c5fd'),
@@ -581,6 +779,69 @@ cluster_config = {
         'RUDRA PRAYAG':'Garhwal', 'TEHRI GARHWAL':'Garhwal', 'UTTAR KASHI':'Garhwal',
         'ALMORA':'Kumaon', 'BAGESHWAR':'Kumaon', 'CHAMPAWAT':'Kumaon', 
         'NAINITAL':'Kumaon', 'PITHORAGARH':'Kumaon', 'UDHAM SINGH NAGAR':'Kumaon'
+    },
+    "Madhya Pradesh": {
+        'ASHOKNAGAR':'Bhopal','BETUL':'Bhopal','BHIND':'Bhopal','BHOPAL':'Bhopal','DATIA':'Bhopal',
+        'GUNA':'Bhopal','GWALIOR':'Bhopal','HARDA':'Bhopal','HOSHANGABAD':'Bhopal','MORENA':'Bhopal',
+        'RAISEN':'Bhopal','RAJGARH':'Bhopal','SEHORE':'Bhopal','SHEOPUR':'Bhopal','SHIVPURI':'Bhopal',
+        'VIDISHA':'Bhopal','AGAR MALWA':'Indore','ALIRAJPUR':'Indore','BARWANI':'Indore','BURHANPUR':'Indore',
+        'DEWAS':'Indore','DHAR':'Indore','INDORE':'Indore','JHABUA':'Indore','KHARGONE':'Indore',
+        'MANDSAUR':'Indore','NEEMUCH':'Indore','RATLAM':'Indore','SHAJAPUR':'Indore','UJJAIN':'Indore',
+        'CHHATARPUR':'Jabalpur','CHHINDWARA':'Jabalpur','DAMOH':'Jabalpur','JABALPUR':'Jabalpur',
+        'KATNI':'Jabalpur','MANDLA':'Jabalpur','NARSINGHPUR':'Jabalpur','NIWARI':'Jabalpur','PANNA':'Jabalpur',
+        'SAGAR':'Jabalpur','SEONI':'Jabalpur','TIKAMGARH':'Jabalpur','ANUPPUR':'Satna','BALAGHAT':'Satna',
+        'DINDORI':'Satna','EAST NIMAR':'Satna','REWA':'Satna','SATNA':'Satna','SHAHDOL':'Satna',
+        'SIDHI':'Satna','SINGRAULI':'Satna','UMARIA':'Satna'
+    },
+    "Chhattisgarh": {
+        'BIJAPUR':'Bastar','DANTEWADA':'Bastar','KANKER':'Bastar','KONDAGAON':'Bastar','NARAYANPUR':'Bastar',
+        'SUKMA':'Bastar','BASTAR':'Bastar','BILASPUR':'Bilaspur','SURGUJA':'Bilaspur','SAKTI':'Bilaspur',
+        'GAURELA-PENDRA-MARWAHI':'Bilaspur','JANJGIR - CHAMPA':'Bilaspur','JASHPUR':'Bilaspur','KORBA':'Bilaspur',
+        'KOREA':'Bilaspur','RAIGARH':'Bilaspur','SURAJPUR':'Bilaspur','BALRAMPUR':'Bilaspur',
+        'MOHLA-MANPUR':'Bilaspur','MANENDRAGARH':'Bilaspur','MUNGELI':'Bilaspur',
+        'BALOD':'Raipur','BALODA BAZAR':'Raipur','SARANGARH-BILAIGARH':'Raipur','GARIYABAND':'Raipur',
+        'DHAMTARI':'Raipur','DURG':'Raipur','KABIRDHAM':'Raipur','MAHASAMUND':'Raipur','RAIPUR':'Raipur',
+        'RAJNANDGAON':'Raipur','BEMETARA':'Raipur'
+    },
+    "Rajasthan": {
+        'AJMER':'Jaipur','ALWAR':'Jaipur','BHARATPUR':'Jaipur','BHILWARA':'Jaipur','DAUSA':'Jaipur',
+        'JAIPUR':'Jaipur','JHUNJHUNU':'Jaipur','NAGAUR':'Jaipur','SIKAR':'Jaipur',
+        'TONK':'Jaipur','BARMER':'Jodhpur','BIKANER':'Jodhpur','CHURU':'Jodhpur','GANGANAGAR':'Jodhpur',
+        'HANUMANGARH':'Jodhpur','JAISALMER':'Jodhpur','JALORE':'Jodhpur','JODHPUR':'Jodhpur',
+        'PALI':'Jodhpur','SIROHI':'Jodhpur','BARAN':'Kota','BUNDI':'Kota','DHOLPUR':'Kota','DUNGARPUR':'Kota',
+        'JHALAWAR':'Kota','KARAULI':'Kota','KOTA':'Kota','SAWAI MADHOPUR':'Kota',
+        'BANSWARA':'Udaipur','CHITTORGARH':'Udaipur','PRATAPGARH':'Udaipur','RAJSAMAND':'Udaipur','UDAIPUR':'Udaipur'
+    },
+    "Andhra Pradesh": {
+        'ANANTAPUR':'Anantapur','KURNOOL':'Anantapur','Y.S.R.':'Anantapur','CHITTOOR':'Chittoor',
+        'SPSR NELLORE':'Chittoor','EAST GODAVARI':'Godavari','WEST GODAVARI':'Godavari',
+        'GUNTUR':'Krishna','KRISHNA':'Krishna','PRAKASAM':'Krishna',
+        'SRIKAKULAM':'Vizag','VISAKHAPATNAM':'Vizag','VIZIANAGARAM':'Vizag'
+    },
+    "Telangana": {
+        'HYDERABAD':'Hyderabad','JOGULAMBA GADWAL':'Hyderabad','MAHABUBNAGAR':'Hyderabad',
+        'MEDAK':'Hyderabad','MEDCHAL MALKAJIGRI':'Hyderabad','NAGARKURNOOL':'Hyderabad',
+        'NARAYANPET':'Hyderabad','NIRMAL':'Hyderabad','RANGA REDDY':'Hyderabad',
+        'SANGAREDDY':'Hyderabad','VIKARABAD':'Hyderabad','WANPARTI':'Hyderabad','MULUGU':'Hyderabad',
+        'BHADRADRI KOTHAGUDEM':'Khammam','NALGONDA':'Khammam','KHAMMAM':'Khammam','MAHABUBABAD':'Khammam',
+        'SURIYAPET':'Khammam','YADADRI BHUVANAGIRI':'Khammam','JAGTIAL':'Warangal','JANGOAN':'Warangal',
+        'JAYASHANKAR BHUPALPALLI':'Warangal','KARIMNAGAR':'Warangal','MANCHERIAL':'Warangal',
+        'PEDDAPALLI':'Warangal','RAJANNA SIRCILLA':'Warangal','SIDDIPET':'Warangal',
+        'WARANGAL RURAL':'Warangal','WARANGAL URBAN':'Warangal','ADILABAD':'Adilabad',
+        'KAMAREDDY':'Adilabad','KUMURAM BHEEM ASIFABAD':'Adilabad','NIZAMABAD':'Adilabad'
+    },
+    "Karnataka": {
+        'BAGALKOTE':'Ballari','BALLARI':'Ballari','BIDAR':'Ballari','KALABURAGI':'Ballari','KOPPAL':'Ballari',
+        'RAICHUR':'Ballari','VIJAYAPURA':'Ballari','YADGIR':'Ballari','DHARWAD':'Hubli','GADAG':'Hubli',
+        'HAVERI':'Hubli','BELAGAVI':'Hubli-IHB','UTTARA KANNADA':'Hubli-IHB','CHIKKAMAGALURU':'Shivamogga',
+        'CHITRADURGA':'Shivamogga','DAVANGERE':'Shivamogga','SHIVAMOGGA':'Shivamogga',
+        'BENGALURU URBAN':'Bangalore','BENGALURU RURAL':'Bangalore','CHIKKABALLAPURA':'Bangalore',
+        'KOLAR':'Bangalore','RAMANAGARA':'Bangalore','TUMAKURU':'Bangalore','HASSAN':'Hassan',
+        'KODAGU':'Hassan','DAKSHINA KANNADA':'Mangalore','UDUPI':'Mangalore','CHAMARAJANAGARA':'Mysuru',
+        'MANDYA':'Mysuru','MYSURU':'Mysuru'
+    },
+    "Goa": {
+        'NORTH GOA':'Goa','SOUTH GOA':'Goa'
     },
     "Tamil Nadu": {
         'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
@@ -690,6 +951,13 @@ for _, row in merged.iterrows():
             "Haryana":0,
             "Himachal Pradesh":0,
             "Uttarakhand":0,
+            "Madhya Pradesh":-0.12,
+            "Chhattisgarh":-0.14,
+            "Rajasthan":-0.12,
+            "Andhra Pradesh":-0.14,
+            "Telangana":-0.05,
+            "Karnataka":-0.15,
+            "Goa":0,
             "Tamil Nadu":-0.10,
             "Kerala":-0.06
         }
@@ -732,6 +1000,30 @@ if target_state == "Uttarakhand":
 if target_state == "Uttarakhand":
     annotations.append(dict(
         x=79.75, y=29.55, text="<b>KUMAON</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Andhra Pradesh":
+    annotations.append(dict(
+        x=82.75, y=16.5, text="<b>GODAVARI</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Andhra Pradesh":
+    annotations.append(dict(
+        x=84, y=18, text="<b>VIZAG</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Telangana":
+    annotations.append(dict(
+        x=80.3, y=19, text="<b>WARANGAL</b>",
+        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Goa":
+    annotations.append(dict(
+        x=74.05, y=15.4, text="<b>GOA</b>",
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
