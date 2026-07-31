@@ -681,7 +681,7 @@ state_ranges = {
         (50, '0–50 MT', '#dbeafe'),
         (75, '75 MT', '#93c5fd'),
         (150, '150 MT', '#3b82f6'),
-        (float('inf'), '510+ MT', '#1e40af')
+        (float('inf'), '150+ MT', '#1e40af')
     ],
     "Tamil Nadu": [
         (100, '0–100 MT', '#dbeafe'),
