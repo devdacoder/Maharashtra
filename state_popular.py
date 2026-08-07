@@ -959,7 +959,7 @@ for _, row in merged.iterrows():
             "Uttarakhand":0,
             "Madhya Pradesh":-0.12,
             "Chhattisgarh":-0.14,
-            "Rajasthan":-0.12,
+            "Rajasthan":-0.14,
             "Andhra Pradesh":-0.14,
             "Telangana":-0.05,
             "Karnataka":-0.15,
