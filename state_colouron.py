@@ -454,8 +454,26 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*24,
             "Others": [0]*24
         }
-
-
+    elif state_name == "Bihar":
+        data = {
+            "District": ['BEGUSARAI','DARBHANGA','MADHUBANI','SAMASTIPUR','ARWAL','AURANGABAD',
+                         'GAYA','JAHANABAD','NAWADA','BANKA','BHAGALPUR','JAMUI','KHAGARIA','LAKHISARAI',
+                         'MUNGER','SHEIKHPURA','MUZAFFARPUR','PASHCHIMI CHAMPARAN','PURBI CHAMPARAN',
+                         'SHEOHAR','SITAMARHI','VAISHALI','BHOJPUR','BUXAR','KAIMUR','NALANDA','PATNA',
+                         'ROHTAS','ARARIA','KATIHAR','KISHANGANJ','PURNIA','MADHEPURA','SAHARSA',
+                         'SUPAUL','GOPALGANJ','SARAN','SIWAN'],
+            "Colouron+": [0]*38,
+            "Everglow": [0]*38,
+            "JSW_CC_Liner": [0]*38,
+            "TATA_Durashine": [10,10,5,10,10,5,0,0,0,0,15,0,0,0,0,0,20,5,5,0,
+                               5,5,10,10,0,10,50,10,20,0,20,70,0,0,5,5,5,5],
+            "Tata_Liner": [50,*([0]*37)],
+            "TATA_Prisma": [0]*38,
+            "Jindal Neucolour+": [0]*38,
+            "APL Apollo Coral": [0]*38,
+            "JSW_Radiance": [0]*38,
+            "Others": [0]*38
+        }
     return pd.DataFrame(data)
 
 @st.cache_data
@@ -773,6 +791,9 @@ state_distributor_configs = {
     },
     "Jharkhand": {
         'RANCHI': 'Distributor A'
+    },
+    "Bihar": {
+        'BEGUSARAI': 'Distributor A'
     } 
     
 }
@@ -932,6 +953,12 @@ state_ranges = {
         (float('inf'), '300+ MT', '#1e40af')
     ],
     "Jharkhand": [
+        (10, '0–10 MT', '#dbeafe'),
+        (30, '10–30 MT', '#93c5fd'),
+        (50, '30–50 MT', '#3b82f6'),
+        (float('inf'), '50+ MT', '#1e40af')
+    ],
+    "Bihar": [
         (10, '0–10 MT', '#dbeafe'),
         (30, '10–30 MT', '#93c5fd'),
         (50, '30–50 MT', '#3b82f6'),
@@ -1169,6 +1196,16 @@ cluster_config = {
         'EAST SINGHBHUM':'Singhbhum','SARAIKELA-KHARSAWAN':'Singhbhum','WEST SINGHBHUM':'Singhbhum',
         'DHANBAD':'Dhanbad','BOKARO':'Dhanbad','JAMTARA':'Dhanbad','DEOGHAR':'Dhanbad',
         'DUMKA':'Dhanbad','PAKUR':'Dhanbad','SAHIBGANJ':'Dhanbad','GODDA':'Dhanbad'
+    },
+    "Bihar": {
+        'BEGUSARAI':'Darbhanga','DARBHANGA':'Darbhanga','MADHUBANI':'Darbhanga','SAMASTIPUR':'Darbhanga',
+        'ARWAL':'Gaya','AURANGABAD':'Gaya','GAYA':'Gaya','JAHANABAD':'Gaya','NAWADA':'Gaya',
+        'BANKA':'Munger','BHAGALPUR':'Munger','JAMUI':'Munger','KHAGARIA':'Munger','LAKHISARAI':'Munger',
+        'MUNGER':'Munger','SHEIKHPURA':'Munger','MUZAFFARPUR':'Muzaffarpur','PASHCHIMI CHAMPARAN':'Muzaffarpur',
+        'PURBI CHAMPARAN':'Muzaffarpur','SHEOHAR':'Muzaffarpur','SITAMARHI':'Muzaffarpur','VAISHALI':'Muzaffarpur',
+        'BHOJPUR':'Patna','BUXAR':'Patna','KAIMUR':'Patna','NALANDA':'Patna','PATNA':'Patna','ROHTAS':'Patna',
+        'ARARIA':'Purnia','KATIHAR':'Purnia','KISHANGANJ':'Purnia','PURNIA':'Purnia','MADHEPURA':'Saharsa',
+        'SAHARSA':'Saharsa','SUPAUL':'Saharsa','GOPALGANJ':'Saran','SARAN':'Saran','SIWAN':'Saran'
     }
 }
 
@@ -1367,7 +1404,8 @@ else:
                 "Assam":-0.06,
                 "Odisha":-0.1,
                 "West Bengal":-0.1,
-                "Jharkhand":-0.02
+                "Jharkhand":-0.02,
+                "Bihar":-0.06
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
