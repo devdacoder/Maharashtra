@@ -1159,11 +1159,11 @@ for _, row in merged.iterrows():
         if district_area < 0.005:
             share_font_size = 1
         elif district_area < 0.01:
-            share_font_size = 4
+            share_font_size = 2
         elif district_area < 0.02:
-            share_font_size = 5
+            share_font_size = 3
         elif district_area < 0.04:
-            share_font_size = 6
+            share_font_size = 4
         elif district_area < 0.08:
             share_font_size = 7
         elif district_area < 0.15:
