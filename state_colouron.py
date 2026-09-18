@@ -473,6 +473,51 @@ def get_geojson(state_name):
 
     else:
         state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
+
+    # ---------------------------------------------------------
+    # COMBINE ALL SIKKIM DISTRICTS INTO ONE DISTRICT
+    # ---------------------------------------------------------
+    
+    if state_name == "Assam":
+    
+        sikkim_mask = state_gdf['state'].str.upper() == "ASSAM"
+        
+        # Since state was changed to Assam above, identify Sikkim
+        # from the original India GeoJSON instead
+        sikkim = india[
+            india['state'].str.upper() == "SIKKIM"
+        ].copy()
+    
+        if not sikkim.empty:
+            # Combine all Sikkim district geometries
+            combined_sikkim_geometry = sikkim.geometry.union_all()
+    
+            # Create one row for Combined Sikkim
+            combined_sikkim = gpd.GeoDataFrame(
+                {
+                    'state': ['Assam'],
+                    'district': ['COMBINED_SIKKIM'],
+                    'geometry': [combined_sikkim_geometry]
+                },
+                crs=india.crs
+            )
+    
+            # Remove individual Sikkim districts from state_gdf
+            state_gdf = state_gdf[
+                ~(
+                    state_gdf.geometry.apply(
+                        lambda geom: any(
+                            geom.equals(s) for s in sikkim.geometry
+                        )
+                    )
+                )
+            ]
+    
+            # Add combined Sikkim
+            state_gdf = pd.concat(
+                [state_gdf, combined_sikkim],
+                ignore_index=True
+            )
     
     # Unified naming fixes
     state_gdf['district'] = state_gdf['district'].str.upper().replace({
