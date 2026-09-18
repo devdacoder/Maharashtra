@@ -1089,115 +1089,170 @@ for _, row in clusters.iterrows():
 
 # C. LABELS AND BOXES
 annotations = []
-for _, row in merged.iterrows():
-    if row.geometry:
-        centroid = row.geometry.centroid
-        # Robust hub check
-        is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
-        # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
-        mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
-        # share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
-        share_val = (
-            f"<b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT"
-            if pd.notna(row[share_col_name])
-            else f"0%<br>{mkt_size_val} MT"
-        )
-        # 1. District Name
-        annotations.append(dict(
-            x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
-            text=row['district'].upper() if is_hub else row['district'].title(),
-            showarrow=False,
-            # font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
-            font=dict(
-                size=13 if is_hub and target_state != "Assam"
-                     else 10 if target_state != "Assam"
-                     else 7,
-                color="black",
-                family="Arial Black" if is_hub else "Arial"
-            ),
-            xref="x", yref="y"
-        ))
-        state_y_offsets = {
-            "Maharashtra": -0.15,
-            "Gujarat": -0.075,
-            "Punjab": 0,
-            "Jammu and Kashmir": 0,
-            "Uttar Pradesh": -0.07,
-            "Haryana":-0.02,
-            "Himachal Pradesh":0,
-            "Uttarakhand":0,
-            "Madhya Pradesh":-0.12,
-            "Chhattisgarh":-0.14,
-            "Rajasthan":-0.14,
-            "Andhra Pradesh":-0.14,
-            "Telangana":-0.05,
-            "Karnataka":-0.15,
-            "Goa":0,
-            "Tamil Nadu":-0.10,
-            "Kerala":-0.06,
-            "Assam":-0.06
-        }
-        # Get the offset for the current state, default to -0.1 if not found
-        current_offset = state_y_offsets.get(target_state, -0.1)
-        
-        # # 2. Share % Box
-        # annotations.append(dict(
-        #     x=centroid.x, 
-        #     y=centroid.y + current_offset, # Using the state-specific offset
-        #     text=f"<b>{share_val}</b>",
-        #     showarrow=False,
-        #     font=dict(
-        #         size=5 if target_state == "Assam" else 10,
-        #         color="white"),
-        #     bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-        #     bordercolor="black", borderwidth=0.5, borderpad=1,
-        #     xref="x", yref="y"
-        # ))
+if target_state="Assam":
+    for _, row in merged.iterrows():
+        if row.geometry:
+            centroid = row.geometry.centroid
+            # Robust hub check
+            is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
+            # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
+            mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
+            # share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
+            share_val = (
+                f"<b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT"
+                if pd.notna(row[share_col_name])
+                else f"0%<br>{mkt_size_val} MT"
+            )
+            # 1. District Name
+            annotations.append(dict(
+                x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
+                text=row['district'].upper() if is_hub else row['district'].title(),
+                showarrow=False,
+                # font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+                font=dict(
+                    size=13 if is_hub and target_state != "Assam"
+                         else 10 if target_state != "Assam"
+                         else 7,
+                    color="black",
+                    family="Arial Black" if is_hub else "Arial"
+                ),
+                xref="x", yref="y"
+            ))
+            state_y_offsets = {
+                "Maharashtra": -0.15,
+                "Gujarat": -0.075,
+                "Punjab": 0,
+                "Jammu and Kashmir": 0,
+                "Uttar Pradesh": -0.07,
+                "Haryana":-0.02,
+                "Himachal Pradesh":0,
+                "Uttarakhand":0,
+                "Madhya Pradesh":-0.12,
+                "Chhattisgarh":-0.14,
+                "Rajasthan":-0.14,
+                "Andhra Pradesh":-0.14,
+                "Telangana":-0.05,
+                "Karnataka":-0.15,
+                "Goa":0,
+                "Tamil Nadu":-0.10,
+                "Kerala":-0.06,
+                "Assam":-0.06
+            }
+            # Get the offset for the current state, default to -0.1 if not found
+            current_offset = state_y_offsets.get(target_state, -0.1)
+            
+            # # 2. Share % Box
+            # annotations.append(dict(
+            #     x=centroid.x, 
+            #     y=centroid.y + current_offset, # Using the state-specific offset
+            #     text=f"<b>{share_val}</b>",
+            #     showarrow=False,
+            #     font=dict(
+            #         size=5 if target_state == "Assam" else 10,
+            #         color="white"),
+            #     bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
+            #     bordercolor="black", borderwidth=0.5, borderpad=1,
+            #     xref="x", yref="y"
+            # ))
+    
+            district_area = row.geometry.area
+    
+            if district_area < 0.2:
+                share_font_size = 3
+            elif district_area < 0.30:
+                share_font_size = 4
+            elif district_area < 0.40:
+                share_font_size = 5
+            elif district_area < 0.50:
+                share_font_size = 6
+            elif district_area < 0.60:
+                share_font_size = 7
+            elif district_area < 0.70:
+                share_font_size = 8
+            elif district_area < 0.80:
+                share_font_size = 9
+            else:
+                share_font_size = 10
+    
+            annotations.append(dict(
+                x=centroid.x,
+                y=centroid.y + current_offset,
+                text=share_val,
+                showarrow=False,
+            
+                font=dict(
+                    size=share_font_size,
+                    color="white",
+                    family="Arial"
+                ),
+            
+                bgcolor=(
+                    row['share_color']
+                    if pd.notna(row['share_color'])
+                    else 'gray'
+                ),
+            
+                bordercolor="black",
+                borderwidth=0.5,
+                borderpad=0.5,
+            
+                xref="x",
+                yref="y"
+            ))
+else:
+    for _, row in merged.iterrows():
+        if row.geometry:
+            centroid = row.geometry.centroid
+            # Robust hub check
+            is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
+            # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
+            mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
+            share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
+            # 1. District Name
+            annotations.append(dict(
+                x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
+                text=row['district'].upper() if is_hub else row['district'].title(),
+                showarrow=False,
+                font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+                xref="x", yref="y"
+            ))
+            state_y_offsets = {
+                "Maharashtra": -0.15,
+                "Gujarat": -0.075,
+                "Punjab": 0,
+                "Jammu and Kashmir": 0,
+                "Uttar Pradesh": -0.07,
+                "Haryana":-0.02,
+                "Himachal Pradesh":0,
+                "Uttarakhand":0,
+                "Madhya Pradesh":-0.12,
+                "Chhattisgarh":-0.14,
+                "Rajasthan":-0.14,
+                "Andhra Pradesh":-0.14,
+                "Telangana":-0.05,
+                "Karnataka":-0.15,
+                "Goa":0,
+                "Tamil Nadu":-0.10,
+                "Kerala":-0.06,
+                "Assam":-0.06
+            }
+            # Get the offset for the current state, default to -0.1 if not found
+            current_offset = state_y_offsets.get(target_state, -0.1)
+            
+            # 2. Share % Box
+            annotations.append(dict(
+                x=centroid.x, 
+                y=centroid.y + current_offset, # Using the state-specific offset
+                text=f"<b>{share_val}</b>",
+                showarrow=False,
+                font=dict(
+                    size=5 if target_state == "Assam" else 10,
+                    color="white"),
+                bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
+                bordercolor="black", borderwidth=0.5, borderpad=1,
+                xref="x", yref="y"
+            ))
 
-        district_area = row.geometry.area
-
-        if district_area < 0.2:
-            share_font_size = 3
-        elif district_area < 0.30:
-            share_font_size = 4
-        elif district_area < 0.40:
-            share_font_size = 5
-        elif district_area < 0.50:
-            share_font_size = 6
-        elif district_area < 0.60:
-            share_font_size = 7
-        elif district_area < 0.70:
-            share_font_size = 8
-        elif district_area < 0.80:
-            share_font_size = 9
-        else:
-            share_font_size = 10
-
-        annotations.append(dict(
-            x=centroid.x,
-            y=centroid.y + current_offset,
-            text=share_val,
-            showarrow=False,
-        
-            font=dict(
-                size=share_font_size,
-                color="white",
-                family="Arial"
-            ),
-        
-            bgcolor=(
-                row['share_color']
-                if pd.notna(row['share_color'])
-                else 'gray'
-            ),
-        
-            bordercolor="black",
-            borderwidth=0.5,
-            borderpad=0.5,
-        
-            xref="x",
-            yref="y"
-        ))
 
 # Manual Fix for Maharashtra only
 if target_state == "Punjab":
