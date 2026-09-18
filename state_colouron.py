@@ -1089,7 +1089,7 @@ for _, row in clusters.iterrows():
 
 # C. LABELS AND BOXES
 annotations = []
-if target_state="Assam":
+if target_state=="Assam":
     for _, row in merged.iterrows():
         if row.geometry:
             centroid = row.geometry.centroid
