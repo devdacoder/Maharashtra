@@ -1366,7 +1366,7 @@ if target_state == "Assam":
 
     # Assam
     annotations.append(dict(
-        x=91, y=26.8, text="<b>ASSAM</b>",
+        x=91, y=27, text="<b>ASSAM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1374,7 +1374,7 @@ if target_state == "Assam":
 
     # Sikkim
     annotations.append(dict(
-        x=90.2, y=27.5, text="<b>SIKKIM</b>",
+        x=89.9, y=27.5, text="<b>SIKKIM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1382,7 +1382,7 @@ if target_state == "Assam":
 
     # Arunachal Pradesh
     annotations.append(dict(
-        x=93, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
+        x=92.5, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1390,7 +1390,7 @@ if target_state == "Assam":
 
     # Manipur
     annotations.append(dict(
-        x=94.4, y=24.8, text="<b>MANIPUR</b>",
+        x=95.2, y=24.8, text="<b>MANIPUR</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1398,7 +1398,7 @@ if target_state == "Assam":
 
     # Meghalaya
     annotations.append(dict(
-        x=91.3, y=25.6, text="<b>MEGHALAYA</b>",
+        x=91.3, y=25, text="<b>MEGHALAYA</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1406,7 +1406,7 @@ if target_state == "Assam":
 
     # Mizoram
     annotations.append(dict(
-        x=93.7, y=23.7, text="<b>MIZORAM</b>",
+        x=93.9, y=23.7, text="<b>MIZORAM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1414,7 +1414,7 @@ if target_state == "Assam":
 
     # Nagaland
     annotations.append(dict(
-        x=95.5, y=26.1, text="<b>NAGALAND</b>",
+        x=95.7, y=26.1, text="<b>NAGALAND</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1422,7 +1422,7 @@ if target_state == "Assam":
 
     # Tripura
     annotations.append(dict(
-        x=91, y=24.0, text="<b>TRIPURA</b>",
+        x=90.8, y=24.0, text="<b>TRIPURA</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
