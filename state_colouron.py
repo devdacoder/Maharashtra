@@ -1111,7 +1111,7 @@ for _, row in merged.iterrows():
             font=dict(
                 size=13 if is_hub and target_state != "Assam"
                      else 10 if target_state != "Assam"
-                     else 6,
+                     else 7,
                 color="black",
                 family="Arial Black" if is_hub else "Arial"
             ),
@@ -1135,7 +1135,7 @@ for _, row in merged.iterrows():
             "Goa":0,
             "Tamil Nadu":-0.10,
             "Kerala":-0.06,
-            "Assam":-0.08
+            "Assam":-0.06
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
