@@ -1367,7 +1367,7 @@ else:
                 "Assam":-0.06,
                 "Odisha":-0.1,
                 "West Bengal":-0.1,
-                "Jharkhand":-0.05
+                "Jharkhand":-0.02
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
