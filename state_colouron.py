@@ -361,6 +361,89 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*14,
             "Others": [15,0,5,5,10,10,10,0,0,0,0,0,0,5]
         }
+    elif state_name == "Assam":
+        data = {
+            "District": [
+                # Sikkim
+                'COMBINED_SIKKIM',
+
+                # Arunachal Pradesh
+                'ANJAW', 'CHANGLANG', 'DIBANG VALLEY', 'EAST KAMENG', 'EAST SIANG',
+                'KAMLE', 'KRA DAADI', 'KURUNG KUMEY', 'LEPARADA', 'LOHIT',
+                'LONGDING', 'LOWER DIBANG VALLEY', 'LOWER SIANG',
+                'LOWER SUBANSIRI', 'NAMSAI', 'PAKKE KESSANG', 'PAPUM PARE',
+                'SHI YOMI', 'SIANG', 'TAWANG', 'TIRAP', 'UPPER SIANG',
+                'UPPER SUBANSIRI', 'WEST KAMENG', 'WEST SIANG',
+
+                # Assam
+                'BAKSA', 'BARPETA', 'BISWANATH', 'BONGAIGAON', 'CACHAR',
+                'CHARAIDEO', 'CHIRANG', 'DARRANG', 'DHEMAJI', 'DHUBRI',
+                'DIBRUGARH', 'DIMA HASAO', 'GOALPARA', 'GOLAGHAT',
+                'HAILAKANDI', 'HOJAI', 'JORHAT', 'KAMRUP', 'KAMRUP METRO',
+                'KARBI ANGLONG', 'KARIMGANJ', 'KOKRAJHAR', 'LAKHIMPUR',
+                'MAJULI', 'MARIGAON', 'NAGAON', 'NALBARI', 'SIVASAGAR',
+                'SONITPUR', 'SOUTH SALMARA MANCACHAR', 'TINSUKIA',
+                'UDALGURI', 'WEST KARBI ANGLONG',
+
+                # Manipur
+                'BISHNUPUR', 'CHANDEL', 'CHURACHANDPUR', 'IMPHAL EAST',
+                'IMPHAL WEST', 'JIRIBAM', 'KAKCHING', 'KAMJONG', 'KANGPOKPI',
+                'NONEY', 'PHERZAWL', 'SENAPATI', 'TAMENGLONG', 'TENGNOUPAL',
+                'THOUBAL', 'UKHRUL',
+
+                # Meghalaya
+                'EAST GARO HILLS', 'EAST JAINTIA HILLS', 'EAST KHASI HILLS',
+                'NORTH GARO HILLS', 'RI BHOI', 'SOUTH GARO HILLS',
+                'SOUTH WEST GARO HILLS', 'SOUTH WEST KHASI HILLS',
+                'WEST GARO HILLS', 'WEST JAINTIA HILLS', 'WEST KHASI HILLS',
+
+                # Mizoram
+                'AIZAWL', 'CHAMPHAI', 'HNAHTHIAL', 'KHAWZAWL', 'KOLASIB',
+                'LAWNGTLAI', 'LUNGLEI', 'MAMIT', 'SAIHA', 'SAITUAL', 'SERCHHIP',
+
+                # Nagaland
+                'MON', 'DIMAPUR', 'KIPHIRE', 'KOHIMA', 'LONGLENG',
+                'MOKOKCHUNG', 'NOKLAK', 'PEREN', 'PHEK', 'TUENSANG',
+                'WOKHA', 'ZUNHEBOTO',
+
+                # Tripura
+                'DHALAI', 'GOMATI', 'KHOWAI', 'NORTH TRIPURA', 'SEPAHIJALA',
+                'SOUTH TRIPURA', 'UNAKOTI', 'WEST TRIPURA'
+            ],
+
+            "Colouron+": [
+                150,
+                *([0] * 41),
+                30,20,30,*([0] * 11),20,
+                *([0] * 60)
+            ],
+
+            "Everglow": [0] * 117,
+
+            "JSW_CC_Liner": [0] * 117,
+
+            "TATA_Durashine": [
+                80,
+                *([0] * 16), 30, *([0] * 9),
+                10,0,20,0,0,0,0,0,0,0,0,20,0,0,0,20,30,50,0,0,0,0,0,0,30,0,0,0,0,30,0,0,
+                0,0,0,20,10,0,0,0,0,0,0,10,0,0,0,0,
+                0,0,5,0,0,0,0,0,0,0,0,
+                30,0,0,0,0,0,0,0,0,0,0,0,
+                5,0,5,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,40
+            ],
+
+            "Tata_Liner": [0] * 117,
+
+            "TATA_Prisma": [0] * 117,
+
+            "Jindal Neucolour+": [0] * 117,
+
+            "APL Apollo Coral": [0] * 117,
+
+            "JSW_Radiance": [0] * 117,
+
+            "Others": [0] * 117
+        }
 
 
     return pd.DataFrame(data)
@@ -576,7 +659,11 @@ state_distributor_configs = {
     },
     "Kerala": {
         'ERNAKULAM': 'Distributor A'
-    }      
+    } 
+    ,
+    "Assam": {
+        'COMBINED_SIKKIM': 'Distributor A'
+    } 
     
 }
 
@@ -715,6 +802,12 @@ state_ranges = {
         (300, '100–300 MT', '#93c5fd'),
         (500, '300–500 MT', '#3b82f6'),
         (float('inf'), '500+ MT', '#1e40af')
+    ],
+     "Assam": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
     ]
 }
 
@@ -887,7 +980,142 @@ cluster_config = {
         'ALAPPUZHA':'Kottayam','KOTTAYAM':'Kottayam','PATHANAMTHITTA':'Kottayam',
         'KOZHIKODE':'Kozhikode','MALAPPURAM':'Kozhikode','WAYANAD':'Kozhikode','KOLLAM':'Thiruvananthapuram',
         'THIRUVANANTHAPURAM':'Thiruvananthapuram','PALAKKAD':'Thrissur','THRISSUR':'Thrissur'
-    }
+    },
+        "Assam": {
+
+        # Sikkim
+        'COMBINED_SIKKIM': 'Sikkim',
+
+        # Arunachal Pradesh
+        'ANJAW': 'Arunachal Pradesh',
+        'CHANGLANG': 'Arunachal Pradesh',
+        'DIBANG VALLEY': 'Arunachal Pradesh',
+        'EAST KAMENG': 'Arunachal Pradesh',
+        'EAST SIANG': 'Arunachal Pradesh',
+        'KAMLE': 'Arunachal Pradesh',
+        'KRA DAADI': 'Arunachal Pradesh',
+        'KURUNG KUMEY': 'Arunachal Pradesh',
+        'LEPARADA': 'Arunachal Pradesh',
+        'LOHIT': 'Arunachal Pradesh',
+        'LONGDING': 'Arunachal Pradesh',
+        'LOWER DIBANG VALLEY': 'Arunachal Pradesh',
+        'LOWER SIANG': 'Arunachal Pradesh',
+        'LOWER SUBANSIRI': 'Arunachal Pradesh',
+        'NAMSAI': 'Arunachal Pradesh',
+        'PAKKE KESSANG': 'Arunachal Pradesh',
+        'PAPUM PARE': 'Arunachal Pradesh',
+        'SHI YOMI': 'Arunachal Pradesh',
+        'SIANG': 'Arunachal Pradesh',
+        'TAWANG': 'Arunachal Pradesh',
+        'TIRAP': 'Arunachal Pradesh',
+        'UPPER SIANG': 'Arunachal Pradesh',
+        'UPPER SUBANSIRI': 'Arunachal Pradesh',
+        'WEST KAMENG': 'Arunachal Pradesh',
+        'WEST SIANG': 'Arunachal Pradesh',
+
+        # Assam
+        'BAKSA': 'Assam',
+        'BARPETA': 'Assam',
+        'BISWANATH': 'Assam',
+        'BONGAIGAON': 'Assam',
+        'CACHAR': 'Assam',
+        'CHARAIDEO': 'Assam',
+        'CHIRANG': 'Assam',
+        'DARRANG': 'Assam',
+        'DHEMAJI': 'Assam',
+        'DHUBRI': 'Assam',
+        'DIBRUGARH': 'Assam',
+        'DIMA HASAO': 'Assam',
+        'GOALPARA': 'Assam',
+        'GOLAGHAT': 'Assam',
+        'HAILAKANDI': 'Assam',
+        'HOJAI': 'Assam',
+        'JORHAT': 'Assam',
+        'KAMRUP': 'Assam',
+        'KAMRUP METRO': 'Assam',
+        'KARBI ANGLONG': 'Assam',
+        'KARIMGANJ': 'Assam',
+        'KOKRAJHAR': 'Assam',
+        'LAKHIMPUR': 'Assam',
+        'MAJULI': 'Assam',
+        'MARIGAON': 'Assam',
+        'NAGAON': 'Assam',
+        'NALBARI': 'Assam',
+        'SIVASAGAR': 'Assam',
+        'SONITPUR': 'Assam',
+        'SOUTH SALMARA MANCACHAR': 'Assam',
+        'TINSUKIA': 'Assam',
+        'UDALGURI': 'Assam',
+        'WEST KARBI ANGLONG': 'Assam',
+
+        # Manipur
+        'BISHNUPUR': 'Manipur',
+        'CHANDEL': 'Manipur',
+        'CHURACHANDPUR': 'Manipur',
+        'IMPHAL EAST': 'Manipur',
+        'IMPHAL WEST': 'Manipur',
+        'JIRIBAM': 'Manipur',
+        'KAKCHING': 'Manipur',
+        'KAMJONG': 'Manipur',
+        'KANGPOKPI': 'Manipur',
+        'NONEY': 'Manipur',
+        'PHERZAWL': 'Manipur',
+        'SENAPATI': 'Manipur',
+        'TAMENGLONG': 'Manipur',
+        'TENGNOUPAL': 'Manipur',
+        'THOUBAL': 'Manipur',
+        'UKHRUL': 'Manipur',
+
+        # Meghalaya
+        'EAST GARO HILLS': 'Meghalaya',
+        'EAST JAINTIA HILLS': 'Meghalaya',
+        'EAST KHASI HILLS': 'Meghalaya',
+        'NORTH GARO HILLS': 'Meghalaya',
+        'RI BHOI': 'Meghalaya',
+        'SOUTH GARO HILLS': 'Meghalaya',
+        'SOUTH WEST GARO HILLS': 'Meghalaya',
+        'SOUTH WEST KHASI HILLS': 'Meghalaya',
+        'WEST GARO HILLS': 'Meghalaya',
+        'WEST JAINTIA HILLS': 'Meghalaya',
+        'WEST KHASI HILLS': 'Meghalaya',
+
+        # Mizoram
+        'AIZAWL': 'Mizoram',
+        'CHAMPHAI': 'Mizoram',
+        'HNAHTHIAL': 'Mizoram',
+        'KHAWZAWL': 'Mizoram',
+        'KOLASIB': 'Mizoram',
+        'LAWNGTLAI': 'Mizoram',
+        'LUNGLEI': 'Mizoram',
+        'MAMIT': 'Mizoram',
+        'SAIHA': 'Mizoram',
+        'SAITUAL': 'Mizoram',
+        'SERCHHIP': 'Mizoram',
+
+        # Nagaland
+        'MON': 'Nagaland',
+        'DIMAPUR': 'Nagaland',
+        'KIPHIRE': 'Nagaland',
+        'KOHIMA': 'Nagaland',
+        'LONGLENG': 'Nagaland',
+        'MOKOKCHUNG': 'Nagaland',
+        'NOKLAK': 'Nagaland',
+        'PEREN': 'Nagaland',
+        'PHEK': 'Nagaland',
+        'TUENSANG': 'Nagaland',
+        'WOKHA': 'Nagaland',
+        'ZUNHEBOTO': 'Nagaland',
+
+        # Tripura
+        'DHALAI': 'Tripura',
+        'GOMATI': 'Tripura',
+        'KHOWAI': 'Tripura',
+        'NORTH TRIPURA': 'Tripura',
+        'SEPAHIJALA': 'Tripura',
+        'SOUTH TRIPURA': 'Tripura',
+        'UNAKOTI': 'Tripura',
+        'WEST TRIPURA': 'Tripura'
+    },
 }
 
 # current_cluster_map = cluster_config.get(target_state, {})
