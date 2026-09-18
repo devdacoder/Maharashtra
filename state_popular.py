@@ -361,6 +361,114 @@ def get_state_data(state_name):
             "AM/NS Optigal 10 yW": [0]*14,
             "Others": [40,5,10,0,10,10,10,0,20,0,40,40,15,15]
         }
+    elif state_name == "Assam":
+        data = {
+            "District": [
+                # Sikkim
+                'COMBINED_SIKKIM',
+                # Arunachal Pradesh
+                'ANJAW', 'CHANGLANG', 'DIBANG VALLEY', 'EAST KAMENG', 'EAST SIANG','KAMLE', 'KRA DAADI', 'KURUNG KUMEY', 'LEPARADA', 'LOHIT',
+                'LONGDING', 'LOWER DIBANG VALLEY', 'LOWER SIANG','LOWER SUBANSIRI', 'NAMSAI', 'PAKKE KESSANG', 'PAPUM PARE',
+                'SHI YOMI', 'SIANG', 'TAWANG', 'TIRAP', 'UPPER SIANG','UPPER SUBANSIRI', 'WEST KAMENG', 'WEST SIANG',
+                # Assam
+                'BAKSA', 'BARPETA', 'BISWANATH', 'BONGAIGAON', 'CACHAR','CHARAIDEO', 'CHIRANG', 'DARRANG', 'DHEMAJI', 'DHUBRI',
+                'DIBRUGARH', 'DIMA HASAO', 'GOALPARA', 'GOLAGHAT','HAILAKANDI', 'HOJAI', 'JORHAT', 'KAMRUP', 'KAMRUP METRO',
+                'KARBI ANGLONG', 'KARIMGANJ', 'KOKRAJHAR', 'LAKHIMPUR','MAJULI', 'MARIGAON', 'NAGAON', 'NALBARI', 'SIVASAGAR',
+                'SONITPUR', 'SOUTH SALMARA MANCACHAR', 'TINSUKIA','UDALGURI', 'WEST KARBI ANGLONG',
+                # Manipur
+                'BISHNUPUR', 'CHANDEL', 'CHURACHANDPUR', 'IMPHAL EAST','IMPHAL WEST', 'JIRIBAM', 'KAKCHING', 'KAMJONG', 'KANGPOKPI',
+                'NONEY', 'PHERZAWL', 'SENAPATI', 'TAMENGLONG', 'TENGNOUPAL','THOUBAL', 'UKHRUL',
+                # Meghalaya
+                'EAST GARO HILLS', 'EAST JAINTIA HILLS', 'EAST KHASI HILLS','NORTH GARO HILLS', 'RI BHOI', 'SOUTH GARO HILLS',
+                'SOUTH WEST GARO HILLS', 'SOUTH WEST KHASI HILLS','WEST GARO HILLS', 'WEST JAINTIA HILLS', 'WEST KHASI HILLS',
+                # Mizoram
+                'AIZAWL', 'CHAMPHAI', 'HNAHTHIAL', 'KHAWZAWL', 'KOLASIB','LAWNGTLAI', 'LUNGLEI', 'MAMIT', 'SAIHA', 'SAITUAL', 'SERCHHIP',
+                # Nagaland
+                'MON', 'DIMAPUR', 'KIPHIRE', 'KOHIMA', 'LONGLENG','MOKOKCHUNG', 'NOKLAK', 'PEREN', 'PHEK', 'TUENSANG',
+                'WOKHA', 'ZUNHEBOTO',
+                # Tripura
+                'DHALAI', 'GOMATI', 'KHOWAI', 'NORTH TRIPURA', 'SEPAHIJALA','SOUTH TRIPURA', 'UNAKOTI', 'WEST TRIPURA'
+            ],
+            "Popular": [150,*([0] * 41),30,20,30,*([0] * 11),20,*([0] * 60)],
+            "Alucolour": [0] * 117,
+            "Infinia": [0] * 117,
+            "APL Apollo Rooftuff": [80,*([0] * 16), 30, *([0] * 9),10,0,20,0,0,0,0,0,0,0,0,20,0,0,0,20,
+                               30,50,0,0,0,0,0,0,30,0,0,0,0,30,0,0,0,0,0,20,10,0,0,0,0,0,0,10,0,0,0,0,
+                               0,0,5,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,5,0,5,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,40],
+            "Jindal Sabrang": [0] * 117,
+            "APL Coral": [0] * 117,
+            "APL Jumbo": [0] * 117,
+            "AM/NS Optigal 10 yW": [0] * 117,
+            "Others": [0] * 117
+        }
+    elif state_name == "Odisha":
+        data = {
+            "District": ['BALANGIR','BARGARH','BOUDH','JHARSUGUDA','NUAPADA','SAMBALPUR','SONEPUR',
+                         'SUNDARGARH','ANUGUL','BALESHWAR','BHADRAK','CUTTACK','DEOGARH','DHENKANAL',
+                         'JAGATSINGHAPUR','JAJAPUR','KENDRAPARA','KENDUJHAR','KHORDHA','MAYURBHANJ',
+                         'NAYAGARH','PURI','GAJAPATI','GANJAM','KALAHANDI','KANDHAMAL','KORAPUT',
+                         'MALKANGIRI','NABARANGPUR','RAYAGADA'],
+            "Popular": [*([0]*22),5,35,10,0,10,5,2,5],
+            "Alucolour": [*([0]*23),7,*([0]*6)],
+            "Infinia": [*([0]*5),20,*([0]*5),50,*([0]*6),50,*([0]*11)],
+            "APL Apollo Rooftuff": [20,0,0,10,0,0,0,0,5,5,0,20,0,5,0,0,0,0,0,0,5,0,0,20,0,0,0,0,0,0],
+            "Jindal Sabrang": [0,50,0,0,0,80,0,0,0,0,0,25,0,15,0,0,25,*([0]*13)],
+            "APL Coral": [0]*30,
+            "APL Jumbo": [0]*30,
+            "AM/NS Optigal 10 yW": [0]*30,
+            "Others": [0]*30
+        }
+    elif state_name == "West Bengal":
+        data = {
+            "District": ['BANKURA','BIRBHUM','HOOGHLY','MEDINIPUR EAST','MEDINIPUR WEST','PASCHIM BARDHAMAN',
+                         'PURBA BARDHAMAN','PURULIA','24 PARAGANAS NORTH','24 PARAGANAS SOUTH','KOLKATA','MURSHIDABAD',
+                         'NADIA','ALIPURDUAR','COOCHBEHAR','DARJEELING','DINAJPUR DAKSHIN','DINAJPUR UTTAR','JALPAIGURI','KALIMPONG',
+                         'MALDAH'],
+            "Popular": [0,0,20,10,10,10,20,0,15,10,10,0,10,85,75,35,20,35,60,25,10],
+            "Alucolour": [0]*21,
+            "Infinia": [0]*21,
+            "APL Apollo Rooftuff": [50,60,150,50,40,60,40,50,120,80,60,80,60,40,30,20,20,20,30,20,25],
+            "Jindal Sabrang": [0]*21,
+            "APL Coral": [0,0,50,0,0,0,90,0,20,20,0,0,20,*([0]*8)],
+            "APL Jumbo": [0]*21,
+            "AM/NS Optigal 10 yW": [0]*21,
+            "Others": [0]*21
+        }
+    elif state_name == "Jharkhand":
+        data = {
+            "District": ['RANCHI','RAMGARH','HAZARIBAGH','KHUNTI','PALAMU','GARHWA','LOHARDAGA',
+                         'LATEHAR','KODERMA','GIRIDIH','GUMLA','SIMDEGA','CHATRA','EAST SINGHBHUM',
+                         'SARAIKELA-KHARSAWAN','WEST SINGHBHUM','DHANBAD','BOKARO','JAMTARA','DEOGHAR',
+                         'DUMKA','PAKUR','SAHIBGANJ','GODDA'],
+            "Popular": [0]*24,
+            "Alucolour": [0]*24,
+            "Infinia": [0]*24,
+            "APL Apollo Rooftuff": [20,10,10,0,0,0,0,0,0,15,0,0,0,20,20,10,10,10,5,10,5,0,5,0],
+            "Jindal Sabrang": [10,*([0]*12),10,20,0,10,*([0]*7)],
+            "APL Coral": [0]*24,
+            "APL Jumbo": [0]*24,
+            "AM/NS Optigal 10 yW": [0]*24,
+            "Others": [0]*24
+        }
+    elif state_name == "Bihar":
+        data = {
+            "District": ['BEGUSARAI','DARBHANGA','MADHUBANI','SAMASTIPUR','ARWAL','AURANGABAD',
+                         'GAYA','JAHANABAD','NAWADA','BANKA','BHAGALPUR','JAMUI','KHAGARIA','LAKHISARAI',
+                         'MUNGER','SHEIKHPURA','MUZAFFARPUR','PASHCHIMI CHAMPARAN','PURBI CHAMPARAN',
+                         'SHEOHAR','SITAMARHI','VAISHALI','BHOJPUR','BUXAR','KAIMUR','NALANDA','PATNA',
+                         'ROHTAS','ARARIA','KATIHAR','KISHANGANJ','PURNIA','MADHEPURA','SAHARSA',
+                         'SUPAUL','GOPALGANJ','SARAN','SIWAN'],
+            "Popular": [0]*38,
+            "Alucolour": [0]*38,
+            "Infinia": [0]*38,
+            "APL Apollo Rooftuff": [10,10,5,10,10,5,0,0,0,0,15,0,0,0,0,0,20,5,5,0,
+                               5,5,10,10,0,10,50,10,20,0,20,70,0,0,5,5,5,5],
+            "Jindal Sabrang": [50,*([0]*37)],
+            "APL Coral": [0]*38,
+            "APL Jumbo": [0]*38,
+            "AM/NS Optigal 10 yW": [0]*38,
+            "Others": [0]*38
+        }
     
     
     return pd.DataFrame(data)
@@ -369,7 +477,72 @@ def get_state_data(state_name):
 def get_geojson(state_name):
     url = "https://raw.githubusercontent.com/datta07/INDIAN-SHAPEFILES/master/INDIA/INDIA_DISTRICTS.geojson"
     india = gpd.read_file(url)
-    state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
+    
+    if state_name == "Assam":
+        east_states = [
+            "Assam",
+            "Arunachal Pradesh",
+            "Sikkim",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Tripura"
+        ]
+
+        state_gdf = india[
+                india['state'].str.upper().isin([s.upper() for s in east_states])
+            ].copy()
+        
+        state_gdf['state'] = "Assam"
+
+    else:
+        state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
+
+    # ---------------------------------------------------------
+    # COMBINE ALL SIKKIM DISTRICTS INTO ONE DISTRICT
+    # ---------------------------------------------------------
+    
+    if state_name == "Assam":
+    
+        sikkim_mask = state_gdf['state'].str.upper() == "ASSAM"
+        
+        # Since state was changed to Assam above, identify Sikkim
+        # from the original India GeoJSON instead
+        sikkim = india[
+            india['state'].str.upper() == "SIKKIM"
+        ].copy()
+    
+        if not sikkim.empty:
+            # Combine all Sikkim district geometries
+            combined_sikkim_geometry = sikkim.geometry.union_all()
+    
+            # Create one row for Combined Sikkim
+            combined_sikkim = gpd.GeoDataFrame(
+                {
+                    'state': ['Assam'],
+                    'district': ['COMBINED_SIKKIM'],
+                    'geometry': [combined_sikkim_geometry]
+                },
+                crs=india.crs
+            )
+    
+            # Remove individual Sikkim districts from state_gdf
+            state_gdf = state_gdf[
+                ~(
+                    state_gdf.geometry.apply(
+                        lambda geom: any(
+                            geom.equals(s) for s in sikkim.geometry
+                        )
+                    )
+                )
+            ]
+    
+            # Add combined Sikkim
+            state_gdf = pd.concat(
+                [state_gdf, combined_sikkim],
+                ignore_index=True
+            )
     
     # Unified naming fixes
     state_gdf['district'] = state_gdf['district'].str.upper().replace({
@@ -430,7 +603,55 @@ def get_geojson(state_name):
         'TIRUPPUR': 'TIRUPUR',
         'TIRUVANNAMALAI': 'TIRUVANAMALAI',
         'TIRUCHIRAPPALLI': 'TRICHY',
-        'THOOTHUKUDI': 'TUTICORIN'
+        'THOOTHUKUDI': 'TUTICORIN',
+        'DARANG':'DARRANG',
+        'KAMRUP RURAL':'KAMRUP',
+        'SIBSAGAR':'SIVASAGAR',
+        '>NJ>W': 'ANJAW',
+        'CH>NGL>NG': 'CHANGLANG',
+        'DIB>NG VALLEY': 'DIBANG VALLEY',
+        'LEPA RADA': 'LEPARADA',
+        'LOWER DIB>NG VALLEY': 'LOWER DIBANG VALLEY',
+        'PAPUMPARE': 'PAPUM PARE',
+        'TIR>P': 'TIRAP',
+        'KAMJANG': 'KAMJONG',
+        'EAST G>RO HILLS': 'EAST GARO HILLS',
+        'EAST KH>SI HILLS': 'EAST KHASI HILLS',
+        'EASTERN WEST KHASI HILLS': '',
+        'NORTH G>RO HILLS': 'NORTH GARO HILLS',
+        'RI-BHOI': 'RI BHOI',
+        'SOUTH G>RO HILLS': 'SOUTH GARO HILLS',
+        'SOUTH WEST G>RO HILLS': 'SOUTH WEST GARO HILLS',
+        'SOUTH WEST KH>SI HILLS': 'SOUTH WEST KHASI HILLS',
+        'WEST G>RO HILLS': 'WEST GARO HILLS',
+        'GOMTI': 'GOMATI',
+        'BALASORE': 'BALESHWAR',
+        'JAGATSINGHPUR': 'JAGATSINGHAPUR',
+        'KEONJHAR (KENDUJHAR)': 'KENDUJHAR',
+        'NABARANGAPUR': 'NABARANGPUR',
+        'NUAPARHA': 'NUAPADA',
+        'RAYAGARHA': 'RAYAGADA',
+        'SUBARNAPUR': 'SONEPUR',
+        '>L|PUR DU>R': 'ALIPURDUAR',
+        'B>NKURA': 'BANKURA',
+        'B|RBH@M': 'BIRBHUM',
+        'D>RJILING': 'DARJEELING',
+        'DAKSHIN DIN>JPUR': 'DINAJPUR DAKSHIN',
+        'HUGLI': 'HOOGHLY',
+        'JALP>IGURI': 'JALPAIGURI',
+        'K>LIMPONG': 'KALIMPONG',
+        'KOCH BIH>R': 'COOCHBEHAR',
+        'KOLK>TA': 'KOLKATA',
+        'M>LDAH': 'MALDAH',
+        'MURSHID>B>D': 'MURSHIDABAD',
+        'NORTH TWENTY-FOUR PARGANAS': '24 PARAGANAS NORTH',
+        'PASCHIM BARDDHAM>N': 'PASCHIM BARDHAMAN',
+        'PASCHIM MEDIN|PUR': 'MEDINIPUR WEST',
+        'PURBA BARDDHAM>N': 'PURBA BARDHAMAN',
+        'PURBA MEDIN|PUR': 'MEDINIPUR EAST',
+        'PURULIYA': 'PURULIA',
+        'SOUTH 24PARGANAS': '24 PARAGANAS SOUTH',
+        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -445,7 +666,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala","Assam","Odisha","West Bengal","Jharkhand","Bihar"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Popular", "Alucolour", 
                                                             "Infinia", "APL Apollo Rooftuff", "Jindal Sabrang","APL Coral","APL Jumbo",
                                                             "AM/NS Optigal 10 yW", "Others"])
@@ -556,7 +777,22 @@ state_distributor_configs = {
     },
     "Kerala": {
         'ERNAKULAM': 'Distributor A'
-    }          
+    },
+    "Assam": {
+        'COMBINED_SIKKIM': 'Distributor A'
+    },
+    "Odisha": {
+        'BARGARH': 'Distributor A'
+    },
+    "West Bengal": {
+        'ALIPURDUAR': 'Distributor A'
+    },
+    "Jharkhand": {
+        'RANCHI': 'Distributor A'
+    },
+    "Bihar": {
+        'BEGUSARAI': 'Distributor A'
+    }           
 }
 
 # 2. Get the specific lookup for the selected state
@@ -694,6 +930,36 @@ state_ranges = {
         (300, '100–300 MT', '#93c5fd'),
         (500, '300–500 MT', '#3b82f6'),
         (float('inf'), '500+ MT', '#1e40af')
+    ],
+     "Assam": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
+    ],
+     "Odisha": [
+        (10, '0–10 MT', '#dbeafe'),
+        (50, '10–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "West Bengal": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
+    ],
+    "Jharkhand": [
+        (10, '0–10 MT', '#dbeafe'),
+        (30, '10–30 MT', '#93c5fd'),
+        (50, '30–50 MT', '#3b82f6'),
+        (float('inf'), '50+ MT', '#1e40af')
+    ],
+    "Bihar": [
+        (10, '0–10 MT', '#dbeafe'),
+        (30, '10–30 MT', '#93c5fd'),
+        (50, '30–50 MT', '#3b82f6'),
+        (float('inf'), '50+ MT', '#1e40af')
     ]
 }
 
@@ -866,6 +1132,77 @@ cluster_config = {
         'ALAPPUZHA':'Kottayam','KOTTAYAM':'Kottayam','PATHANAMTHITTA':'Kottayam',
         'KOZHIKODE':'Kozhikode','MALAPPURAM':'Kozhikode','WAYANAD':'Kozhikode','KOLLAM':'Thiruvananthapuram',
         'THIRUVANANTHAPURAM':'Thiruvananthapuram','PALAKKAD':'Thrissur','THRISSUR':'Thrissur'
+    },
+    "Assam": {
+        # Sikkim
+        'COMBINED_SIKKIM': 'Sikkim',
+        # Arunachal Pradesh
+        'ANJAW': 'Arunachal Pradesh','CHANGLANG': 'Arunachal Pradesh','DIBANG VALLEY': 'Arunachal Pradesh','EAST KAMENG': 'Arunachal Pradesh',
+        'EAST SIANG': 'Arunachal Pradesh','KAMLE': 'Arunachal Pradesh','KRA DAADI': 'Arunachal Pradesh','KURUNG KUMEY': 'Arunachal Pradesh',
+        'LEPARADA': 'Arunachal Pradesh','LOHIT': 'Arunachal Pradesh','LONGDING': 'Arunachal Pradesh','LOWER DIBANG VALLEY': 'Arunachal Pradesh',
+        'LOWER SIANG': 'Arunachal Pradesh','LOWER SUBANSIRI': 'Arunachal Pradesh','NAMSAI': 'Arunachal Pradesh',
+        'PAKKE KESSANG': 'Arunachal Pradesh','PAPUM PARE': 'Arunachal Pradesh','SHI YOMI': 'Arunachal Pradesh','SIANG': 'Arunachal Pradesh',
+        'TAWANG': 'Arunachal Pradesh','TIRAP': 'Arunachal Pradesh','UPPER SIANG': 'Arunachal Pradesh',
+        'UPPER SUBANSIRI': 'Arunachal Pradesh','WEST KAMENG': 'Arunachal Pradesh','WEST SIANG': 'Arunachal Pradesh',
+        # Assam
+        'BAKSA': 'Assam','BARPETA': 'Assam','BISWANATH': 'Assam','BONGAIGAON': 'Assam','CACHAR': 'Assam',
+        'CHARAIDEO': 'Assam','CHIRANG': 'Assam','DARRANG': 'Assam','DHEMAJI': 'Assam','DHUBRI': 'Assam',
+        'DIBRUGARH': 'Assam','DIMA HASAO': 'Assam','GOALPARA': 'Assam','GOLAGHAT': 'Assam','HAILAKANDI': 'Assam',
+        'HOJAI': 'Assam','JORHAT': 'Assam','KAMRUP': 'Assam','KAMRUP METRO': 'Assam','KARBI ANGLONG': 'Assam',
+        'KARIMGANJ': 'Assam','KOKRAJHAR': 'Assam','LAKHIMPUR': 'Assam','MAJULI': 'Assam','MARIGAON': 'Assam',
+        'NAGAON': 'Assam','NALBARI': 'Assam','SIVASAGAR': 'Assam','SONITPUR': 'Assam','SOUTH SALMARA MANCACHAR': 'Assam',
+        'TINSUKIA': 'Assam','UDALGURI': 'Assam','WEST KARBI ANGLONG': 'Assam',
+        # Manipur
+        'BISHNUPUR': 'Manipur','CHANDEL': 'Manipur','CHURACHANDPUR': 'Manipur','IMPHAL EAST': 'Manipur','IMPHAL WEST': 'Manipur',
+            'JIRIBAM': 'Manipur','KAKCHING': 'Manipur','KAMJONG': 'Manipur','KANGPOKPI': 'Manipur','NONEY': 'Manipur','PHERZAWL': 'Manipur',
+            'SENAPATI': 'Manipur','TAMENGLONG': 'Manipur','TENGNOUPAL': 'Manipur','THOUBAL': 'Manipur','UKHRUL': 'Manipur',
+        # Meghalaya
+        'EAST GARO HILLS': 'Meghalaya','EAST JAINTIA HILLS': 'Meghalaya','EAST KHASI HILLS': 'Meghalaya','NORTH GARO HILLS': 'Meghalaya',
+        'RI BHOI': 'Meghalaya','SOUTH GARO HILLS': 'Meghalaya','SOUTH WEST GARO HILLS': 'Meghalaya','SOUTH WEST KHASI HILLS': 'Meghalaya',
+        'WEST GARO HILLS': 'Meghalaya','WEST JAINTIA HILLS': 'Meghalaya','WEST KHASI HILLS': 'Meghalaya',
+        # Mizoram
+        'AIZAWL': 'Mizoram','CHAMPHAI': 'Mizoram','HNAHTHIAL': 'Mizoram','KHAWZAWL': 'Mizoram','KOLASIB': 'Mizoram',
+        'LAWNGTLAI': 'Mizoram','LUNGLEI': 'Mizoram','MAMIT': 'Mizoram','SAIHA': 'Mizoram','SAITUAL': 'Mizoram','SERCHHIP': 'Mizoram',
+        # Nagaland
+        'MON': 'Nagaland','DIMAPUR': 'Nagaland','KIPHIRE': 'Nagaland','KOHIMA': 'Nagaland','LONGLENG': 'Nagaland','MOKOKCHUNG': 'Nagaland',
+        'NOKLAK': 'Nagaland','PEREN': 'Nagaland','PHEK': 'Nagaland','TUENSANG': 'Nagaland','WOKHA': 'Nagaland','ZUNHEBOTO': 'Nagaland',
+        # Tripura
+        'DHALAI': 'Tripura','GOMATI': 'Tripura','KHOWAI': 'Tripura','NORTH TRIPURA': 'Tripura','SEPAHIJALA': 'Tripura',
+        'SOUTH TRIPURA': 'Tripura','UNAKOTI': 'Tripura','WEST TRIPURA': 'Tripura'
+    },
+    "Odisha": {
+        'BALANGIR':'Bargarh','BARGARH':'Bargarh','BOUDH':'Bargarh','JHARSUGUDA':'Bargarh','NUAPADA':'Bargarh',
+        'SAMBALPUR':'Bargarh','SONEPUR':'Bargarh','SUNDARGARH':'Bargarh','ANUGUL':'Cuttack',
+        'BALESHWAR':'Cuttack','BHADRAK':'Cuttack','CUTTACK':'Cuttack','DEOGARH':'Cuttack','DHENKANAL':'Cuttack',
+        'JAGATSINGHAPUR':'Cuttack','JAJAPUR':'Cuttack','KENDRAPARA':'Cuttack','KENDUJHAR':'Cuttack','KHORDHA':'Cuttack',
+        'MAYURBHANJ':'Cuttack','NAYAGARH':'Cuttack','PURI':'Cuttack','GAJAPATI':'Ganjam','GANJAM':'Ganjam',
+        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'
+    },
+    "West Bengal": {
+        'BANKURA':'Bardhaman','BIRBHUM':'Bardhaman','HOOGHLY':'Bardhaman','MEDINIPUR EAST':'Bardhaman',
+        'MEDINIPUR WEST':'Bardhaman','PASCHIM BARDHAMAN':'Bardhaman','PURBA BARDHAMAN':'Bardhaman',
+        'PURULIA':'Bardhaman','24 PARAGANAS NORTH':'Kolkata','24 PARAGANAS SOUTH':'Kolkata',
+        'KOLKATA':'Kolkata','MURSHIDABAD':'Kolkata','NADIA':'Kolkata','ALIPURDUAR':'Siliguri',
+        'COOCHBEHAR':'Siliguri','DARJEELING':'Siliguri','DINAJPUR DAKSHIN':'Siliguri',
+        'DINAJPUR UTTAR':'Siliguri','JALPAIGURI':'Siliguri','KALIMPONG':'Siliguri','MALDAH':'Siliguri'   
+    },
+    "Jharkhand": {
+        'RANCHI':'Ranchi','RAMGARH':'Ranchi','HAZARIBAGH':'Ranchi','KHUNTI':'Ranchi','PALAMU':'Ranchi',
+        'GARHWA':'Ranchi','LOHARDAGA':'Ranchi','LATEHAR':'Ranchi','KODERMA':'Ranchi',
+        'GIRIDIH':'Ranchi','GUMLA':'Ranchi','SIMDEGA':'Ranchi','CHATRA':'Ranchi',
+        'EAST SINGHBHUM':'Singhbhum','SARAIKELA-KHARSAWAN':'Singhbhum','WEST SINGHBHUM':'Singhbhum',
+        'DHANBAD':'Dhanbad','BOKARO':'Dhanbad','JAMTARA':'Dhanbad','DEOGHAR':'Dhanbad',
+        'DUMKA':'Dhanbad','PAKUR':'Dhanbad','SAHIBGANJ':'Dhanbad','GODDA':'Dhanbad'
+    },
+    "Bihar": {
+        'BEGUSARAI':'Darbhanga','DARBHANGA':'Darbhanga','MADHUBANI':'Darbhanga','SAMASTIPUR':'Darbhanga',
+        'ARWAL':'Gaya','AURANGABAD':'Gaya','GAYA':'Gaya','JAHANABAD':'Gaya','NAWADA':'Gaya',
+        'BANKA':'Munger','BHAGALPUR':'Munger','JAMUI':'Munger','KHAGARIA':'Munger','LAKHISARAI':'Munger',
+        'MUNGER':'Munger','SHEIKHPURA':'Munger','MUZAFFARPUR':'Muzaffarpur','PASHCHIMI CHAMPARAN':'Muzaffarpur',
+        'PURBI CHAMPARAN':'Muzaffarpur','SHEOHAR':'Muzaffarpur','SITAMARHI':'Muzaffarpur','VAISHALI':'Muzaffarpur',
+        'BHOJPUR':'Patna','BUXAR':'Patna','KAIMUR':'Patna','NALANDA':'Patna','PATNA':'Patna','ROHTAS':'Patna',
+        'ARARIA':'Purnia','KATIHAR':'Purnia','KISHANGANJ':'Purnia','PURNIA':'Purnia','MADHEPURA':'Saharsa',
+        'SAHARSA':'Saharsa','SUPAUL':'Saharsa','GOPALGANJ':'Saran','SARAN':'Saran','SIWAN':'Saran'
     }
 }
 
@@ -932,55 +1269,160 @@ for _, row in clusters.iterrows():
 
 # C. LABELS AND BOXES
 annotations = []
-for _, row in merged.iterrows():
-    if row.geometry:
-        centroid = row.geometry.centroid
-        # Robust hub check
-        is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
-        # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
-        mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
-        share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
-        # 1. District Name
-        annotations.append(dict(
-            x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
-            text=row['district'].upper() if is_hub else row['district'].title(),
-            showarrow=False,
-            font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
-            xref="x", yref="y"
-        ))
-        state_y_offsets = {
-            "Maharashtra": -0.15,
-            "Gujarat": -0.075,
-            "Punjab": 0,
-            "Jammu and Kashmir": 0,
-            "Uttar Pradesh": -0.07,
-            "Haryana":-0.02,
-            "Himachal Pradesh":0,
-            "Uttarakhand":0,
-            "Madhya Pradesh":-0.12,
-            "Chhattisgarh":-0.14,
-            "Rajasthan":-0.14,
-            "Andhra Pradesh":-0.14,
-            "Telangana":-0.05,
-            "Karnataka":-0.15,
-            "Goa":0,
-            "Tamil Nadu":-0.10,
-            "Kerala":-0.06
-        }
-        # Get the offset for the current state, default to -0.1 if not found
-        current_offset = state_y_offsets.get(target_state, -0.1)
-        
-        # 2. Share % Box
-        annotations.append(dict(
-            x=centroid.x, 
-            y=centroid.y + current_offset, # Using the state-specific offset
-            text=f"<b>{share_val}</b>",
-            showarrow=False,
-            font=dict(size=10, color="white"),
-            bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-            bordercolor="black", borderwidth=0.5, borderpad=1,
-            xref="x", yref="y"
-        ))
+if target_state=="Assam":
+    for _, row in merged.iterrows():
+        if row.geometry:
+            centroid = row.geometry.centroid
+            # Robust hub check
+            is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
+            # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
+            mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
+            # share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
+            share_val = (
+                f"<b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT"
+                if pd.notna(row[share_col_name])
+                else f"0%<br>{mkt_size_val} MT"
+            )
+            # 1. District Name
+            annotations.append(dict(
+                x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
+                text=row['district'].upper() if is_hub else row['district'].title(),
+                showarrow=False,
+                # font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+                font=dict(
+                    size=13 if is_hub and target_state != "Assam"
+                         else 10 if target_state != "Assam"
+                         else 7,
+                    color="black",
+                    family="Arial Black" if is_hub else "Arial"
+                ),
+                xref="x", yref="y"
+            ))
+            state_y_offsets = {
+                "Maharashtra": -0.15,
+                "Gujarat": -0.075,
+                "Punjab": 0,
+                "Jammu and Kashmir": 0,
+                "Uttar Pradesh": -0.07,
+                "Haryana":-0.02,
+                "Himachal Pradesh":0,
+                "Uttarakhand":0,
+                "Madhya Pradesh":-0.12,
+                "Chhattisgarh":-0.14,
+                "Rajasthan":-0.14,
+                "Andhra Pradesh":-0.14,
+                "Telangana":-0.05,
+                "Karnataka":-0.15,
+                "Goa":0,
+                "Tamil Nadu":-0.10,
+                "Kerala":-0.06,
+                "Assam":-0.06
+            }
+            # Get the offset for the current state, default to -0.1 if not found
+            current_offset = state_y_offsets.get(target_state, -0.1)
+    
+            district_area = row.geometry.area
+    
+            if district_area < 0.2:
+                share_font_size = 4
+            elif district_area < 0.30:
+                share_font_size = 5
+            elif district_area < 0.40:
+                share_font_size = 6
+            elif district_area < 0.50:
+                share_font_size = 7
+            elif district_area < 0.60:
+                share_font_size = 8
+            elif district_area < 0.70:
+                share_font_size = 9
+            elif district_area < 0.80:
+                share_font_size = 9
+            else:
+                share_font_size = 10
+    
+            annotations.append(dict(
+                x=centroid.x,
+                y=centroid.y + current_offset,
+                text=share_val,
+                showarrow=False,
+            
+                font=dict(
+                    size=share_font_size,
+                    color="white",
+                    family="Arial"
+                ),
+            
+                bgcolor=(
+                    row['share_color']
+                    if pd.notna(row['share_color'])
+                    else 'gray'
+                ),
+            
+                bordercolor="black",
+                borderwidth=0.5,
+                borderpad=0.5,
+            
+                xref="x",
+                yref="y"
+            ))
+else:
+    for _, row in merged.iterrows():
+        if row.geometry:
+            centroid = row.geometry.centroid
+            # Robust hub check
+            is_hub = str(row['district_upper']).upper() == str(row['cluster']).upper()
+            # share_val = f"{int(row[share_col_name])}%" if pd.notna(row[share_col_name]) else "0%"
+            mkt_size_val = int(row['Market_Size']) if pd.notna(row['Market_Size']) and not np.isnan(row['Market_Size']) else 0
+            share_val = f"<span style='font-size:10px;'><b>{int(row[share_col_name])}%</b><br>{mkt_size_val} MT</span>" if pd.notna(row[share_col_name]) else f"<span style='font-size:10px;'>0%<br>{mkt_size_val} MT</span>"
+            # 1. District Name
+            annotations.append(dict(
+                x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
+                text=row['district'].upper() if is_hub else row['district'].title(),
+                showarrow=False,
+                font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+                xref="x", yref="y"
+            ))
+            state_y_offsets = {
+                "Maharashtra": -0.15,
+                "Gujarat": -0.075,
+                "Punjab": 0,
+                "Jammu and Kashmir": 0,
+                "Uttar Pradesh": -0.07,
+                "Haryana":-0.02,
+                "Himachal Pradesh":0,
+                "Uttarakhand":0,
+                "Madhya Pradesh":-0.12,
+                "Chhattisgarh":-0.14,
+                "Rajasthan":-0.14,
+                "Andhra Pradesh":-0.14,
+                "Telangana":-0.05,
+                "Karnataka":-0.15,
+                "Goa":0,
+                "Tamil Nadu":-0.10,
+                "Kerala":-0.06,
+                "Assam":-0.06,
+                "Odisha":-0.1,
+                "West Bengal":-0.1,
+                "Jharkhand":-0.02,
+                "Bihar":-0.03
+            }
+            # Get the offset for the current state, default to -0.1 if not found
+            current_offset = state_y_offsets.get(target_state, -0.1)
+            
+            # 2. Share % Box
+            annotations.append(dict(
+                x=centroid.x, 
+                y=centroid.y + current_offset, # Using the state-specific offset
+                text=f"<b>{share_val}</b>",
+                showarrow=False,
+                font=dict(
+                    size=5 if target_state == "Assam" else 10,
+                    color="white"),
+                bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
+                bordercolor="black", borderwidth=0.5, borderpad=1,
+                xref="x", yref="y"
+            ))
+
 
 # Manual Fix for Maharashtra only
 if target_state == "Punjab":
@@ -1039,7 +1481,75 @@ if target_state == "Tamil Nadu":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
+if target_state == "Assam":
+    annotations.append(dict(
+        x=91, y=27, text="<b>ASSAM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=89.3, y=27.5, text="<b>SIKKIM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=92.1, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=95.2, y=24.8, text="<b>MANIPUR</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=91.3, y=25, text="<b>MEGHALAYA</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=93.9, y=23.4, text="<b>MIZORAM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=95.7, y=26.1, text="<b>NAGALAND</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=90.7, y=24.0, text="<b>TRIPURA</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "West Bengal":
+    annotations.append(dict(
+        x=87, y=24.3, text="<b>BARDHAMAN</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=87.6, y=26.7, text="<b>SILIGURI</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Jharkhand":
+    annotations.append(dict(
+        x=87, y=22.7, text="<b>SINGHBHUM</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
 
 # --- TOTAL MARKET BOX (Merged into annotations to prevent error) ---
 total_mkt_size = df['Market_Size'].sum()
@@ -1096,7 +1606,15 @@ fig.update_layout(
         title_font_family="Arial Black",
         itemsizing='constant')
 )
-
+if target_state == "Assam":
+    fig.update_xaxes(
+        range=[88.5, 96],
+        showgrid=False
+    )
+    fig.update_yaxes(
+        range=[22, 29.5],
+        showgrid=False
+    )
 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 # # ---------------------------------------------------------
 # # 5. TABLES (Unchanged)
