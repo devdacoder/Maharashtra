@@ -1140,35 +1140,21 @@ if target_state=="Assam":
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
-            
-            # # 2. Share % Box
-            # annotations.append(dict(
-            #     x=centroid.x, 
-            #     y=centroid.y + current_offset, # Using the state-specific offset
-            #     text=f"<b>{share_val}</b>",
-            #     showarrow=False,
-            #     font=dict(
-            #         size=5 if target_state == "Assam" else 10,
-            #         color="white"),
-            #     bgcolor=row['share_color'] if pd.notna(row['share_color']) else 'gray',
-            #     bordercolor="black", borderwidth=0.5, borderpad=1,
-            #     xref="x", yref="y"
-            # ))
     
             district_area = row.geometry.area
     
             if district_area < 0.2:
-                share_font_size = 3
-            elif district_area < 0.30:
                 share_font_size = 4
-            elif district_area < 0.40:
+            elif district_area < 0.30:
                 share_font_size = 5
-            elif district_area < 0.50:
+            elif district_area < 0.40:
                 share_font_size = 6
-            elif district_area < 0.60:
+            elif district_area < 0.50:
                 share_font_size = 7
-            elif district_area < 0.70:
+            elif district_area < 0.60:
                 share_font_size = 8
+            elif district_area < 0.70:
+                share_font_size = 9
             elif district_area < 0.80:
                 share_font_size = 9
             else:
