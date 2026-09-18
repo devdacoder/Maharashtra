@@ -369,7 +369,27 @@ def get_state_data(state_name):
 def get_geojson(state_name):
     url = "https://raw.githubusercontent.com/datta07/INDIAN-SHAPEFILES/master/INDIA/INDIA_DISTRICTS.geojson"
     india = gpd.read_file(url)
-    state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
+
+    if state_name == "Assam":
+        east_states = [
+            "Assam",
+            "Arunachal Pradesh",
+            "Sikkim",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Tripura"
+        ]
+
+        state_gdf = india[
+                india['state'].str.upper().isin([s.upper() for s in east_states])
+            ].copy()
+        
+        state_gdf['state'] = "Assam"
+
+    else:
+        state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
     
     # Unified naming fixes
     state_gdf['district'] = state_gdf['district'].str.upper().replace({
@@ -446,7 +466,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala","Assam"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
