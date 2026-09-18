@@ -409,7 +409,7 @@ def get_state_data(state_name):
                          'JAGATSINGHAPUR','JAJAPUR','KENDRAPARA','KENDUJHAR','KHORDHA','MAYURBHANJ',
                          'NAYAGARH','PURI','GAJAPATI','GANJAM','KALAHANDI','KANDHAMAL','KORAPUT',
                          'MALKANGIRI','NABARANGPUR','RAYAGADA'],
-            "Colouron+": [*([0]*22),5,35,10,0,10,5,2,5)
+            "Colouron+": [*([0]*22),5,35,10,0,10,5,2,5],
             "Everglow": [*([0]*23),2,*([0]*6)],
             "JSW_CC_Liner": [*([0]*5),20,*([0]*5),50,*([0]*6),50,*([0]*11)],
             "TATA_Durashine": [20,0,0,10,0,0,0,0,5,5,0,20,0,5,0,0,0,0,0,0,5,0,0,20,0,0,0,0,0,0],
