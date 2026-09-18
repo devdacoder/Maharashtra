@@ -431,7 +431,7 @@ def get_state_data(state_name):
             "JSW_CC_Liner": [0]*21,
             "TATA_Durashine": [50,60,150,50,40,60,40,50,120,80,60,80,60,40,30,20,20,20,30,20,25],
             "Tata_Liner": [0]*21,
-            "TATA_Prisma": [0,0,50,0,0,0,9,0,20,20,0,0,20,*([0]*8)],
+            "TATA_Prisma": [0,0,50,0,0,0,90,0,20,20,0,0,20,*([0]*8)],
             "Jindal Neucolour+": [0]*21,
             "APL Apollo Coral": [0]*21,
             "JSW_Radiance": [0]*21,
@@ -1460,13 +1460,13 @@ if target_state == "Assam":
     ))
 if target_state == "West Bengal":
     annotations.append(dict(
-        x=87.9, y=23.3, text="<b>BARDHAMAN</b>",
+        x=87, y=23.9, text="<b>BARDHAMAN</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
     annotations.append(dict(
-        x=88.4, y=26.7, text="<b>SILIGURI</b>",
+        x=87.8, y=26.7, text="<b>SILIGURI</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
