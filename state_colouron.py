@@ -1110,8 +1110,8 @@ for _, row in merged.iterrows():
             # font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
             font=dict(
                 size=13 if is_hub and target_state != "Assam"
-                     else 6 if target_state != "Assam"
-                     else 10,
+                     else 10 if target_state != "Assam"
+                     else 6,
                 color="black",
                 family="Arial Black" if is_hub else "Arial"
             ),
