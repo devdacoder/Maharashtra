@@ -1192,7 +1192,14 @@ for _, row in merged.iterrows():
             x=centroid.x, y=centroid.y + (0.15 if is_hub else 0.1),
             text=row['district'].upper() if is_hub else row['district'].title(),
             showarrow=False,
-            font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+            # font=dict(size=13 if is_hub else 10, color="black", family="Arial Black" if is_hub else "Arial"),
+            font=dict(
+                size=13 if is_hub and target_state != "Assam"
+                     else 9 if target_state != "Assam"
+                     else 11,
+                color="black",
+                family="Arial Black" if is_hub else "Arial"
+            ),
             xref="x", yref="y"
         ))
         state_y_offsets = {
@@ -1212,7 +1219,8 @@ for _, row in merged.iterrows():
             "Karnataka":-0.15,
             "Goa":0,
             "Tamil Nadu":-0.10,
-            "Kerala":-0.06
+            "Kerala":-0.06,
+            "Assam":=-0.06
         }
         # Get the offset for the current state, default to -0.1 if not found
         current_offset = state_y_offsets.get(target_state, -0.1)
