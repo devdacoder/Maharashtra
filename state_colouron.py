@@ -1485,11 +1485,11 @@ fig.update_layout(
 )
 if target_state == "Assam":
     fig.update_xaxes(
-        range=[88.0, 96.5],
+        range=[88.5, 96],
         showgrid=False
     )
     fig.update_yaxes(
-        range=[21.5, 30.0],
+        range=[22, 29.5],
         showgrid=False
     )
 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
