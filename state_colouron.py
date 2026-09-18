@@ -536,7 +536,25 @@ def get_geojson(state_name):
         'THOOTHUKUDI': 'TUTICORIN',
         'DARANG':'DARRANG',
         'KAMRUP RURAL':'KAMRUP',
-        'SIBSAGAR':'SIVASAGAR'
+        'SIBSAGAR':'SIVASAGAR',
+        '>NJ>W': 'ANJAW',
+        'CH>NGL>NG': 'CHANGLANG',
+        'DIB>NG VALLEY': 'DIBANG VALLEY',
+        'LEPA RADA': 'LEPARADA',
+        'LOWER DIB>NG VALLEY': 'LOWER DIBANG VALLEY',
+        'PAPUMPARE': 'PAPUM PARE',
+        'TIR>P': 'TIRAP',
+        'KAMJANG': 'KAMJONG',
+        'EAST G>RO HILLS': 'EAST GARO HILLS',
+        'EAST KH>SI HILLS': 'EAST KHASI HILLS',
+        'EASTERN WEST KHASI HILLS': '',
+        'NORTH G>RO HILLS': 'NORTH GARO HILLS',
+        'RI-BHOI': 'RI BHOI',
+        'SOUTH G>RO HILLS': 'SOUTH GARO HILLS',
+        'SOUTH WEST G>RO HILLS': 'SOUTH WEST GARO HILLS',
+        'SOUTH WEST KH>SI HILLS': 'SOUTH WEST KHASI HILLS',
+        'WEST G>RO HILLS': 'WEST GARO HILLS',
+        'GOMTI': 'GOMATI'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
