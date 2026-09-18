@@ -1080,8 +1080,8 @@ cluster_config = {
         'BALESHWAR':'Cuttack','BHADRAK':'Cuttack','CUTTACK':'Cuttack','DEOGARH':'Cuttack','DHENKANAL':'Cuttack',
         'JAGATSINGHAPUR':'Cuttack','JAJAPUR':'Cuttack','KENDRAPARA':'Cuttack','KENDUJHAR':'Cuttack','KHORDHA':'Cuttack',
         'MAYURBHANJ':'Cuttack','NAYAGARH':'Cuttack','PURI':'Cuttack','GAJAPATI':'Ganjam','GANJAM':'Ganjam',
-        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'
-    }
+        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'}
+}
 
 # current_cluster_map = cluster_config.get(target_state, {})
 # merged['cluster'] = merged['district_upper'].map(current_cluster_map)
