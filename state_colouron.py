@@ -437,6 +437,23 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*21,
             "Others": [0]*21
         }
+    elif state_name == "Jharkhand":
+        data = {
+            "District": ['RANCHI','RAMGARH','HAZARIBAGH','KHUNTI','PALAMU','GARHWA','LOHARDAGA',
+                         'LATEHAR','KODERMA','GIRIDIH','GUMLA','SIMDEGA','CHATRA','EAST SINGHBHUM',
+                         'SARAIKELA-KHARSAWAN','WEST SINGHBHUM','DHANBAD','BOKARO','JAMTARA','DEOGHAR',
+                         'DUMKA','PAKUR','SAHIBGANJ','GODDA'],
+            "Colouron+": [0]*24,
+            "Everglow": [0]*24,
+            "JSW_CC_Liner": [0]*24,
+            "TATA_Durashine": [20,10,10,0,0,0,0,0,0,15,0,0,0,20,20,10,10,10,5,10,5,0,5,0],
+            "Tata_Liner": [10,*([0]*12),10,20,0,10,*([0]*7)],
+            "TATA_Prisma": [0]*24,
+            "Jindal Neucolour+": [0]*24,
+            "APL Apollo Coral": [0]*24,
+            "JSW_Radiance": [0]*24,
+            "Others": [0]*24
+        }
 
 
     return pd.DataFrame(data)
@@ -753,6 +770,9 @@ state_distributor_configs = {
     },
     "West Bengal": {
         'ALIPURDUAR': 'Distributor A'
+    },
+    "Jharkhand": {
+        'RANCHI': 'Distributor A'
     } 
     
 }
@@ -910,6 +930,12 @@ state_ranges = {
         (150, '50–150 MT', '#93c5fd'),
         (300, '150–300 MT', '#3b82f6'),
         (float('inf'), '300+ MT', '#1e40af')
+    ],
+    "Jharkhand": [
+        (10, '0–10 MT', '#dbeafe'),
+        (30, '10–30 MT', '#93c5fd'),
+        (50, '30–50 MT', '#3b82f6'),
+        (float('inf'), '50+ MT', '#1e40af')
     ]
 }
 
@@ -1135,6 +1161,14 @@ cluster_config = {
         'KOLKATA':'Kolkata','MURSHIDABAD':'Kolkata','NADIA':'Kolkata','ALIPURDUAR':'Siliguri',
         'COOCHBEHAR':'Siliguri','DARJEELING':'Siliguri','DINAJPUR DAKSHIN':'Siliguri',
         'DINAJPUR UTTAR':'Siliguri','JALPAIGURI':'Siliguri','KALIMPONG':'Siliguri','MALDAH':'Siliguri'   
+    },
+    "Jharkhand": {
+        'RANCHI':'Ranchi','RAMGARH':'Ranchi','HAZARIBAGH':'Ranchi','KHUNTI':'Ranchi','PALAMU':'Ranchi',
+        'GARHWA':'Ranchi','LOHARDAGA':'Ranchi','LATEHAR':'Ranchi','KODERMA':'Ranchi',
+        'GIRIDIH':'Ranchi','GUMLA':'Ranchi','SIMDEGA':'Ranchi','CHATRA':'Ranchi',
+        'EAST SINGHBHUM':'Singhbhum','SARAIKELA-KHARSAWAN':'Singhbhum','WEST SINGHBHUM':'Singhbhum',
+        'DHANBAD':'Dhanbad','BOKARO':'Dhanbad','JAMTARA':'Dhanbad','DEOGHAR':'Dhanbad',
+        'DUMKA':'Dhanbad','PAKUR':'Dhanbad','SAHIBGANJ':'Dhanbad','GODDA':'Dhanbad'
     }
 }
 
@@ -1332,7 +1366,8 @@ else:
                 "Kerala":-0.06,
                 "Assam":-0.06,
                 "Odisha":-0.1,
-                "West Bengal":-0.1
+                "West Bengal":-0.1,
+                "Jharkhand":-0.1
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
@@ -1467,6 +1502,13 @@ if target_state == "West Bengal":
     ))
     annotations.append(dict(
         x=87.6, y=26.7, text="<b>SILIGURI</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+if target_state == "Jharkhand":
+    annotations.append(dict(
+        x=86.2, y=22.7, text="<b>SINGHBHUM</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
