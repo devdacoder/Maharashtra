@@ -1362,6 +1362,71 @@ if target_state == "Tamil Nadu":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
+if target_state == "Assam":
+
+    # Assam
+    annotations.append(dict(
+        x=92.8, y=26.2, text="<b>ASSAM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Sikkim
+    annotations.append(dict(
+        x=88.6, y=27.5, text="<b>SIKKIM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Arunachal Pradesh
+    annotations.append(dict(
+        x=94.2, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Manipur
+    annotations.append(dict(
+        x=93.9, y=24.8, text="<b>MANIPUR</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Meghalaya
+    annotations.append(dict(
+        x=91.3, y=25.6, text="<b>MEGHALAYA</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Mizoram
+    annotations.append(dict(
+        x=92.7, y=23.7, text="<b>MIZORAM</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Nagaland
+    annotations.append(dict(
+        x=94.5, y=26.1, text="<b>NAGALAND</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+
+    # Tripura
+    annotations.append(dict(
+        x=91.6, y=24.0, text="<b>TRIPURA</b>",
+        showarrow=False,
+        font=dict(size=11, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
 
 # --- TOTAL MARKET BOX (Merged into annotations to prevent error) ---
 total_mkt_size = df['Market_Size'].sum()
