@@ -533,8 +533,10 @@ def get_geojson(state_name):
         'TIRUPPUR': 'TIRUPUR',
         'TIRUVANNAMALAI': 'TIRUVANAMALAI',
         'TIRUCHIRAPPALLI': 'TRICHY',
-        'THOOTHUKUDI': 'TUTICORIN'
-
+        'THOOTHUKUDI': 'TUTICORIN',
+        'DARANG':'DARRANG',
+        'KAMRUP RURAL':'KAMRUP'
+        'SIBSAGAR':'SIVASAGAR'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
