@@ -420,6 +420,23 @@ def get_state_data(state_name):
             "JSW_Radiance": [0]*30,
             "Others": [0]*30
         }
+    elif state_name == "West Bengal":
+        data = {
+            "District": ['BANKURA','BIRBHUM','HOOGHLY','MEDINIPUR EAST','MEDINIPUR WEST','PASCHIM BARDHAMAN',
+                         'PURBA BARDHAMAN','PURULIA','24 PARAGANAS NORTH','24 PARAGANAS SOUTH','KOLKATA','MURSHIDABAD',
+                         'NADIA','ALIPURDUAR','COOCHBEHAR','DARJEELING','DINAJPUR DAKSHIN','DINAJPUR UTTAR','JALPAIGURI','KALIMPONG',
+                         'MALDAH'],
+            "Colouron+": [0,0,20,10,10,10,20,0,15,10,10,0,10,85,75,35,20,35,60,25,10],
+            "Everglow": [0]*21,
+            "JSW_CC_Liner": [0]*21,
+            "TATA_Durashine": [50,60,150,50,40,60,40,50,120,80,60,80,60,40,30,20,20,20,30,20,25],
+            "Tata_Liner": [0]*21,
+            "TATA_Prisma": [0,0,50,0,0,0,9,0,20,20,0,0,20,*([0]*8)],
+            "Jindal Neucolour+": [0]*21,
+            "APL Apollo Coral": [0]*21,
+            "JSW_Radiance": [0]*21,
+            "Others": [0]*21
+        }
 
 
     return pd.DataFrame(data)
@@ -582,7 +599,27 @@ def get_geojson(state_name):
         'NABARANGAPUR': 'NABARANGPUR',
         'NUAPARHA': 'NUAPADA',
         'RAYAGARHA': 'RAYAGADA',
-        'SUBARNAPUR': 'SONEPUR'
+        'SUBARNAPUR': 'SONEPUR',
+        '>L|PUR DU>R': 'ALIPURDUAR',
+        'B>NKURA': 'BANKURA',
+        'B|RBH@M': 'BIRBHUM',
+        'D>RJILING': 'DARJEELING',
+        'DAKSHIN DIN>JPUR': 'DINAJPUR DAKSHIN',
+        'HUGLI': 'HOOGHLY',
+        'JALP>IGURI': 'JALPAIGURI',
+        'K>LIMPONG': 'KALIMPONG',
+        'KOCH BIH>R': 'COOCHBEHAR',
+        'KOLK>TA': 'KOLKATA',
+        'M>LDAH': 'MALDAH',
+        'MURSHID>B>D': 'MURSHIDABAD',
+        'NORTH TWENTY-FOUR PARGANAS': '24 PARAGANAS NORTH',
+        'PASCHIM BARDDHAM>N': 'PASCHIM BARDHAMAN',
+        'PASCHIM MEDIN|PUR': 'MEDINIPUR WEST',
+        'PURBA BARDDHAM>N': 'PURBA BARDHAMAN',
+        'PURBA MEDIN|PUR': 'MEDINIPUR EAST',
+        'PURULIYA': 'PURULIA',
+        'SOUTH 24PARGANAS': '24 PARAGANAS SOUTH',
+        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -713,6 +750,9 @@ state_distributor_configs = {
     },
     "Odisha": {
         'BARGARH': 'Distributor A'
+    },
+    "West Bengal": {
+        'ALIPURDUAR': 'Distributor A'
     } 
     
 }
@@ -864,6 +904,12 @@ state_ranges = {
         (50, '10–50 MT', '#93c5fd'),
         (100, '50–100 MT', '#3b82f6'),
         (float('inf'), '100+ MT', '#1e40af')
+    ],
+    "West Bengal": [
+        (50, '0–50 MT', '#dbeafe'),
+        (150, '50–150 MT', '#93c5fd'),
+        (300, '150–300 MT', '#3b82f6'),
+        (float('inf'), '300+ MT', '#1e40af')
     ]
 }
 
@@ -1080,7 +1126,16 @@ cluster_config = {
         'BALESHWAR':'Cuttack','BHADRAK':'Cuttack','CUTTACK':'Cuttack','DEOGARH':'Cuttack','DHENKANAL':'Cuttack',
         'JAGATSINGHAPUR':'Cuttack','JAJAPUR':'Cuttack','KENDRAPARA':'Cuttack','KENDUJHAR':'Cuttack','KHORDHA':'Cuttack',
         'MAYURBHANJ':'Cuttack','NAYAGARH':'Cuttack','PURI':'Cuttack','GAJAPATI':'Ganjam','GANJAM':'Ganjam',
-        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'}
+        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'
+    },
+    "West Bengal": {
+        'BANKURA':'Bardhaman','BIRBHUM':'Bardhaman','HOOGHLY':'Bardhaman','MEDINIPUR EAST':'Bardhaman',
+        'MEDINIPUR WEST':'Bardhaman','PASCHIM BARDHAMAN':'Bardhaman','PURBA BARDHAMAN':'Bardhaman',
+        'PURULIA':'Bardhaman','24 PARAGANAS NORTH':'Kolkata','24 PARAGANAS SOUTH':'Kolkata',
+        'KOLKATA':'Kolkata','MURSHIDABAD':'Kolkata','NADIA':'Kolkata','ALIPURDUAR':'Siliguri',
+        'COOCHBEHAR':'Siliguri','DARJEELING':'Siliguri','DINAJPUR DAKSHIN':'Siliguri',
+        'DINAJPUR UTTAR':'Siliguri','JALPAIGURI':'Siliguri','KALIMPONG':'Siliguri','MALDAH':'Siliguri'   
+    }
 }
 
 # current_cluster_map = cluster_config.get(target_state, {})
@@ -1191,8 +1246,7 @@ if target_state=="Assam":
                 "Goa":0,
                 "Tamil Nadu":-0.10,
                 "Kerala":-0.06,
-                "Assam":-0.06,
-                "Odisha":-0.06
+                "Assam":-0.06
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
@@ -1276,7 +1330,9 @@ else:
                 "Goa":0,
                 "Tamil Nadu":-0.10,
                 "Kerala":-0.06,
-                "Assam":-0.06
+                "Assam":-0.06,
+                "Odisha":-0.1,
+                "West Bengal":-0.1
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
@@ -1354,71 +1410,68 @@ if target_state == "Tamil Nadu":
         xref="x", yref="y"
     ))
 if target_state == "Assam":
-
-    # Assam
     annotations.append(dict(
         x=91, y=27, text="<b>ASSAM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Sikkim
     annotations.append(dict(
         x=89.3, y=27.5, text="<b>SIKKIM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Arunachal Pradesh
     annotations.append(dict(
         x=92.1, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Manipur
     annotations.append(dict(
         x=95.2, y=24.8, text="<b>MANIPUR</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Meghalaya
     annotations.append(dict(
         x=91.3, y=25, text="<b>MEGHALAYA</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Mizoram
     annotations.append(dict(
         x=93.9, y=23.4, text="<b>MIZORAM</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Nagaland
     annotations.append(dict(
         x=95.7, y=26.1, text="<b>NAGALAND</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
-    # Tripura
     annotations.append(dict(
         x=90.7, y=24.0, text="<b>TRIPURA</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-
+if target_state == "West Bengal":
+    annotations.append(dict(
+        x=87.9, y=23.3, text="<b>BARDHAMAN</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=88.4, y=26.7, text="<b>SILIGURI</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    
 # --- TOTAL MARKET BOX (Merged into annotations to prevent error) ---
 total_mkt_size = df['Market_Size'].sum()
 total_brand_vol = df[target_brand].sum()
