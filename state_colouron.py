@@ -535,7 +535,7 @@ def get_geojson(state_name):
         'TIRUCHIRAPPALLI': 'TRICHY',
         'THOOTHUKUDI': 'TUTICORIN',
         'DARANG':'DARRANG',
-        'KAMRUP RURAL':'KAMRUP'
+        'KAMRUP RURAL':'KAMRUP',
         'SIBSAGAR':'SIVASAGAR'
     })
     if state_name == "Karnataka":
