@@ -1483,7 +1483,15 @@ fig.update_layout(
         title_font_family="Arial Black",
         itemsizing='constant')
 )
-
+if target_state == "Assam":
+    fig.update_xaxes(
+        range=[88.0, 96.5],
+        showgrid=False
+    )
+    fig.update_yaxes(
+        range=[21.5, 30.0],
+        showgrid=False
+    )
 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
 # 5. Styling to kill Index and White Spaces
