@@ -1460,13 +1460,13 @@ if target_state == "Assam":
     ))
 if target_state == "West Bengal":
     annotations.append(dict(
-        x=87, y=23.9, text="<b>BARDHAMAN</b>",
+        x=87, y=24.3, text="<b>BARDHAMAN</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
     annotations.append(dict(
-        x=87.8, y=26.7, text="<b>SILIGURI</b>",
+        x=87.6, y=26.7, text="<b>SILIGURI</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
