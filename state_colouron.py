@@ -366,83 +366,59 @@ def get_state_data(state_name):
             "District": [
                 # Sikkim
                 'COMBINED_SIKKIM',
-
                 # Arunachal Pradesh
-                'ANJAW', 'CHANGLANG', 'DIBANG VALLEY', 'EAST KAMENG', 'EAST SIANG',
-                'KAMLE', 'KRA DAADI', 'KURUNG KUMEY', 'LEPARADA', 'LOHIT',
-                'LONGDING', 'LOWER DIBANG VALLEY', 'LOWER SIANG',
-                'LOWER SUBANSIRI', 'NAMSAI', 'PAKKE KESSANG', 'PAPUM PARE',
-                'SHI YOMI', 'SIANG', 'TAWANG', 'TIRAP', 'UPPER SIANG',
-                'UPPER SUBANSIRI', 'WEST KAMENG', 'WEST SIANG',
-
+                'ANJAW', 'CHANGLANG', 'DIBANG VALLEY', 'EAST KAMENG', 'EAST SIANG','KAMLE', 'KRA DAADI', 'KURUNG KUMEY', 'LEPARADA', 'LOHIT',
+                'LONGDING', 'LOWER DIBANG VALLEY', 'LOWER SIANG','LOWER SUBANSIRI', 'NAMSAI', 'PAKKE KESSANG', 'PAPUM PARE',
+                'SHI YOMI', 'SIANG', 'TAWANG', 'TIRAP', 'UPPER SIANG','UPPER SUBANSIRI', 'WEST KAMENG', 'WEST SIANG',
                 # Assam
-                'BAKSA', 'BARPETA', 'BISWANATH', 'BONGAIGAON', 'CACHAR',
-                'CHARAIDEO', 'CHIRANG', 'DARRANG', 'DHEMAJI', 'DHUBRI',
-                'DIBRUGARH', 'DIMA HASAO', 'GOALPARA', 'GOLAGHAT',
-                'HAILAKANDI', 'HOJAI', 'JORHAT', 'KAMRUP', 'KAMRUP METRO',
-                'KARBI ANGLONG', 'KARIMGANJ', 'KOKRAJHAR', 'LAKHIMPUR',
-                'MAJULI', 'MARIGAON', 'NAGAON', 'NALBARI', 'SIVASAGAR',
-                'SONITPUR', 'SOUTH SALMARA MANCACHAR', 'TINSUKIA',
-                'UDALGURI', 'WEST KARBI ANGLONG',
-
+                'BAKSA', 'BARPETA', 'BISWANATH', 'BONGAIGAON', 'CACHAR','CHARAIDEO', 'CHIRANG', 'DARRANG', 'DHEMAJI', 'DHUBRI',
+                'DIBRUGARH', 'DIMA HASAO', 'GOALPARA', 'GOLAGHAT','HAILAKANDI', 'HOJAI', 'JORHAT', 'KAMRUP', 'KAMRUP METRO',
+                'KARBI ANGLONG', 'KARIMGANJ', 'KOKRAJHAR', 'LAKHIMPUR','MAJULI', 'MARIGAON', 'NAGAON', 'NALBARI', 'SIVASAGAR',
+                'SONITPUR', 'SOUTH SALMARA MANCACHAR', 'TINSUKIA','UDALGURI', 'WEST KARBI ANGLONG',
                 # Manipur
-                'BISHNUPUR', 'CHANDEL', 'CHURACHANDPUR', 'IMPHAL EAST',
-                'IMPHAL WEST', 'JIRIBAM', 'KAKCHING', 'KAMJONG', 'KANGPOKPI',
-                'NONEY', 'PHERZAWL', 'SENAPATI', 'TAMENGLONG', 'TENGNOUPAL',
-                'THOUBAL', 'UKHRUL',
-
+                'BISHNUPUR', 'CHANDEL', 'CHURACHANDPUR', 'IMPHAL EAST','IMPHAL WEST', 'JIRIBAM', 'KAKCHING', 'KAMJONG', 'KANGPOKPI',
+                'NONEY', 'PHERZAWL', 'SENAPATI', 'TAMENGLONG', 'TENGNOUPAL','THOUBAL', 'UKHRUL',
                 # Meghalaya
-                'EAST GARO HILLS', 'EAST JAINTIA HILLS', 'EAST KHASI HILLS',
-                'NORTH GARO HILLS', 'RI BHOI', 'SOUTH GARO HILLS',
-                'SOUTH WEST GARO HILLS', 'SOUTH WEST KHASI HILLS',
-                'WEST GARO HILLS', 'WEST JAINTIA HILLS', 'WEST KHASI HILLS',
-
+                'EAST GARO HILLS', 'EAST JAINTIA HILLS', 'EAST KHASI HILLS','NORTH GARO HILLS', 'RI BHOI', 'SOUTH GARO HILLS',
+                'SOUTH WEST GARO HILLS', 'SOUTH WEST KHASI HILLS','WEST GARO HILLS', 'WEST JAINTIA HILLS', 'WEST KHASI HILLS',
                 # Mizoram
-                'AIZAWL', 'CHAMPHAI', 'HNAHTHIAL', 'KHAWZAWL', 'KOLASIB',
-                'LAWNGTLAI', 'LUNGLEI', 'MAMIT', 'SAIHA', 'SAITUAL', 'SERCHHIP',
-
+                'AIZAWL', 'CHAMPHAI', 'HNAHTHIAL', 'KHAWZAWL', 'KOLASIB','LAWNGTLAI', 'LUNGLEI', 'MAMIT', 'SAIHA', 'SAITUAL', 'SERCHHIP',
                 # Nagaland
-                'MON', 'DIMAPUR', 'KIPHIRE', 'KOHIMA', 'LONGLENG',
-                'MOKOKCHUNG', 'NOKLAK', 'PEREN', 'PHEK', 'TUENSANG',
+                'MON', 'DIMAPUR', 'KIPHIRE', 'KOHIMA', 'LONGLENG','MOKOKCHUNG', 'NOKLAK', 'PEREN', 'PHEK', 'TUENSANG',
                 'WOKHA', 'ZUNHEBOTO',
-
                 # Tripura
-                'DHALAI', 'GOMATI', 'KHOWAI', 'NORTH TRIPURA', 'SEPAHIJALA',
-                'SOUTH TRIPURA', 'UNAKOTI', 'WEST TRIPURA'
+                'DHALAI', 'GOMATI', 'KHOWAI', 'NORTH TRIPURA', 'SEPAHIJALA','SOUTH TRIPURA', 'UNAKOTI', 'WEST TRIPURA'
             ],
-
-            "Colouron+": [
-                150,
-                *([0] * 41),
-                30,20,30,*([0] * 11),20,
-                *([0] * 60)
-            ],
-
+            "Colouron+": [150,*([0] * 41),30,20,30,*([0] * 11),20,*([0] * 60)],
             "Everglow": [0] * 117,
-
             "JSW_CC_Liner": [0] * 117,
-
-            "TATA_Durashine": [
-                80,
-                *([0] * 16), 30, *([0] * 9),
-                10,0,20,0,0,0,0,0,0,0,0,20,0,0,0,20,30,50,0,0,0,0,0,0,30,0,0,0,0,30,0,0,
-                0,0,0,20,10,0,0,0,0,0,0,10,0,0,0,0,
-                0,0,5,0,0,0,0,0,0,0,0,
-                30,0,0,0,0,0,0,0,0,0,0,0,
-                5,0,5,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,40
-            ],
-
+            "TATA_Durashine": [80,*([0] * 16), 30, *([0] * 9),10,0,20,0,0,0,0,0,0,0,0,20,0,0,0,20,
+                               30,50,0,0,0,0,0,0,30,0,0,0,0,30,0,0,0,0,0,20,10,0,0,0,0,0,0,10,0,0,0,0,
+                               0,0,5,0,0,0,0,0,0,0,0,30,0,0,0,0,0,0,0,0,0,0,0,5,0,5,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,40],
             "Tata_Liner": [0] * 117,
-
             "TATA_Prisma": [0] * 117,
-
             "Jindal Neucolour+": [0] * 117,
-
             "APL Apollo Coral": [0] * 117,
-
             "JSW_Radiance": [0] * 117,
-
             "Others": [0] * 117
+        }
+        elif state_name == "Odisha":
+        data = {
+            "District": ['BALANGIR','BARGARH','BOUDH','JHARSUGUDA','NUAPADA','SAMBALPUR','SONEPUR',
+                         'SUNDARGARH','ANUGUL','BALESHWAR','BHADRAK','CUTTACK','DEOGARH','DHENKANAL',
+                         'JAGATSINGHAPUR','JAJAPUR','KENDRAPARA','KENDUJHAR','KHORDHA','MAYURBHANJ',
+                         'NAYAGARH','PURI','GAJAPATI','GANJAM','KALAHANDI','KANDHAMAL','KORAPUT',
+                         'MALKANGIRI','NABARANGPUR','RAYAGADA'],
+            "Colouron+": [*([0]*22),5,35,10,0,10,5,2,5)
+            "Everglow": [*([0]*23),2,*([0]*6)],
+            "JSW_CC_Liner": [*([0]*5),20,*([0]*5),50,*([0]*6),50,*([0]*11)],
+            "TATA_Durashine": [20,0,0,10,0,0,0,0,5,5,0,20,0,5,0,0,0,0,0,0,5,0,0,20,0,0,0,0,0,0],
+            "Tata_Liner": [0,50,0,0,0,80,0,0,0,0,0,25,0,15,0,0,25,*([0]*13)],
+            "TATA_Prisma": [0]*30,
+            "Jindal Neucolour+": [0]*30,
+            "APL Apollo Coral": [0]*30,
+            "JSW_Radiance": [0]*30,
+            "Others": [0]*30
         }
 
 
@@ -599,7 +575,14 @@ def get_geojson(state_name):
         'SOUTH WEST G>RO HILLS': 'SOUTH WEST GARO HILLS',
         'SOUTH WEST KH>SI HILLS': 'SOUTH WEST KHASI HILLS',
         'WEST G>RO HILLS': 'WEST GARO HILLS',
-        'GOMTI': 'GOMATI'
+        'GOMTI': 'GOMATI',
+        'BALASORE': 'BALESHWAR',
+        'JAGATSINGHPUR': 'JAGATSINGHAPUR',
+        'KEONJHAR (KENDUJHAR)': 'KENDUJHAR',
+        'NABARANGAPUR': 'NABARANGPUR',
+        'NUAPARHA': 'NUAPADA',
+        'RAYAGARHA': 'RAYAGADA',
+        'SUBARNAPUR': 'SONEPUR'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -614,7 +597,7 @@ def get_geojson(state_name):
 # 2. SELECTION & PROCESSING
 # ---------------------------------------------------------
 # Sidebar Selections
-target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala","Assam"])
+target_state = st.sidebar.selectbox("Select State", ["Uttarakhand","Himachal Pradesh","Haryana","Uttar Pradesh","Jammu and Kashmir","Punjab","Gujarat", "Maharashtra","Madhya Pradesh","Chhattisgarh","Rajasthan","Andhra Pradesh","Telangana","Karnataka","Goa","Tamil Nadu","Kerala","Assam","Odisha","West Bengal","Jharkhand","Bihar"])
 target_brand = st.sidebar.selectbox("Select Target Brand", ["Colouron+", "Everglow", "JSW_CC_Liner", "JSW_Radiance", "TATA_Durashine", "Tata_Liner", "TATA_Prisma", "Jindal Neucolour+", "APL Apollo Coral", "Others"])
 
 df = get_state_data(target_state)
@@ -724,10 +707,12 @@ state_distributor_configs = {
     },
     "Kerala": {
         'ERNAKULAM': 'Distributor A'
-    } 
-    ,
+    },
     "Assam": {
         'COMBINED_SIKKIM': 'Distributor A'
+    },
+    "Odisha": {
+        'BARGARH': 'Distributor A'
     } 
     
 }
@@ -873,6 +858,12 @@ state_ranges = {
         (150, '50–150 MT', '#93c5fd'),
         (300, '150–300 MT', '#3b82f6'),
         (float('inf'), '300+ MT', '#1e40af')
+    ],
+     "Odisha": [
+        (10, '0–10 MT', '#dbeafe'),
+        (50, '10–50 MT', '#93c5fd'),
+        (100, '50–100 MT', '#3b82f6'),
+        (float('inf'), '100+ MT', '#1e40af')
     ]
 }
 
@@ -1047,10 +1038,8 @@ cluster_config = {
         'THIRUVANANTHAPURAM':'Thiruvananthapuram','PALAKKAD':'Thrissur','THRISSUR':'Thrissur'
     },
         "Assam": {
-
         # Sikkim
         'COMBINED_SIKKIM': 'Sikkim',
-
         # Arunachal Pradesh
         'ANJAW': 'Arunachal Pradesh','CHANGLANG': 'Arunachal Pradesh','DIBANG VALLEY': 'Arunachal Pradesh','EAST KAMENG': 'Arunachal Pradesh',
         'EAST SIANG': 'Arunachal Pradesh','KAMLE': 'Arunachal Pradesh','KRA DAADI': 'Arunachal Pradesh','KURUNG KUMEY': 'Arunachal Pradesh',
@@ -1059,7 +1048,6 @@ cluster_config = {
         'PAKKE KESSANG': 'Arunachal Pradesh','PAPUM PARE': 'Arunachal Pradesh','SHI YOMI': 'Arunachal Pradesh','SIANG': 'Arunachal Pradesh',
         'TAWANG': 'Arunachal Pradesh','TIRAP': 'Arunachal Pradesh','UPPER SIANG': 'Arunachal Pradesh',
         'UPPER SUBANSIRI': 'Arunachal Pradesh','WEST KAMENG': 'Arunachal Pradesh','WEST SIANG': 'Arunachal Pradesh',
-
         # Assam
         'BAKSA': 'Assam','BARPETA': 'Assam','BISWANATH': 'Assam','BONGAIGAON': 'Assam','CACHAR': 'Assam',
         'CHARAIDEO': 'Assam','CHIRANG': 'Assam','DARRANG': 'Assam','DHEMAJI': 'Assam','DHUBRI': 'Assam',
@@ -1068,30 +1056,32 @@ cluster_config = {
         'KARIMGANJ': 'Assam','KOKRAJHAR': 'Assam','LAKHIMPUR': 'Assam','MAJULI': 'Assam','MARIGAON': 'Assam',
         'NAGAON': 'Assam','NALBARI': 'Assam','SIVASAGAR': 'Assam','SONITPUR': 'Assam','SOUTH SALMARA MANCACHAR': 'Assam',
         'TINSUKIA': 'Assam','UDALGURI': 'Assam','WEST KARBI ANGLONG': 'Assam',
-
         # Manipur
         'BISHNUPUR': 'Manipur','CHANDEL': 'Manipur','CHURACHANDPUR': 'Manipur','IMPHAL EAST': 'Manipur','IMPHAL WEST': 'Manipur',
             'JIRIBAM': 'Manipur','KAKCHING': 'Manipur','KAMJONG': 'Manipur','KANGPOKPI': 'Manipur','NONEY': 'Manipur','PHERZAWL': 'Manipur',
             'SENAPATI': 'Manipur','TAMENGLONG': 'Manipur','TENGNOUPAL': 'Manipur','THOUBAL': 'Manipur','UKHRUL': 'Manipur',
-
         # Meghalaya
         'EAST GARO HILLS': 'Meghalaya','EAST JAINTIA HILLS': 'Meghalaya','EAST KHASI HILLS': 'Meghalaya','NORTH GARO HILLS': 'Meghalaya',
         'RI BHOI': 'Meghalaya','SOUTH GARO HILLS': 'Meghalaya','SOUTH WEST GARO HILLS': 'Meghalaya','SOUTH WEST KHASI HILLS': 'Meghalaya',
         'WEST GARO HILLS': 'Meghalaya','WEST JAINTIA HILLS': 'Meghalaya','WEST KHASI HILLS': 'Meghalaya',
-
         # Mizoram
         'AIZAWL': 'Mizoram','CHAMPHAI': 'Mizoram','HNAHTHIAL': 'Mizoram','KHAWZAWL': 'Mizoram','KOLASIB': 'Mizoram',
         'LAWNGTLAI': 'Mizoram','LUNGLEI': 'Mizoram','MAMIT': 'Mizoram','SAIHA': 'Mizoram','SAITUAL': 'Mizoram','SERCHHIP': 'Mizoram',
-
         # Nagaland
         'MON': 'Nagaland','DIMAPUR': 'Nagaland','KIPHIRE': 'Nagaland','KOHIMA': 'Nagaland','LONGLENG': 'Nagaland','MOKOKCHUNG': 'Nagaland',
         'NOKLAK': 'Nagaland','PEREN': 'Nagaland','PHEK': 'Nagaland','TUENSANG': 'Nagaland','WOKHA': 'Nagaland','ZUNHEBOTO': 'Nagaland',
-
         # Tripura
         'DHALAI': 'Tripura','GOMATI': 'Tripura','KHOWAI': 'Tripura','NORTH TRIPURA': 'Tripura','SEPAHIJALA': 'Tripura',
         'SOUTH TRIPURA': 'Tripura','UNAKOTI': 'Tripura','WEST TRIPURA': 'Tripura'
     },
-}
+    "Odisha": {
+        'BALANGIR':'Bargarh','BARGARH':'Bargarh','BOUDH':'Bargarh','JHARSUGUDA':'Bargarh','NUAPADA':'Bargarh',
+        'SAMBALPUR':'Bargarh','SONEPUR':'Bargarh','SUNDARGARH':'Bargarh','ANUGUL':'Cuttack',
+        'BALESHWAR':'Cuttack','BHADRAK':'Cuttack','CUTTACK':'Cuttack','DEOGARH':'Cuttack','DHENKANAL':'Cuttack',
+        'JAGATSINGHAPUR':'Cuttack','JAJAPUR':'Cuttack','KENDRAPARA':'Cuttack','KENDUJHAR':'Cuttack','KHORDHA':'Cuttack',
+        'MAYURBHANJ':'Cuttack','NAYAGARH':'Cuttack','PURI':'Cuttack','GAJAPATI':'Ganjam','GANJAM':'Ganjam',
+        'KALAHANDI':'Ganjam','KANDHAMAL':'Ganjam','KORAPUT':'Ganjam','MALKANGIRI':'Ganjam','NABARANGPUR':'Ganjam','RAYAGADA':'Ganjam'
+    }
 
 # current_cluster_map = cluster_config.get(target_state, {})
 # merged['cluster'] = merged['district_upper'].map(current_cluster_map)
@@ -1201,7 +1191,8 @@ if target_state=="Assam":
                 "Goa":0,
                 "Tamil Nadu":-0.10,
                 "Kerala":-0.06,
-                "Assam":-0.06
+                "Assam":-0.06,
+                "Odisha":-0.06
             }
             # Get the offset for the current state, default to -0.1 if not found
             current_offset = state_y_offsets.get(target_state, -0.1)
