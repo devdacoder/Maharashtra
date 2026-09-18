@@ -1157,7 +1157,7 @@ for _, row in merged.iterrows():
         district_area = row.geometry.area
 
         if district_area < 0.005:
-            share_font_size = 3
+            share_font_size = 1
         elif district_area < 0.01:
             share_font_size = 4
         elif district_area < 0.02:
