@@ -1382,7 +1382,7 @@ if target_state == "Assam":
 
     # Arunachal Pradesh
     annotations.append(dict(
-        x=94.2, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
+        x=93.5, y=28.5, text="<b>ARUNACHAL PRADESH</b>",
         showarrow=False,
         font=dict(size=11, color="black", family="Arial Black"),
         xref="x", yref="y"
