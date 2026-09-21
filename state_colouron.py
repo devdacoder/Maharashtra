@@ -1472,7 +1472,7 @@ if target_state == "Telangana":
     ))
 if target_state == "Karnataka":
     annotations.append(dict(
-        x=75.1, y=15.6, text="<b>HUBLI</b>",
+        x=74.7, y=15.6, text="<b>HUBLI</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
@@ -1484,7 +1484,7 @@ if target_state == "Karnataka":
         xref="x", yref="y"
     ))
     annotations.append(dict(
-        x=78.9, y=13.0, text="<b>BANGALORE</b>",
+        x=79.2, y=13.0, text="<b>BANGALORE</b>",
         showarrow=False,
         font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
