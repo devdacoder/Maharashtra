@@ -1470,6 +1470,31 @@ if target_state == "Telangana":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
+if target_state == "Karnataka":
+    annotations.append(dict(
+        x=75.1, y=15.4, text="<b>HUBLI</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=75.2, y=15.8, text="<b>HUBLI-IHB</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=77.6, y=13.0, text="<b>BANGALORE</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
+    annotations.append(dict(
+        x=74.9, y=12.9, text="<b>MANGALORE</b>",
+        showarrow=False,
+        font=dict(size=13, color="black", family="Arial Black"),
+        xref="x", yref="y"
+    ))
 if target_state == "Goa":
     annotations.append(dict(
         x=74.05, y=15.4, text="<b>GOA</b>",
