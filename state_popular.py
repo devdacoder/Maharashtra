@@ -777,7 +777,7 @@ state_distributor_configs = {
         'VIRUDHUNAGAR':'All Distributors','KANNIYAKUMARI':'All Distributors','TENKASI':'All Distributors',
         'TIRUNELVELI':'All Distributors','TUTICORIN':'All Distributors','DINDIGUL':'All Distributors',
         'MADURAI':'All Distributors','THENI':'All Distributors','RAMANATHAPURAM':'All Distributors',
-        'SIVAGANGA':'All Distributors','TIRUPUR':'Mitsun Agencies','KARUR':'Mitsun Agencies','PONDY':'All Distributors'
+        'SIVAGANGA':'All Distributors','TIRUPUR':'Mitsun Agencies','KARUR':'Mitsun Agencies','PONDY':'All Distributors',
         'VILUPPURAM':'All Distributors','CUDDALORE':'All Distributors','TIRUVANAMALAI':'All Distributors',
         'KALLAKKURICHI':'All Distributors','VELLORE':'All Distributors','TIRUPATHUR':'All Distributors',
         'RANIPET':'All Distributors','CHENGALPATTU':'All Distributors','CHENNAI':'All Distributors',
