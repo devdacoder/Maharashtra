@@ -666,7 +666,8 @@ def get_geojson(state_name):
         'PURULIYA': 'PURULIA',
         'SOUTH 24PARGANAS': '24 PARAGANAS SOUTH',
         'UTTAR DIN>JPUR': 'DINAJPUR UTTAR',
-        'PUDUCHERRY':'PONDY'
+        'PUDUCHERRY':'PONDY',
+        'KARAIKAL':'KARAIKKAL'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
