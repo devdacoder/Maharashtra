@@ -1134,7 +1134,7 @@ cluster_config = {
         'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
         'TIRUNELVELI':'Tirunelveli','TUTICORIN':'Tirunelveli','DINDIGUL':'Madurai','MADURAI':'Madurai',
         'THENI':'Madurai','RAMANATHAPURAM':'Madurai','SIVAGANGA':'Madurai','TIRUPUR':'Tirupur',
-        'KARUR':'Tirupur','PONDY':'Pondy''VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
+        'KARUR':'Tirupur','PONDY':'Pondy','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
         'KALLAKKURICHI':'Pondy','VELLORE':'Vellore','TIRUPATHUR':'Vellore','RANIPET':'Vellore',
         'CHENGALPATTU':'Chennai','CHENNAI':'Chennai','KANCHIPURAM':'Chennai','THIRUVALLUR':'Chennai',
         'COIMBATORE':'Coimbatore','ERODE':'Coimbatore','THE NILGIRIS':'Coimbatore','SALEM':'Salem',
