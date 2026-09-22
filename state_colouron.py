@@ -1653,6 +1653,15 @@ if target_state == "Assam":
         range=[22, 29.5],
         showgrid=False
     )
+if target_state == "Tamil Nadu":
+    fig.update_xaxes(
+        range=[88.5, 96],
+        showgrid=False
+    )
+    fig.update_yaxes(
+        range=[22, 29.5],
+        showgrid=False
+    )
 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 
 # 5. Styling to kill Index and White Spaces
