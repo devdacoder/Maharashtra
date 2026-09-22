@@ -326,23 +326,23 @@ def get_state_data(state_name):
         data = {
             "District": [
                 'VIRUDHUNAGAR','KANNIYAKUMARI','TENKASI','TIRUNELVELI','TUTICORIN','DINDIGUL','MADURAI',
-                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','VILUPPURAM','CUDDALORE',
+                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','PONDY','VILUPPURAM','CUDDALORE',
                 'TIRUVANAMALAI','KALLAKKURICHI','VELLORE','TIRUPATHUR','RANIPET','CHENGALPATTU','CHENNAI',
                 'KANCHIPURAM','THIRUVALLUR','COIMBATORE','ERODE','THE NILGIRIS','SALEM','NAMAKKAL',
                 'DHARMAPURI','KRISHNAGIRI','PUDUKKOTTAI','TRICHY','THANJAVUR','ARIYALUR','THIRUVARUR',
-                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI'
+                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI','KARAIKKAL'
             ],
-            "Colouron+": [60,180,60,130,100,80,50,20,40,30,190,60,50,25,50,40,50,20,20,100,200,100,
-                          150,150,50,20,120,30,50,50,15,60,25,20,15,20,10,10],
-            "Everglow": [0,0,0,0,0,2,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-            "JSW_CC_Liner": [0,0,0,0,0,10,10,0,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,150,15,0,10,10,10,15,0,0,0,0,0,0,0,0],
-            "TATA_Durashine": [20,20,30,20,20,20,25,5,10,5,0,500,20,15,25,10,10,10,10,50,30,30,40,25,30,5,30,23,5,10,20,40,20,10,50,10,10,10],
-            "Tata_Liner": [0,0,0,15,0,10,30,0,0,0,100,100,0,0,0,0,0,0,0,80,150,150,80,10,15,0,10,8,12,0,0,0,0,0,0,0,0,0],
-            "TATA_Prisma": [0]*38,
-            "Jindal Neucolour+": [0]*38,
-            "APL Apollo Coral": [0]*38,
+            "Colouron+": [60,180,60,130,100,80,50,20,40,30,190,60,20,50,25,50,40,50,20,20,100,200,100,
+                          150,150,50,20,120,30,50,50,15,60,25,20,15,20,10,10,10],
+            "Everglow": [0,0,0,0,0,2,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            "JSW_CC_Liner": [0,0,0,0,0,10,10,0,0,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,150,15,0,10,10,10,15,0,0,0,0,0,0,0,0,0],
+            "TATA_Durashine": [20,20,30,20,20,20,25,5,10,5,0,500,10,20,15,25,10,10,10,10,50,30,30,40,25,30,5,30,23,5,10,20,40,20,10,50,10,10,10,10],
+            "Tata_Liner": [0,0,0,15,0,10,30,0,0,0,100,100,0,0,0,0,0,0,0,0,80,150,150,80,10,15,0,10,8,12,0,0,0,0,0,0,0,0,0,0],
+            "TATA_Prisma": [0]*40,
+            "Jindal Neucolour+": [0]*40,
+            "APL Apollo Coral": [0]*40,
             "JSW_Radiance": [20,0,0,0,0,20,20,0,0,10,350,0,100,0,0,0,0,0,0,30,150,100,100,200,25,10,0,25,15,4,40,0,250,100,0,0,0,0,0,0],
-            "Others": [0]*38
+            "Others": [0]*40
         }
     elif state_name == "Kerala":
         data = {
@@ -498,6 +498,17 @@ def get_geojson(state_name):
             ].copy()
         
         state_gdf['state'] = "Assam"
+    elif state_name == "Tamil Nadu":
+        tamil_states = [
+            "Tamil Nadu",
+            "Puducherry"
+        ]
+
+        state_gdf = india[
+                india['state'].str.upper().isin([s.upper() for s in tamil_states])
+            ].copy()
+        
+        state_gdf['state'] = "Tamil Nadu"
 
     else:
         state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
@@ -654,7 +665,8 @@ def get_geojson(state_name):
         'PURBA MEDIN|PUR': 'MEDINIPUR EAST',
         'PURULIYA': 'PURULIA',
         'SOUTH 24PARGANAS': '24 PARAGANAS SOUTH',
-        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR'
+        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR',
+        'PUDUCHERRY':'PONDY'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -765,7 +777,7 @@ state_distributor_configs = {
         'VIRUDHUNAGAR':'Safi Steel Traders','KANNIYAKUMARI':'Safi Steel Traders','TENKASI':'Safi Steel Traders',
         'TIRUNELVELI':'Safi Steel Traders','TUTICORIN':'Safi Steel Traders','DINDIGUL':'Shree Sivabalaji Steels',
         'MADURAI':'Shree Sivabalaji Steels','THENI':'Shree Sivabalaji Steels','RAMANATHAPURAM':'Shree Sivabalaji Steels',
-        'SIVAGANGA':'Shree Sivabalaji Steels','TIRUPUR':'Balu Iron and Steel Corporation','KARUR':'Balu Iron and Steel Corporation',
+        'SIVAGANGA':'Shree Sivabalaji Steels','TIRUPUR':'Balu Iron and Steel Corporation','KARUR':'Balu Iron and Steel Corporation','PONDY':'Balu Iron and Steel Corporation',
         'VILUPPURAM':'Balu Cement Corporation','CUDDALORE':'Balu Cement Corporation','TIRUVANAMALAI':'Balu Cement Corporation',
         'KALLAKKURICHI':'Balu Cement Corporation','VELLORE':'Mercury Steel Agency','TIRUPATHUR':'Mercury Steel Agency',
         'RANIPET':'Mercury Steel Agency','CHENGALPATTU':'Saro Steels and Crayon Roofing','CHENNAI':'Saro Steels and Crayon Roofing',
@@ -775,7 +787,7 @@ state_distributor_configs = {
         'DHARMAPURI':'Kay Vee Metal Roofing','KRISHNAGIRI':'Kay Vee Metal Roofing','PUDUKKOTTAI':'MKS Metal Roofing',
         'TRICHY':'MKS Metal Roofing','THANJAVUR':'MKS Metal Roofing','ARIYALUR':'MKS Metal Roofing',
         'THIRUVARUR':'MKS Metal Roofing','PERAMBALUR':'MKS Metal Roofing','NAGAPATTINAM':'MKS Metal Roofing',
-        'MAYILADUTHURAI':'MKS Metal Roofing'
+        'MAYILADUTHURAI':'MKS Metal Roofing','KARAIKKAL':'MKS Metal Roofing'
     },
     "Kerala": {
         'ERNAKULAM': 'Distributor A'
@@ -1122,13 +1134,13 @@ cluster_config = {
         'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
         'TIRUNELVELI':'Tirunelveli','TUTICORIN':'Tirunelveli','DINDIGUL':'Madurai','MADURAI':'Madurai',
         'THENI':'Madurai','RAMANATHAPURAM':'Madurai','SIVAGANGA':'Madurai','TIRUPUR':'Tirupur',
-        'KARUR':'Tirupur','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
+        'KARUR':'Tirupur','PONDY':'Pondy''VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
         'KALLAKKURICHI':'Pondy','VELLORE':'Vellore','TIRUPATHUR':'Vellore','RANIPET':'Vellore',
         'CHENGALPATTU':'Chennai','CHENNAI':'Chennai','KANCHIPURAM':'Chennai','THIRUVALLUR':'Chennai',
         'COIMBATORE':'Coimbatore','ERODE':'Coimbatore','THE NILGIRIS':'Coimbatore','SALEM':'Salem',
         'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
         'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
-        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
+        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy','KARAIKKAL':'Trichy'
     },
     "Kerala": {
         'ERNAKULAM':'Ernakulam','IDUKKI':'Ernakulam','KANNUR':'Kannur','KASARAGOD':'Kannur',
@@ -1501,12 +1513,12 @@ if target_state == "Goa":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-if target_state == "Tamil Nadu":
-    annotations.append(dict(
-        x=79.83, y=11.93, text="<b>PONDY</b>",
-        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
-        xref="x", yref="y"
-    ))
+# if target_state == "Tamil Nadu":
+#     annotations.append(dict(
+#         x=79.83, y=11.93, text="<b>PONDY</b>",
+#         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
+#         xref="x", yref="y"
+#     ))
 if target_state == "Assam":
     annotations.append(dict(
         x=91, y=27, text="<b>ASSAM</b>",
