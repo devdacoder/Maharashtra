@@ -324,26 +324,26 @@ def get_state_data(state_name):
         data = {
             "District": [
                 'VIRUDHUNAGAR','KANNIYAKUMARI','TENKASI','TIRUNELVELI','TUTICORIN','DINDIGUL','MADURAI',
-                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','VILUPPURAM','CUDDALORE',
+                'THENI','RAMANATHAPURAM','SIVAGANGA','TIRUPUR','KARUR','PONDY','VILUPPURAM','CUDDALORE',
                 'TIRUVANAMALAI','KALLAKKURICHI','VELLORE','TIRUPATHUR','RANIPET','CHENGALPATTU','CHENNAI',
                 'KANCHIPURAM','THIRUVALLUR','COIMBATORE','ERODE','THE NILGIRIS','SALEM','NAMAKKAL',
                 'DHARMAPURI','KRISHNAGIRI','PUDUKKOTTAI','TRICHY','THANJAVUR','ARIYALUR','THIRUVARUR',
-                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI'
+                'PERAMBALUR','NAGAPATTINAM','MAYILADUTHURAI','KARAIKKAL'
             ],
-            "Popular": [80,20,120,100,30,92,100,90,80,60,130,60,20,25,20,20,150,50,60,250,200,350,300,
-                        200,70,14,150,70,70,55,60,80,50,40,20,30,30,60],
-            "Alucolour": [0,0,0,0,0,5,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,0,25,10,0,0,0,0,0,0,0,0,0,0,0,0,5],
-            "Infinia": [0]*38, 
-            "APL Apollo Rooftuff": [20,0,0,10,0,10,50,10,0,10,20,30,0,0,25,10,0,0,15,150,100,100,100,
-                                    30,20,8,25,16,25,9,10,25,15,0,0,0,20,20],
-            "Jindal Sabrang": [10,0,20,60,15,0,0,0,0,0,0,0,0,0,0,0,15,10,0,100,80,100,80,0,0,0,0,0,0,0,
-                               10,0,20,0,0,20,20,20],
-            "APL Coral": [0]*38,
-            "APL Jumbo": [30,0,10,10,0,10,60,10,10,15,0,0,0,0,0,0,0,0,0,0,0,0,0,20,12,4,12,10,15,0,0,15,
-                          0,0,0,0,0,0],
-            "AM/NS Optigal 10 yW": [0,0,0,0,0,0,0,0,0,0,20,20,10,10,10,5,0,15,0,50,30,50,30,10,0,0,10,
-                                    0,12,15,10,20,10,0,0,0,10,10],
-            "Others": [0]*38
+            "Popular": [80,20,120,100,30,92,100,90,80,60,130,60,20,20,25,20,20,150,50,60,250,200,350,300,
+                        200,70,14,150,70,70,55,60,80,50,40,20,30,30,60,30],
+            "Alucolour": [0,0,0,0,0,5,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,0,0,25,10,0,0,0,0,0,0,0,0,0,0,0,0,5,0],
+            "Infinia": [0]*40, 
+            "APL Apollo Rooftuff": [20,0,0,10,0,10,50,10,0,10,20,30,0,0,0,25,10,0,0,15,150,100,100,100,
+                                    250,100,8,100,16,50,50,10,25,15,0,0,0,20,20,10],
+            "Jindal Sabrang": [10,0,20,60,15,0,0,0,0,0,80,40,0,40,0,40,0,15,40,40,50,30,50,30,20,50,0,20,
+                                0,0,20,10,0,20,0,0,20,20,20,10],
+            "APL Coral": [*([0]*21),100,*([0]*18)],
+            "APL Jumbo": [30,0,10,10,0,10,60,10,10,15,0,0,0,0,0,0,0,0,0,0,0,250,0,0,20,12,4,12,10,15,0,
+                            0,15,0,0,0,0,0,0,0],
+            "AM/NS Optigal 10 yW": [0,0,0,0,0,0,0,0,0,0,20,20,10,10,10,10,5,0,15,0,50,30,50,30,10,0,
+                                    0,10,0,12,15,10,20,10,0,0,0,10,10,10],
+            "Others": [0]*40
         }
     elif state_name == "Kerala":
         data = {
@@ -430,7 +430,7 @@ def get_state_data(state_name):
             "Infinia": [0]*21,
             "APL Apollo Rooftuff": [0]*21,
             "Jindal Sabrang": [350,270,350,280,250,300,350,250,350,350,300,300,300,200,200,100,100,100,150,50,100],
-            "APL Coral": [0,0,50,0,0,0,90,0,20,20,0,0,20,*([0]*8)],
+            "APL Coral": [0]*21,
             "APL Jumbo": [0]*21,
             "AM/NS Optigal 10 yW": [0]*21,
             "Others": [0]*21
@@ -495,6 +495,17 @@ def get_geojson(state_name):
             ].copy()
         
         state_gdf['state'] = "Assam"
+    elif state_name == "Tamil Nadu":
+        tamil_states = [
+            "Tamil Nadu",
+            "Puducherry"
+        ]
+
+        state_gdf = india[
+                india['state'].str.upper().isin([s.upper() for s in tamil_states])
+            ].copy()
+        
+        state_gdf['state'] = "Tamil Nadu"
 
     else:
         state_gdf = india[india['state'].str.upper() == state_name.upper()].copy()
@@ -651,7 +662,9 @@ def get_geojson(state_name):
         'PURBA MEDIN|PUR': 'MEDINIPUR EAST',
         'PURULIYA': 'PURULIA',
         'SOUTH 24PARGANAS': '24 PARAGANAS SOUTH',
-        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR'
+        'UTTAR DIN>JPUR': 'DINAJPUR UTTAR',
+        'PUDUCHERRY':'PONDY',
+        'KARAIKAL':'KARAIKKAL'
     })
     if state_name == "Karnataka":
         h_idx = state_gdf[state_gdf['district'] == 'H'].index
@@ -764,7 +777,7 @@ state_distributor_configs = {
         'VIRUDHUNAGAR':'All Distributors','KANNIYAKUMARI':'All Distributors','TENKASI':'All Distributors',
         'TIRUNELVELI':'All Distributors','TUTICORIN':'All Distributors','DINDIGUL':'All Distributors',
         'MADURAI':'All Distributors','THENI':'All Distributors','RAMANATHAPURAM':'All Distributors',
-        'SIVAGANGA':'All Distributors','TIRUPUR':'Mitsun Agencies','KARUR':'Mitsun Agencies',
+        'SIVAGANGA':'All Distributors','TIRUPUR':'Mitsun Agencies','KARUR':'Mitsun Agencies','PONDY':'All Distributors'
         'VILUPPURAM':'All Distributors','CUDDALORE':'All Distributors','TIRUVANAMALAI':'All Distributors',
         'KALLAKKURICHI':'All Distributors','VELLORE':'All Distributors','TIRUPATHUR':'All Distributors',
         'RANIPET':'All Distributors','CHENGALPATTU':'All Distributors','CHENNAI':'All Distributors',
@@ -773,7 +786,7 @@ state_distributor_configs = {
         'NAMAKKAL':'All Distributors','DHARMAPURI':'All Distributors','KRISHNAGIRI':'All Distributors',
         'PUDUKKOTTAI':'All Distributors','TRICHY':'Mitsun Agencies','THANJAVUR':'All Distributors',
         'ARIYALUR':'All Distributors','THIRUVARUR':'All Distributors','PERAMBALUR':'All Distributors',
-        'NAGAPATTINAM':'All Distributors','MAYILADUTHURAI':'All Distributors'
+        'NAGAPATTINAM':'All Distributors','MAYILADUTHURAI':'All Distributors','KARAIKKAL':'All Distributors'
     },
     "Kerala": {
         'ERNAKULAM': 'Distributor A'
@@ -1119,13 +1132,13 @@ cluster_config = {
         'VIRUDHUNAGAR':'Tirunelveli','KANNIYAKUMARI':'Tirunelveli','TENKASI':'Tirunelveli',
         'TIRUNELVELI':'Tirunelveli','TUTICORIN':'Tirunelveli','DINDIGUL':'Madurai','MADURAI':'Madurai',
         'THENI':'Madurai','RAMANATHAPURAM':'Madurai','SIVAGANGA':'Madurai','TIRUPUR':'Tirupur',
-        'KARUR':'Tirupur','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
+        'KARUR':'Tirupur','PONDY':'Pondy','VILUPPURAM':'Pondy','CUDDALORE':'Pondy','TIRUVANAMALAI':'Pondy',
         'KALLAKKURICHI':'Pondy','VELLORE':'Vellore','TIRUPATHUR':'Vellore','RANIPET':'Vellore',
         'CHENGALPATTU':'Chennai','CHENNAI':'Chennai','KANCHIPURAM':'Chennai','THIRUVALLUR':'Chennai',
         'COIMBATORE':'Coimbatore','ERODE':'Coimbatore','THE NILGIRIS':'Coimbatore','SALEM':'Salem',
         'NAMAKKAL':'Salem','DHARMAPURI':'Salem','KRISHNAGIRI':'Salem','PUDUKKOTTAI':'Trichy',
         'TRICHY':'Trichy','THANJAVUR':'Trichy','ARIYALUR':'Trichy','THIRUVARUR':'Trichy',
-        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy'
+        'PERAMBALUR':'Trichy','NAGAPATTINAM':'Trichy','MAYILADUTHURAI':'Trichy','KARAIKKAL':'Trichy'
     },
     "Kerala": {
         'ERNAKULAM':'Ernakulam','IDUKKI':'Ernakulam','KANNUR':'Kannur','KASARAGOD':'Kannur',
@@ -1500,12 +1513,7 @@ if target_state == "Goa":
         showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
         xref="x", yref="y"
     ))
-if target_state == "Tamil Nadu":
-    annotations.append(dict(
-        x=79.83, y=11.93, text="<b>PONDY</b>",
-        showarrow=False, font=dict(size=13, color="black", family="Arial Black"),
-        xref="x", yref="y"
-    ))
+
 if target_state == "Assam":
     annotations.append(dict(
         x=91, y=27, text="<b>ASSAM</b>",
@@ -1640,6 +1648,16 @@ if target_state == "Assam":
         range=[22, 29.5],
         showgrid=False
     )
+if target_state == "Tamil Nadu":
+    fig.update_xaxes(
+        range=[76, 80.5],
+        showgrid=False
+    )
+    fig.update_yaxes(
+        range=[8, 13.6],
+        showgrid=False
+    )
+
 st.plotly_chart(fig, use_container_width=True, config={'displayModeBar': False})
 # # ---------------------------------------------------------
 # # 5. TABLES (Unchanged)
