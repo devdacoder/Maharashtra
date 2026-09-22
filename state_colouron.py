@@ -311,7 +311,7 @@ def get_state_data(state_name):
             "District": [
                 'NORTH GOA','SOUTH GOA'
             ],
-            "Colouron+": [250,200],
+            "Colouron+": [350,200],
             "Everglow": [0,5],
             "JSW_CC_Liner": [10,0],
             "TATA_Durashine": [150,120],
